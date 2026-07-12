@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="gmtk-jam"
+run/main_scene="uid://bb53a65w4s4uc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
