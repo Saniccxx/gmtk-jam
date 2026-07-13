@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hbvb4mnln3cw"]
 
+[ext_resource type="Script" uid="uid://d08a003y3anji" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_i3pqv"]
 
@@ -21,6 +22,7 @@ animations = [{
 size = Vector2(299.99997, 299.99997)
 
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
+script = ExtResource("1_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
 position = Vector2(-5.9604645e-08, 5.9604645e-08)
