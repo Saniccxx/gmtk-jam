@@ -22,6 +22,7 @@ animations = [{
 size = Vector2(299.99997, 299.99997)
 
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
+floor_snap_length = 10.0
 script = ExtResource("1_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
@@ -34,3 +35,7 @@ frame_progress = 0.22587757
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75747721]
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_1ud0v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1400287306]
+process_callback = 0
+position_smoothing_enabled = true

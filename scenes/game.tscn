@@ -9,7 +9,7 @@
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=647450714]
 position = Vector2(182, 163)
-rotation = 0.23387411
+rotation = 0.2617994
 scale = Vector2(200, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2134265304]
