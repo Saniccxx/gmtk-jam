@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://hbvb4mnln3cw"]
 
+<<<<<<< Updated upstream:player.tscn
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_i3pqv"]
+=======
+[ext_resource type="Script" uid="uid://d08a003y3anji" path="res://Players/Parkour_player.gd" id="1_5kett"]
+[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="2_hfgrh"]
+[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="3_huna1"]
+>>>>>>> Stashed changes:Players/Parkour_player.tscn
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fb6tf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_onrkg")
+"texture": ExtResource("2_hfgrh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_i3pqv")
+"texture": ExtResource("3_huna1")
 }],
 "loop": 1,
 "name": &"default",
@@ -20,7 +26,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ud0v"]
 size = Vector2(299.99997, 299.99997)
 
+<<<<<<< Updated upstream:player.tscn
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
+=======
+[node name="Parkour_player" type="CharacterBody2D" unique_id=689076596]
+floor_snap_length = 10.0
+script = ExtResource("1_5kett")
+>>>>>>> Stashed changes:Players/Parkour_player.tscn
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
 position = Vector2(-5.9604645e-08, 5.9604645e-08)
