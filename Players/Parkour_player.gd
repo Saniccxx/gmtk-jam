@@ -7,6 +7,7 @@ const AIR_ACCEL = 0.5
 const AIR_FRICTION = 0.01
 const MASS = 1.5
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -43,5 +44,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x -= AIR_FRICTION * velocity.x * delta
 		velocity.x += AIR_ACCEL * direction * SPEED * delta
+
+	if sliding and is_on_floor():
+		if sprite.animation != "slide":
+			sprite.animation = "slide"
+			sprite.stop() # no animation
+	else:
+		sprite.rotation = 0.0
+		if sprite.animation != "default":
+			sprite.animation = "default"
+			sprite.play()
+
 
 	move_and_slide()
