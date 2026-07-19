@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d08a003y3anji" path="res://Players/Parkour_player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="4_hfgrh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fb6tf"]
 animations = [{
@@ -21,13 +22,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ud0v"]
 size = Vector2(299.99997, 299.99997)
 
+[sub_resource type="FontFile" id="FontFile_huna1"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/200/0/ascent = 0.0
+cache/0/200/0/descent = 0.0
+cache/0/200/0/underline_position = 0.0
+cache/0/200/0/underline_thickness = 0.0
+cache/0/200/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6htc"]
+font_size = 200
+
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
 floor_snap_length = 20.0
 script = ExtResource("1_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
 position = Vector2(-5.9604645e-08, 5.9604645e-08)
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_fb6tf")
 autoplay = "default"
 frame_progress = 0.22587757
@@ -36,6 +65,21 @@ frame_progress = 0.22587757
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_1ud0v")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1400287306]
-process_callback = 0
-position_smoothing_enabled = true
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1901138139]
+zoom = Vector2(0.2, 0.2)
+
+[node name="money_label" type="Label" parent="." unique_id=1785994065]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 4575.0
+offset_top = -2651.0
+offset_right = 4761.0
+offset_bottom = -2384.0
+grow_horizontal = 0
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontFile_huna1")
+theme_override_font_sizes/font_size = 100
+label_settings = SubResource("LabelSettings_u6htc")
+visible_characters = 13
+script = ExtResource("4_hfgrh")
