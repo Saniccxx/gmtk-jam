@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bs5rlbw05hguf"]
 
-[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_b5jt4"]
-[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_uc4km"]
+[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_2gwqr"]
+[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_qoaby"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_b5jt4")
+"texture": ExtResource("1_2gwqr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_uc4km")
+"texture": ExtResource("2_qoaby")
 }],
 "loop": 1,
 "name": &"default",
