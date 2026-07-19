@@ -1,16 +1,16 @@
 extends CharacterBody2D
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 500.0
+const JUMP_VELOCITY = -600.0
 const GROUND_ACCEL = 10.0
 const GROUND_FRICTION = 10.0
 const AIR_ACCEL = 0.5
 const AIR_FRICTION = 0.01
-const SLIDE_GRAVITY = 500.0
+const MASS = 1.5
 
 	
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * MASS
 
 	var sliding := Input.is_action_pressed("slide")
 
@@ -31,9 +31,12 @@ func _physics_process(delta: float) -> void:
 		if sliding:
 			#wierd thingies which calculate vector of player sliding down
 			var floor_normal = get_floor_normal()
-			var downhill = -Vector2(floor_normal.y, -floor_normal.x)
-
-			velocity += downhill * SLIDE_GRAVITY * delta
+			var slope_tangent = Vector2(floor_normal.y, -floor_normal.x)
+			var downhill = slope_tangent * slope_tangent.dot(get_gravity())
+			
+			velocity += downhill * delta * MASS
+			
+			print(downhill, velocity)
 		else:
 			velocity.x -= GROUND_FRICTION * velocity.x * delta
 			velocity.x += GROUND_ACCEL * direction * SPEED * delta

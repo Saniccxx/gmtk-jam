@@ -22,7 +22,7 @@ animations = [{
 size = Vector2(299.99997, 299.99997)
 
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
-floor_snap_length = 10.0
+floor_snap_length = 20.0
 script = ExtResource("1_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
