@@ -1,7 +1,22 @@
 [gd_scene format=3 uid="uid://bxk48v2svnl6b"]
 
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://Players/Parkour_player.tscn" id="1_n0eqh"]
+[ext_resource type="Texture2D" uid="uid://cx221ibwp33h5" path="res://icon.svg" id="2_0mmr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tykit"]
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 
 [node name="Player" parent="." unique_id=689076596 instance=ExtResource("1_n0eqh")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1235527177]
+position = Vector2(182, 163)
+rotation = 0.2617994
+scale = Vector2(200, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2038239376]
+scale = Vector2(0.156, 0.156)
+texture = ExtResource("2_0mmr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2022326396]
+shape = SubResource("RectangleShape2D_tykit")
