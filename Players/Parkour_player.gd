@@ -37,6 +37,8 @@ func _physics_process(delta: float) -> void:
 			
 			velocity += downhill * delta * MASS
 			
+			sprite.rotation = floor_normal.angle() + PI / 2
+			
 			print(downhill, velocity)
 		else:
 			velocity.x -= GROUND_FRICTION * velocity.x * delta
