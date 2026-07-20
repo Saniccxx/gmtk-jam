@@ -1,5 +1,6 @@
 extends Node
 
+var map_pos = Vector2(0,0)
 var money = 0
 var gun_names = ["pistol", "shotgun", "machinegun"]
 var gun_costs = [0, 50, 400]

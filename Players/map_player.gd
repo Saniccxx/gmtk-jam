@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
+	print(position)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("accept"):
