@@ -16,6 +16,9 @@ var vertical_range = 1000.0
 var rotate_range = PI/6
 var threshold_range = 10000.0
 
+
+const WIN_DISTANCE = 100000.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# ground
@@ -32,6 +35,10 @@ func _process(_delta: float) -> void:
 		generate_platforms(gen_threshold)
 		
 	cleanup_platforms()
+	
+	if player.global_position.x >= WIN_DISTANCE:
+		get_tree().change_scene_to_file.call_deferred("res://scenes/parkour/winner_display.tscn")
+
 
 func generate_platforms(target_x: float) -> void:
 	while current_gen_x < target_x:
