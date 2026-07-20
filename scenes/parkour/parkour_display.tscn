@@ -50,7 +50,7 @@ script = ExtResource("1_rqnsb")
 zoom = Vector2(0.2, 0.2)
 process_callback = 0
 
-[node name="money_label" type="Label" parent="." unique_id=681366231]
+[node name="money_label" type="Label" parent="Camera2D" unique_id=681366231]
 offset_left = 4000.0
 offset_top = -2500.0
 offset_right = 4126.0
@@ -59,3 +59,5 @@ theme_override_fonts/font = SubResource("FontFile_4mxc0")
 label_settings = SubResource("LabelSettings_x3moo")
 visible_characters = 13
 script = ExtResource("3_tyibk")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
