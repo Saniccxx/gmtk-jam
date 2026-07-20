@@ -67,3 +67,9 @@ func cleanup_platforms() -> void:
 	for child in obstacles.get_children():
 		if child.global_position.x < camera.global_position.x - threshold_range:
 			child.queue_free()
+
+
+func _on_lava_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		# after physics stuff
+		get_tree().change_scene_to_file.call_deferred("res://scenes/parkour/death_display.tscn")
