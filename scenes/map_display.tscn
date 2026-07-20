@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb53a65w4s4uc"]
 
-[ext_resource type="Script" uid="uid://b7mgk00h8ccly" path="res://map_display.gd" id="1_dtnn4"]
+[ext_resource type="Script" uid="uid://b7mgk00h8ccly" path="res://scenes/map_display.gd" id="1_dtnn4"]
 [ext_resource type="Texture2D" uid="uid://cx221ibwp33h5" path="res://icon.svg" id="1_ilqfu"]
 [ext_resource type="PackedScene" uid="uid://bs5rlbw05hguf" path="res://Players/Map_player.tscn" id="2_dtnn4"]
 
@@ -23,4 +23,3 @@ shape = SubResource("RectangleShape2D_ndusb")
 
 [node name="MapPlayer" parent="." unique_id=1666857073 instance=ExtResource("2_dtnn4")]
 position = Vector2(26, -488)
-scale = Vector2(1, 1)
