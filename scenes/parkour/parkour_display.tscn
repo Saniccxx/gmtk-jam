@@ -76,10 +76,10 @@ visible_characters = 13
 script = ExtResource("3_tyibk")
 
 [node name="distance_label" type="Label" parent="Camera2D" unique_id=1172696997]
-offset_left = 3737.0
-offset_top = -1871.0
-offset_right = 4195.0
-offset_bottom = -1417.0
+offset_left = 3083.0
+offset_top = -1889.0
+offset_right = 3541.0
+offset_bottom = -1435.0
 label_settings = SubResource("LabelSettings_1yfpb")
 script = ExtResource("4_1yfpb")
 

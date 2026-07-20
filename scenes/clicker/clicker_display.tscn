@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b7h7tno488lfd"]
+
+[ext_resource type="Script" uid="uid://mmarpsanxk6d" path="res://scenes/clicker/clicker_display.gd" id="1_h0a4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0a4l"]
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6qnb"]
+font_size = 52
+
+[node name="ClickerDisplay" type="Node2D" unique_id=894052617]
+script = ExtResource("1_h0a4l")
+
+[node name="Timer" type="Timer" parent="." unique_id=896751480]
+
+[node name="Label" type="Label" parent="." unique_id=81220069]
+offset_left = 694.0
+offset_top = 400.0
+offset_right = 1113.0
+offset_bottom = 793.0
+text = "Click SPACE!"
+label_settings = SubResource("LabelSettings_h0a4l")
+
+[node name="Label2" type="Label" parent="." unique_id=705496741]
+offset_left = 697.0
+offset_top = 539.0
+offset_right = 909.0
+offset_bottom = 611.0
+text = "time left"
+label_settings = SubResource("LabelSettings_d6qnb")
