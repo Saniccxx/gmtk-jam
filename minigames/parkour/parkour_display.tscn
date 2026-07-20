@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bxk48v2svnl6b"]
 
-[ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour_display.gd" id="1_0mmr1"]
-[ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://Players/Parkour_player.tscn" id="1_n0eqh"]
+[ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://minigames/parkour/parkour_display.gd" id="1_0mmr1"]
+[ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://minigames/parkour/Parkour_player.tscn" id="1_n0eqh"]
 [ext_resource type="Texture2D" uid="uid://cx221ibwp33h5" path="res://icon.svg" id="2_0mmr1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tykit"]
