@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cc6xltfbf3qoj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndusb"]
+font_size = 500
+font_color = Color(0, 1, 0, 1)
+
+[node name="DeathDisplay" type="Node2D" unique_id=542092148]
+
+[node name="Label" type="Label" parent="." unique_id=1907093]
+offset_right = 2267.0
+offset_bottom = 818.0
+text = "U  WON"
+label_settings = SubResource("LabelSettings_ndusb")
