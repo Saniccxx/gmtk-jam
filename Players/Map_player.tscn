@@ -23,6 +23,9 @@ animations = [{
 size = Vector2(294.5, 294)
 
 [sub_resource type="FontFile" id="FontFile_b0i83"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -70,11 +73,11 @@ shape = SubResource("RectangleShape2D_gh2ie")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264704422]
 zoom = Vector2(0.2, 0.2)
 
-[node name="money_label" type="Label" parent="." unique_id=2144805856]
-offset_left = 4604.0
-offset_top = -2627.0
-offset_right = 4730.0
-offset_bottom = -2360.0
+[node name="money_label" type="Label" parent="." unique_id=541304960]
+offset_left = 4000.0
+offset_top = -2500.0
+offset_right = 4126.0
+offset_bottom = -2233.0
 theme_override_fonts/font = SubResource("FontFile_b0i83")
 label_settings = SubResource("LabelSettings_j1o2y")
 visible_characters = 13

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cqbby2k2mt3xs" path="res://assets/jeff.png" id="4_hfgrh"]
+[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="5_huna1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ud0v"]
 size = Vector2(299.99997, 299.99997)
@@ -30,20 +31,65 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="FontFile" id="FontFile_huna1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/99/0/ascent = 0.0
+cache/0/99/0/descent = 0.0
+cache/0/99/0/underline_position = 0.0
+cache/0/99/0/underline_thickness = 0.0
+cache/0/99/0/scale = 1.0
+cache/0/200/0/ascent = 0.0
+cache/0/200/0/descent = 0.0
+cache/0/200/0/underline_position = 0.0
+cache/0/200/0/underline_thickness = 0.0
+cache/0/200/0/scale = 1.0
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_u6htc"]
+font_size = 200
+
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
 floor_snap_length = 20.0
 script = ExtResource("1_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75747721]
-scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_1ud0v")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1400287306]
+zoom = Vector2(0.2, 0.2)
 process_callback = 0
-position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673395033]
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_fb6tf")
 animation = &"slide"
 autoplay = "default"
+
+[node name="money_label" type="Label" parent="." unique_id=288048619]
+offset_left = 4000.0
+offset_top = -2500.0
+offset_right = 4126.0
+offset_bottom = -2233.0
+theme_override_fonts/font = SubResource("FontFile_huna1")
+label_settings = SubResource("LabelSettings_u6htc")
+visible_characters = 13
+script = ExtResource("5_huna1")
