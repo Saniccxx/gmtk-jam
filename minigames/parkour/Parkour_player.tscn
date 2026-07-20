@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hbvb4mnln3cw"]
 
-[ext_resource type="Script" uid="uid://d08a003y3anji" path="res://Players/Parkour_player.gd" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://d08a003y3anji" path="res://minigames/parkour/Parkour_player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cqbby2k2mt3xs" path="res://assets/jeff.png" id="4_hfgrh"]
