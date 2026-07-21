@@ -56,20 +56,21 @@ float fbm(vec2 p) {
     float value = 0.0;
     float scale = 0.5;
     for (int i = 0; i < 4; i++) {
-        value += simplex_noise(p) * scale;
+        float n = abs(simplex_noise(p)); 
+        value += (1.0 - n) * scale; 
         p *= 2.0;
         scale *= 0.5;
     }
-    return value * 0.5 + 0.5;
+    return value;
 }
 
 void fragment() {
     vec2 pos = world_pos / pattern_size;
     float n = fbm(pos + vec2(TIME * speed * 0.2));
-
-    float t1 = smoothstep(0.2, 0.45, n);
-    float t2 = smoothstep(0.45, 0.7, n);
-    float t3 = smoothstep(0.7, 0.9, n);
+	
+	float t1 = smoothstep(0.35, 0.40, n);
+	float t2 = smoothstep(0.55, 0.60, n);
+	float t3 = smoothstep(0.75, 0.80, n);
 
     vec3 color = mix(color_dark, color_mid_low, t1);
     color = mix(color, color_mid_high, t2);

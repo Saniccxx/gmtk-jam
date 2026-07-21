@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxk48v2svnl6b"]
 
 [ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour/parkour_display.gd" id="1_rqnsb"]
+[ext_resource type="Script" uid="uid://cddr6nhm40aws" path="res://scenes/parkour/fps_label.gd" id="2_ghnu6"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="3_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
@@ -68,6 +69,14 @@ shader = ExtResource("5_3qyxb")
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1399835960]
+
+[node name="FPSLabel" type="Label" parent="UILayer" unique_id=993973077]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS"
+script = ExtResource("2_ghnu6")
 
 [node name="Player" parent="." unique_id=689076596 instance=ExtResource("2_tyibk")]
 
