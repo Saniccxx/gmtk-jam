@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="3_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
+[ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 
 [sub_resource type="FontFile" id="FontFile_4mxc0"]
 subpixel_positioning = 0
@@ -56,6 +57,9 @@ fill_to = Vector2(0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndusb"]
 size = Vector2(64, 63.999996)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qyxb"]
+shader = ExtResource("5_3qyxb")
+
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
 
@@ -95,5 +99,16 @@ position = Vector2(-1.0681152e-06, 0)
 shape = SubResource("RectangleShape2D_ndusb")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1555202411]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1665855742]
+material = SubResource("ShaderMaterial_3qyxb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="body_entered" from="Camera2D/Lava" to="." method="_on_lava_body_entered"]
