@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cc6xltfbf3qoj"]
 
-[ext_resource type="Script" uid="uid://c722iv3dvwtq7" path="res://scenes/parkour/winner_display.gd" id="1_pvt6p"]
+[ext_resource type="Script" uid="uid://c722iv3dvwtq7" path="res://scenes/win/winner_display.gd" id="1_wnx80"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0, 1, 0.047058824, 1, 0.27058825, 0.43529412, 0, 1)
@@ -62,7 +62,7 @@ corner_radius_bottom_left = 10
 [node name="WinnerDisplay" type="Control" unique_id=1784500990]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_pvt6p")
+script = ExtResource("1_wnx80")
 
 [node name="Background" type="TextureRect" parent="." unique_id=351325093]
 layout_mode = 0

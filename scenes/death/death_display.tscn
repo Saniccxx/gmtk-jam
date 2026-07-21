@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d0whd11dxk56c"]
 
-[ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/parkour/death_display.gd" id="1_742l4"]
+[ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/death/death_display.gd" id="1_xwwag"]
 
 [sub_resource type="Gradient" id="Gradient_742l4"]
 colors = PackedColorArray(0.54248, 1.347661e-06, 3.3691526e-07, 1, 1, 0.43529412, 0, 1)
@@ -63,7 +63,7 @@ corner_radius_bottom_left = 10
 [node name="DeathDisplay" type="Control" unique_id=1417985601]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_742l4")
+script = ExtResource("1_xwwag")
 
 [node name="Background" type="TextureRect" parent="." unique_id=2062820933]
 layout_mode = 0

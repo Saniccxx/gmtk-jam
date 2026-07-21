@@ -12,8 +12,8 @@ var last_minigame_path: String = ""
 
 func load_death_screen() -> void:
 	last_minigame_path = get_tree().current_scene.scene_file_path
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/parkour/death_display.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/death/death_display.tscn")
 
 func load_winner_screen() -> void:
 	last_minigame_path = get_tree().current_scene.scene_file_path
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/parkour/winner_display.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/win/winner_display.tscn")
