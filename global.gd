@@ -1,5 +1,7 @@
 extends Node
 
+
+signal gun_changed
 var map_pos = Vector2(0,0)
 var money = 9999
 var gun_names = ["pistol", "uzi", "shotgun", "machinegun"]
@@ -9,6 +11,10 @@ var best_owned_gun = 0
 var current_gun = 0
 
 var last_minigame_path: String = ""
+
+func set_current_gun(new_gun):
+	current_gun = new_gun
+	gun_changed.emit()
 
 func load_death_screen() -> void:
 	last_minigame_path = get_tree().current_scene.scene_file_path
