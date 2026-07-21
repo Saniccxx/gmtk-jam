@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh2ie"]
-size = Vector2(294.5, 294)
+size = Vector2(298, 298)
 
 [node name="MapPlayer" type="CharacterBody2D" unique_id=1666857073]
 script = ExtResource("1_iunym")
@@ -29,7 +29,6 @@ sprite_frames = SubResource("SpriteFrames_cvx70")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1263598800]
-position = Vector2(-0.25, 0)
 shape = SubResource("RectangleShape2D_gh2ie")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264704422]
