@@ -85,7 +85,7 @@ script = ExtResource("4_1yfpb")
 
 [node name="Lava" type="Area2D" parent="Camera2D" unique_id=1128987468]
 position = Vector2(0, 2600)
-scale = Vector2(150, 25)
+scale = Vector2(300, 25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/Lava" unique_id=2082557607]
 texture = SubResource("GradientTexture2D_eic0u")
