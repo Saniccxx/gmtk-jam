@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndusb"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ndusb"]
+font_size = 288
+
 [node name="Game" type="Node2D" unique_id=108136187]
 script = ExtResource("1_dtnn4")
 
@@ -23,3 +26,11 @@ shape = SubResource("RectangleShape2D_ndusb")
 
 [node name="MapPlayer" parent="." unique_id=1666857073 instance=ExtResource("2_dtnn4")]
 position = Vector2(26, -488)
+
+[node name="Label" type="Label" parent="MapPlayer" unique_id=482893253]
+offset_left = -3102.0
+offset_top = -2103.0
+offset_right = 3091.0
+offset_bottom = -1710.0
+text = "CLICK SPACE TO ENTER RANDOM MINIGAME!"
+label_settings = SubResource("LabelSettings_ndusb")

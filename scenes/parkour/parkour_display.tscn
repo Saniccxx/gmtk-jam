@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour/parkour_display.gd" id="1_rqnsb"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="3_tyibk"]
+[ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 
 [sub_resource type="FontFile" id="FontFile_4mxc0"]
 subpixel_positioning = 0
@@ -41,6 +42,20 @@ cache/0/100/0/scale = 1.0
 [sub_resource type="LabelSettings" id="LabelSettings_x3moo"]
 font_size = 200
 
+[sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
+font_size = 288
+
+[sub_resource type="Gradient" id="Gradient_r1pss"]
+colors = PackedColorArray(0.8980392, 0.3254902, 0.13333334, 1, 0.75066704, 2.3102762e-06, 8.663535e-07, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eic0u"]
+gradient = SubResource("Gradient_r1pss")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndusb"]
+size = Vector2(64, 63.999996)
+
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
 
@@ -50,7 +65,7 @@ script = ExtResource("1_rqnsb")
 zoom = Vector2(0.2, 0.2)
 process_callback = 0
 
-[node name="money_label" type="Label" parent="." unique_id=681366231]
+[node name="money_label" type="Label" parent="Camera2D" unique_id=681366231]
 offset_left = 4000.0
 offset_top = -2500.0
 offset_right = 4126.0
@@ -59,3 +74,26 @@ theme_override_fonts/font = SubResource("FontFile_4mxc0")
 label_settings = SubResource("LabelSettings_x3moo")
 visible_characters = 13
 script = ExtResource("3_tyibk")
+
+[node name="distance_label" type="Label" parent="Camera2D" unique_id=1172696997]
+offset_left = 3083.0
+offset_top = -1889.0
+offset_right = 3541.0
+offset_bottom = -1435.0
+label_settings = SubResource("LabelSettings_1yfpb")
+script = ExtResource("4_1yfpb")
+
+[node name="Lava" type="Area2D" parent="Camera2D" unique_id=1128987468]
+position = Vector2(0, 2600)
+scale = Vector2(300, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Lava" unique_id=2082557607]
+texture = SubResource("GradientTexture2D_eic0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Lava" unique_id=1729884612]
+position = Vector2(-1.0681152e-06, 0)
+shape = SubResource("RectangleShape2D_ndusb")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
+
+[connection signal="body_entered" from="Camera2D/Lava" to="." method="_on_lava_body_entered"]

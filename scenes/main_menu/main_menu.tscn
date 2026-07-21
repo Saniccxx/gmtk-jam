@@ -100,7 +100,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1193133954]
 layout_mode = 2
-text = "GMTK JAM"
+text = "Jeffin with Godot"
 label_settings = SubResource("LabelSettings_title")
 
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=855837034]
