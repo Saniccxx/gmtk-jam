@@ -30,4 +30,4 @@ func _on_button_pressed() -> void:
 		return
 	global.money -= cost
 	global.best_owned_gun += 1
-	global.current_gun = global.best_owned_gun
+	global.set_current_gun(global.best_owned_gun)

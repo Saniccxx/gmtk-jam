@@ -20,8 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		label.text = "Mash Space! %d/%d" % [current_clicks, clicks_needed]
 		
 		if current_clicks >= clicks_needed:
-			get_tree().change_scene_to_file("res://scenes/parkour/winner_display.tscn")
+			global.load_winner_screen()
 
 func _on_timer_timeout() -> void:
 	if current_clicks < clicks_needed:
-		get_tree().change_scene_to_file("res://scenes/parkour/death_display.tscn")
+		global.load_death_screen()

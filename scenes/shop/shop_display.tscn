@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cawjavfl5se4w" path="res://assets/uzi.png" id="3_6xwx5"]
 [ext_resource type="Texture2D" uid="uid://dr8ri2rvd1du8" path="res://assets/machinegun.jpg" id="4_cjj6y"]
 [ext_resource type="Texture2D" uid="uid://blyrd82jefvk6" path="res://assets/shotgun.jpg" id="4_i06sb"]
+[ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_i06sb"]
 
 [node name="ShopDisplay" type="Control" unique_id=1154627393]
 layout_mode = 3
@@ -46,3 +47,6 @@ item_icon = ExtResource("4_i06sb")
 layout_mode = 2
 item_num = "3"
 item_icon = ExtResource("4_cjj6y")
+
+[node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_i06sb")]
+layout_mode = 1

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cj71ghepp1xrm"]
+
+[ext_resource type="Script" uid="uid://8sfga1gvcq42" path="res://money_label.gd" id="1_efote"]
+[ext_resource type="Script" uid="uid://bddjkplq42qq0" path="res://control.gd" id="1_ne771"]
+[ext_resource type="Script" uid="uid://5giq0x8mlln2" path="res://gun_img.gd" id="2_ne771"]
+[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="2_vow1y"]
+
+[node name="Hud" type="Control" unique_id=923602173]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=331104122]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1852210214]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ne771")
+
+[node name="Money_label" type="Label" parent="CanvasLayer/Control" unique_id=1314289299]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -298.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 100
+script = ExtResource("1_efote")
+
+[node name="Gun_img" type="TextureRect" parent="CanvasLayer/Control" unique_id=2050013809]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+expand_mode = 1
+script = ExtResource("2_ne771")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=595914550]
+layout_mode = 1
+offset_right = 108.0
+offset_bottom = 100.0
+theme_override_constants/icon_max_width = 100
+icon = ExtResource("2_vow1y")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
