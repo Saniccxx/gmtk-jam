@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cc84eo0k6bgrr" path="res://scenes/map/map_player.gd" id="1_iunym"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="2_bwm20"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="3_4humi"]
-[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="4_wyxft"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
@@ -22,43 +21,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh2ie"]
 size = Vector2(294.5, 294)
 
-[sub_resource type="FontFile" id="FontFile_b0i83"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/99/0/ascent = 0.0
-cache/0/99/0/descent = 0.0
-cache/0/99/0/underline_position = 0.0
-cache/0/99/0/underline_thickness = 0.0
-cache/0/99/0/scale = 1.0
-cache/0/200/0/ascent = 0.0
-cache/0/200/0/descent = 0.0
-cache/0/200/0/underline_position = 0.0
-cache/0/200/0/underline_thickness = 0.0
-cache/0/200/0/scale = 1.0
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_j1o2y"]
-font_size = 200
-
 [node name="MapPlayer" type="CharacterBody2D" unique_id=1666857073]
 script = ExtResource("1_iunym")
 
@@ -72,13 +34,3 @@ shape = SubResource("RectangleShape2D_gh2ie")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264704422]
 zoom = Vector2(0.2, 0.2)
-
-[node name="money_label" type="Label" parent="." unique_id=541304960]
-offset_left = 4000.0
-offset_top = -2500.0
-offset_right = 4126.0
-offset_bottom = -2233.0
-theme_override_fonts/font = SubResource("FontFile_b0i83")
-label_settings = SubResource("LabelSettings_j1o2y")
-visible_characters = 13
-script = ExtResource("4_wyxft")

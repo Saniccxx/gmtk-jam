@@ -19,3 +19,5 @@ func change_scene_random():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("accept"):
 		change_scene_random()
+	if Input.is_action_just_pressed("slide"):
+		get_tree().change_scene_to_file("res://scenes/shop/shop_display.tscn")

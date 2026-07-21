@@ -3,47 +3,9 @@
 [ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour/parkour_display.gd" id="1_rqnsb"]
 [ext_resource type="Script" uid="uid://cddr6nhm40aws" path="res://scenes/parkour/fps_label.gd" id="2_ghnu6"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
-[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="3_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
-
-[sub_resource type="FontFile" id="FontFile_4mxc0"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/99/0/ascent = 0.0
-cache/0/99/0/descent = 0.0
-cache/0/99/0/underline_position = 0.0
-cache/0/99/0/underline_thickness = 0.0
-cache/0/99/0/scale = 1.0
-cache/0/200/0/ascent = 0.0
-cache/0/200/0/descent = 0.0
-cache/0/200/0/underline_position = 0.0
-cache/0/200/0/underline_thickness = 0.0
-cache/0/200/0/scale = 1.0
-cache/0/100/0/ascent = 0.0
-cache/0/100/0/descent = 0.0
-cache/0/100/0/underline_position = 0.0
-cache/0/100/0/underline_thickness = 0.0
-cache/0/100/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_x3moo"]
-font_size = 200
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 288
@@ -83,16 +45,6 @@ script = ExtResource("2_ghnu6")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1061438086]
 zoom = Vector2(0.2, 0.2)
 process_callback = 0
-
-[node name="money_label" type="Label" parent="Camera2D" unique_id=681366231]
-offset_left = 4000.0
-offset_top = -2500.0
-offset_right = 4126.0
-offset_bottom = -2233.0
-theme_override_fonts/font = SubResource("FontFile_4mxc0")
-label_settings = SubResource("LabelSettings_x3moo")
-visible_characters = 13
-script = ExtResource("3_tyibk")
 
 [node name="distance_label" type="Label" parent="Camera2D" unique_id=1172696997]
 offset_left = 3083.0
