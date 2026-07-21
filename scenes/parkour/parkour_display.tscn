@@ -81,7 +81,7 @@ offset_top = 368.0
 offset_right = 72.0
 offset_bottom = 398.0
 theme_override_font_sizes/font_size = 160
-text = "FPS"
+text = "FPSSSSSSSSSSSSSSSSSSSSSS"
 script = ExtResource("2_ghnu6")
 
 [connection signal="body_entered" from="Camera2D/Lava" to="." method="_on_lava_body_entered"]
