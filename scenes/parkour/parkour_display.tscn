@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
+[ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 288
@@ -31,14 +32,6 @@ shader = ExtResource("5_3qyxb")
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
-
-[node name="UILayer" type="CanvasLayer" parent="." unique_id=1399835960]
-
-[node name="FPSLabel" type="Label" parent="UILayer" unique_id=993973077]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "FPS"
-script = ExtResource("2_ghnu6")
 
 [node name="Player" parent="." unique_id=689076596 instance=ExtResource("2_tyibk")]
 
@@ -78,5 +71,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_ghnu6")]
+
+[node name="FPSLabel" type="Label" parent="Hud" unique_id=993973077]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 368.0
+offset_right = 72.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 160
+text = "FPS"
+script = ExtResource("2_ghnu6")
 
 [connection signal="body_entered" from="Camera2D/Lava" to="." method="_on_lava_body_entered"]
