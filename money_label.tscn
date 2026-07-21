@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b3mephygrrkm4"]
+
+[sub_resource type="GDScript" id="GDScript_6ewvk"]
+script/source = "extends Label
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	self.text = str(global.money)
+"
+
+[node name="MoneyLabel" type="Label" unique_id=1647489184]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 100
+text = "default"
+script = SubResource("GDScript_6ewvk")

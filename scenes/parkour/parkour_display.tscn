@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour/parkour_display.gd" id="1_rqnsb"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
-[ext_resource type="PackedScene" uid="uid://b3mephygrrkm4" path="res://money_label.tscn" id="4_3qyxb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 288
@@ -35,8 +34,6 @@ offset_right = 3541.0
 offset_bottom = -1435.0
 label_settings = SubResource("LabelSettings_1yfpb")
 script = ExtResource("4_1yfpb")
-
-[node name="MoneyLabel" parent="Camera2D" unique_id=1647489184 instance=ExtResource("4_3qyxb")]
 
 [node name="Lava" type="Area2D" parent="Camera2D" unique_id=1128987468]
 position = Vector2(0, 2600)
