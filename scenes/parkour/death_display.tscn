@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/parkour/death_display.gd" id="1_742l4"]
 
-[sub_resource type="Gradient" id="Gradient_bg"]
+[sub_resource type="Gradient" id="Gradient_742l4"]
 colors = PackedColorArray(0.54248, 1.347661e-06, 3.3691526e-07, 1, 1, 0.43529412, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ajg20"]
-gradient = SubResource("Gradient_bg")
+gradient = SubResource("Gradient_742l4")
 width = 1920
 height = 1080
 fill_to = Vector2(0, 1)

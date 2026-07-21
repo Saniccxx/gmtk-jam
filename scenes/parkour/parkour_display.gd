@@ -37,7 +37,7 @@ func _process(_delta: float) -> void:
 	cleanup_platforms()
 	
 	if player.global_position.x >= WIN_DISTANCE:
-		get_tree().change_scene_to_file.call_deferred("res://scenes/parkour/winner_display.tscn")
+		global.load_winner_screen()
 
 
 func generate_platforms(target_x: float) -> void:
@@ -79,4 +79,4 @@ func cleanup_platforms() -> void:
 func _on_lava_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		# after physics stuff
-		get_tree().change_scene_to_file.call_deferred("res://scenes/parkour/death_display.tscn")
+		global.load_death_screen()
