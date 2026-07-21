@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dg1r767maqkq5"]
+
+[ext_resource type="Script" uid="uid://b3fn55u4js5b0" path="res://scenes/zombie/zombie_game.gd" id="1_4oaqw"]
+[ext_resource type="PackedScene" uid="uid://bng34yh5ad4iv" path="res://scenes/zombie/zombie_player.tscn" id="2_2yv2p"]
+[ext_resource type="PackedScene" uid="uid://b56jy0nurj1qb" path="res://scenes/zombie/zombie_enemy.tscn" id="3_wcnkj"]
+
+[node name="ZombieGame" type="Node2D" unique_id=255044243]
+script = ExtResource("1_4oaqw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=183276062]
+zoom = Vector2(0.33, 0.33)
+
+[node name="ZombiePlayer" parent="." unique_id=937063102 instance=ExtResource("2_2yv2p")]
+z_index = 1
+position = Vector2(-8, 7)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
+
+[node name="ZombieEnemy" parent="Enemies" unique_id=363887606 instance=ExtResource("3_wcnkj")]
+position = Vector2(-1104, 717)
+
+[node name="ZombieEnemy2" parent="Enemies" unique_id=583660903 instance=ExtResource("3_wcnkj")]
+position = Vector2(215, 926)
+
+[node name="ZombieEnemy3" parent="Enemies" unique_id=1213044578 instance=ExtResource("3_wcnkj")]
+position = Vector2(1688, 610)
+
+[node name="ZombieEnemy4" parent="Enemies" unique_id=1776129017 instance=ExtResource("3_wcnkj")]
+position = Vector2(-1016, -399)
