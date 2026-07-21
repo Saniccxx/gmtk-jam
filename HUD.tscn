@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cj71ghepp1xrm"]
 
 [ext_resource type="Script" uid="uid://8sfga1gvcq42" path="res://money_label.gd" id="1_efote"]
+[ext_resource type="Script" uid="uid://bddjkplq42qq0" path="res://control.gd" id="1_ne771"]
 [ext_resource type="Script" uid="uid://5giq0x8mlln2" path="res://gun_img.gd" id="2_ne771"]
 [ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="2_vow1y"]
 
@@ -23,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_ne771")
 
 [node name="Money_label" type="Label" parent="CanvasLayer/Control" unique_id=1314289299]
 layout_mode = 1
