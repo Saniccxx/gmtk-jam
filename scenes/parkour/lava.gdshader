@@ -26,7 +26,7 @@ float simplex_noise(vec2 v) {
     vec2 i  = floor(v + dot(v, C.yy));
     vec2 x0 = v - i + dot(i, C.xx);
 
-    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+    vec2 i1 = step(x0.yx, x0.xy);
     vec4 x12 = x0.xyxy + C.xxzz;
     x12.xy -= i1;
 
@@ -35,8 +35,8 @@ float simplex_noise(vec2 v) {
            + i.x + vec3(0.0, i1.x, 1.0));
 
     vec3 m = max(0.5 - vec3(dot(x0, x0), dot(x12.xy, x12.xy), dot(x12.zw, x12.zw)), 0.0);
-    m = m * m;
-    m = m * m;
+    m *= m;
+    m *= m;
 
     vec3 x = 2.0 * fract(p * C.www) - 1.0;
     vec3 h = abs(x) - 0.5;
@@ -56,20 +56,21 @@ float fbm(vec2 p) {
     float value = 0.0;
     float scale = 0.5;
     for (int i = 0; i < 4; i++) {
-        value += simplex_noise(p) * scale;
+        float n = abs(simplex_noise(p)); 
+        value += (1.0 - n) * scale; 
         p *= 2.0;
         scale *= 0.5;
     }
-    return value * 0.5 + 0.5;
+    return value;
 }
 
 void fragment() {
-    vec2 pos = world_pos / pattern_size;
-    float n = fbm(pos + vec2(TIME * speed * 0.2));
-
-    float t1 = smoothstep(0.2, 0.45, n);
-    float t2 = smoothstep(0.45, 0.7, n);
-    float t3 = smoothstep(0.7, 0.9, n);
+    vec2 pos = (world_pos / pattern_size) + vec2(TIME * speed * 0.2);
+    float n = fbm(pos);
+	
+	float t1 = smoothstep(0.35, 0.40, n);
+	float t2 = smoothstep(0.55, 0.60, n);
+	float t3 = smoothstep(0.75, 0.80, n);
 
     vec3 color = mix(color_dark, color_mid_low, t1);
     color = mix(color, color_mid_high, t2);
