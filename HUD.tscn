@@ -57,3 +57,5 @@ offset_right = 108.0
 offset_bottom = 100.0
 theme_override_constants/icon_max_width = 100
 icon = ExtResource("2_vow1y")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
