@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bs5rlbw05hguf"]
 
-[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="1_2gwqr"]
-[ext_resource type="Script" uid="uid://cc84eo0k6bgrr" path="res://Players/map_player.gd" id="1_qoaby"]
-[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="2_qoaby"]
-[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="4_b0i83"]
+[ext_resource type="Script" uid="uid://cc84eo0k6bgrr" path="res://scenes/map/map_player.gd" id="1_iunym"]
+[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="2_bwm20"]
+[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="3_4humi"]
+[ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="4_wyxft"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2gwqr")
+"texture": ExtResource("2_bwm20")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_qoaby")
+"texture": ExtResource("3_4humi")
 }],
 "loop": 1,
 "name": &"default",
@@ -60,7 +60,7 @@ cache/0/100/0/scale = 1.0
 font_size = 200
 
 [node name="MapPlayer" type="CharacterBody2D" unique_id=1666857073]
-script = ExtResource("1_qoaby")
+script = ExtResource("1_iunym")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1831280720]
 sprite_frames = SubResource("SpriteFrames_cvx70")
@@ -81,4 +81,4 @@ offset_bottom = -2233.0
 theme_override_fonts/font = SubResource("FontFile_b0i83")
 label_settings = SubResource("LabelSettings_j1o2y")
 visible_characters = 13
-script = ExtResource("4_b0i83")
+script = ExtResource("4_wyxft")

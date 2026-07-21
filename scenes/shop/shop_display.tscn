@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c17kl2ucjxoc4"]
+
+[ext_resource type="Script" uid="uid://c0vbl2xhdxfo4" path="res://scenes/shop/shop_display.gd" id="1_ocb2d"]
+[ext_resource type="PackedScene" uid="uid://c74nq13xm42ne" path="res://scenes/shop/shop_item.tscn" id="2_7m8lc"]
+[ext_resource type="Texture2D" uid="uid://cawjavfl5se4w" path="res://assets/uzi.png" id="3_6xwx5"]
+[ext_resource type="Texture2D" uid="uid://dr8ri2rvd1du8" path="res://assets/machinegun.jpg" id="4_cjj6y"]
+[ext_resource type="Texture2D" uid="uid://blyrd82jefvk6" path="res://assets/shotgun.jpg" id="4_i06sb"]
+
+[node name="ShopDisplay" type="Control" unique_id=1154627393]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ocb2d")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=899794277]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 90
+theme_override_constants/margin_bottom = 300
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer" unique_id=1213106346]
+layout_mode = 2
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="ShopItem" parent="MarginContainer/HBoxContainer2" unique_id=1310639877 instance=ExtResource("2_7m8lc")]
+layout_mode = 2
+item_num = "1"
+item_icon = ExtResource("3_6xwx5")
+
+[node name="ShopItem2" parent="MarginContainer/HBoxContainer2" unique_id=998647294 instance=ExtResource("2_7m8lc")]
+layout_mode = 2
+item_num = "2"
+item_icon = ExtResource("4_i06sb")
+
+[node name="ShopItem3" parent="MarginContainer/HBoxContainer2" unique_id=1716545205 instance=ExtResource("2_7m8lc")]
+layout_mode = 2
+item_num = "3"
+item_icon = ExtResource("4_cjj6y")
