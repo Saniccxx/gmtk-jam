@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dkdnn1q5mxmgj" path="res://label.gd" id="3_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
+[ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 
 [sub_resource type="FontFile" id="FontFile_4mxc0"]
 subpixel_positioning = 0
@@ -46,13 +47,18 @@ font_size = 200
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 288
 
-[sub_resource type="Gradient" id="Gradient_r1pss"]
-colors = PackedColorArray(0.8980392, 0.3254902, 0.13333334, 1, 0.75066704, 2.3102762e-06, 8.663535e-07, 1)
-metadata/_snap_count = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
+shader = ExtResource("5_c82wr")
+shader_parameter/speed = 0.2
+shader_parameter/pattern_size = 600.0
+shader_parameter/color_dark = Color(0.2, 0, 0, 1)
+shader_parameter/color_mid_low = Color(0.5, 0.1, 0, 1)
+shader_parameter/color_mid_high = Color(1, 0.5, 0, 1)
+shader_parameter/color_bright = Color(1, 1, 0, 1)
+shader_parameter/glow_color = Color(1, 0.3, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_eic0u"]
-gradient = SubResource("Gradient_r1pss")
-fill_to = Vector2(0, 1)
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c82wr"]
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndusb"]
 size = Vector2(64, 63.999996)
@@ -92,7 +98,8 @@ position = Vector2(0, 2600)
 scale = Vector2(300, 25)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/Lava" unique_id=2082557607]
-texture = SubResource("GradientTexture2D_eic0u")
+material = SubResource("ShaderMaterial_5l7qi")
+texture = SubResource("PlaceholderTexture2D_c82wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Lava" unique_id=1729884612]
 position = Vector2(-1.0681152e-06, 0)
