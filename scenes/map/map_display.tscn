@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7mgk00h8ccly" path="res://scenes/map/map_display.gd" id="1_dtnn4"]
 [ext_resource type="Texture2D" uid="uid://cx221ibwp33h5" path="res://icon.svg" id="1_ilqfu"]
 [ext_resource type="PackedScene" uid="uid://bs5rlbw05hguf" path="res://scenes/map/Map_player.tscn" id="2_dtnn4"]
+[ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="4_pnlec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ndusb"]
 
@@ -34,3 +35,5 @@ offset_right = 3091.0
 offset_bottom = -1710.0
 text = "CLICK SPACE TO ENTER RANDOM MINIGAME!"
 label_settings = SubResource("LabelSettings_ndusb")
+
+[node name="Hud" parent="." unique_id=923602173 instance=ExtResource("4_pnlec")]
