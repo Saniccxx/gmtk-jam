@@ -6,11 +6,8 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	print(position)
+	pass
 
-	# Handle jump.
-	if Input.is_action_just_pressed("accept"):
-		print("accept clicked")
 
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
