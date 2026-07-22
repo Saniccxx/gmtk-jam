@@ -34,9 +34,9 @@ shader = ExtResource("5_3qyxb")
 script = ExtResource("1_rqnsb")
 
 [node name="Player" parent="." unique_id=689076596 instance=ExtResource("2_tyibk")]
+scale = Vector2(0.2, 0.2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1061438086]
-zoom = Vector2(0.2, 0.2)
 process_callback = 0
 
 [node name="distance_label" type="Label" parent="Camera2D" unique_id=1172696997]
@@ -48,8 +48,8 @@ label_settings = SubResource("LabelSettings_1yfpb")
 script = ExtResource("4_1yfpb")
 
 [node name="Lava" type="Area2D" parent="Camera2D" unique_id=1128987468]
-position = Vector2(0, 2600)
-scale = Vector2(300, 25)
+position = Vector2(0, 500)
+scale = Vector2(50, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D/Lava" unique_id=2082557607]
 material = SubResource("ShaderMaterial_5l7qi")

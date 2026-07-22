@@ -7,12 +7,12 @@ extends Node2D
 var platform_texture = preload("res://scenes/parkour/assets/platform.png")
 
 var base_texture_size = Vector2(300.0, 50.0)
-var platform_scale = Vector2(3.0, 3.0) 
-var platform_scale_variance = 2.0
+var platform_scale = Vector2(1.0, 1.0) 
+var platform_scale_variance = 0.5
 
 var current_gen_x = -1000.0
-var platform_spacing_x = 1400.0
-var vertical_range = 1000.0 
+var platform_spacing_x = 400.0
+var vertical_range = 100.0 
 var rotate_range = PI/6
 var threshold_range = 10000.0
 
@@ -22,7 +22,7 @@ const WIN_DISTANCE = 100000.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# ground
-	spawn_platform(Vector2(0, 500), 0.0, Vector2(6.0, 3.0))
+	spawn_platform(Vector2(0, 200), 0.0, Vector2(3.0, 1.0))
 	
 	generate_platforms(threshold_range)
 
