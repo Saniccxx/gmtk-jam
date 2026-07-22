@@ -8,6 +8,7 @@ const AIR_ACCEL = 5
 const AIR_FRICTION = 0.5
 const MASS = 3
 const RECOIL_FORCE = 800.0
+const SLIDE_JUMP_BOOST_RATIO = 0.6 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 	
@@ -18,8 +19,18 @@ func _physics_process(delta: float) -> void:
 	var sliding := Input.is_action_pressed("slide")
 
 	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
+		var final_jump = JUMP_VELOCITY
+		
+		if sliding:
+			var current_speed = velocity.length()
+			
+			if current_speed > SPEED:
+				var extra_speed = current_speed - SPEED
+				var jump_boost = extra_speed * SLIDE_JUMP_BOOST_RATIO
+				final_jump -= jump_boost 
+		
+		velocity.y = final_jump
+
 	# walljump
 	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():
 		var wall_normal = get_wall_normal()
@@ -32,21 +43,24 @@ func _physics_process(delta: float) -> void:
 		velocity -= mouse_direction * RECOIL_FORCE
 
 	var direction := Input.get_axis("move_left", "move_right")
-	if sliding:
-		direction = 0
 
 	if is_on_floor():
 		if sliding:
+			direction = 0
+			# TODO fix player auto jumping at the end of the slope when he is high
+			
+			
 			#wierd thingies which calculate vector of player sliding down
 			var floor_normal = get_floor_normal()
 			var slope_tangent = Vector2(floor_normal.y, -floor_normal.x)
+			
+			print(slope_tangent)
+			
 			var downhill = slope_tangent * slope_tangent.dot(get_gravity())
 			
 			velocity += downhill * delta * MASS
 			
 			sprite.rotation = floor_normal.angle() + PI / 2
-			
-			print(downhill, velocity)
 		else:
 			velocity.x -= GROUND_FRICTION * velocity.x * delta
 			velocity.x += GROUND_ACCEL * direction * SPEED * delta
