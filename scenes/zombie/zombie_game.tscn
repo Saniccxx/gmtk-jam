@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bng34yh5ad4iv" path="res://scenes/zombie/zombie_player.tscn" id="2_2yv2p"]
 [ext_resource type="Texture2D" uid="uid://bif3uqndiykh5" path="res://assets/cockroach.png" id="2_vof6t"]
 [ext_resource type="PackedScene" uid="uid://b56jy0nurj1qb" path="res://scenes/zombie/zombie_enemy.tscn" id="3_wcnkj"]
+[ext_resource type="Script" uid="uid://ejw6e505vc5p" path="res://scenes/zombie/Spawner.gd" id="4_s0wpy"]
 [ext_resource type="AudioStream" uid="uid://5hh7a5avm3w2" path="res://assets/around.mp3" id="5_fblyp"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_0u8bq"]
 
@@ -373,6 +374,11 @@ position = Vector2(956, 297)
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
 position = Vector2(-57, 130)
 scale = Vector2(1.0103086, 0.9953063)
+script = ExtResource("4_s0wpy")
+
+[node name="SpawnTimer" type="Timer" parent="Enemies" unique_id=849169788]
+wait_time = 2.0
+autostart = true
 
 [node name="ZombieEnemy" parent="Enemies" unique_id=363887606 instance=ExtResource("3_wcnkj")]
 position = Vector2(316.7349, 686.2209)
@@ -436,3 +442,4 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_jei5n")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]
