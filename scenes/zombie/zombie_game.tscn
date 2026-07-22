@@ -7,23 +7,22 @@
 [node name="ZombieGame" type="Node2D" unique_id=255044243]
 script = ExtResource("1_4oaqw")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=183276062]
-zoom = Vector2(0.33, 0.33)
-
 [node name="ZombiePlayer" parent="." unique_id=937063102 instance=ExtResource("2_2yv2p")]
 z_index = 1
-position = Vector2(-8, 7)
+position = Vector2(960.99994, 537.99994)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
+position = Vector2(-34, 114)
+scale = Vector2(1.0103086, 0.9953063)
 
 [node name="ZombieEnemy" parent="Enemies" unique_id=363887606 instance=ExtResource("3_wcnkj")]
-position = Vector2(-1104, 717)
+position = Vector2(316.735, 686.2209)
 
 [node name="ZombieEnemy2" parent="Enemies" unique_id=583660903 instance=ExtResource("3_wcnkj")]
-position = Vector2(215, 926)
+position = Vector2(1158.062, 849.98956)
 
 [node name="ZombieEnemy3" parent="Enemies" unique_id=1213044578 instance=ExtResource("3_wcnkj")]
-position = Vector2(1688, 610)
+position = Vector2(1766.7867, 728.41895)
 
 [node name="ZombieEnemy4" parent="Enemies" unique_id=1776129017 instance=ExtResource("3_wcnkj")]
-position = Vector2(-1016, -399)
+position = Vector2(277.14307, 268.2591)

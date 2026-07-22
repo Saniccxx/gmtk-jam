@@ -10,7 +10,7 @@ size = Vector2(900, 900)
 size = Vector2(900, 900)
 
 [node name="ZombieEnemy" type="CharacterBody2D" unique_id=363887606]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.07, 0.07)
 collision_layer = 4
 script = ExtResource("1_ntf5h")
 

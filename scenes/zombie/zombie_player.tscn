@@ -10,6 +10,7 @@ size = Vector2(338, 328)
 size = Vector2(338, 328)
 
 [node name="ZombiePlayer" type="CharacterBody2D" unique_id=937063102]
+scale = Vector2(0.3, 0.3)
 collision_layer = 2
 script = ExtResource("1_vmcvx")
 
