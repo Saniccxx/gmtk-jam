@@ -8,7 +8,7 @@ func _ready() -> void:
 
 var minigames = [
 	"res://scenes/parkour/parkour_display.tscn",
-	"res://scenes/clicker/clicker_display.tscn",
+	"res://scenes/target/target_display.tscn",
 	"res://scenes/zombie/zombie_game.tscn"
 ]
 func change_scene_random():
