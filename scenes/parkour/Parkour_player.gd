@@ -1,4 +1,5 @@
 extends CharacterBody2D
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -1000.0
 const GROUND_ACCEL = 20.0
@@ -6,6 +7,7 @@ const GROUND_FRICTION = 10.0
 const AIR_ACCEL = 5
 const AIR_FRICTION = 0.5
 const MASS = 3
+const RECOIL_FORCE = 800.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 	
@@ -23,6 +25,11 @@ func _physics_process(delta: float) -> void:
 		var wall_normal = get_wall_normal()
 		velocity.x = wall_normal.x * SPEED
 		velocity.y = JUMP_VELOCITY
+
+	# recoil
+	if Input.is_action_just_pressed("click"):
+		var mouse_direction = (get_global_mouse_position() - global_position).normalized()
+		velocity -= mouse_direction * RECOIL_FORCE
 
 	var direction := Input.get_axis("move_left", "move_right")
 	if sliding:
