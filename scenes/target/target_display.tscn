@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://rt28xat71nv8"]
 
-[ext_resource type="Texture2D" uid="uid://c0h75l56qhk2b" path="res://assets/celownik.png" id="1_rf755"]
-[ext_resource type="Script" uid="uid://bduoxqh4lo83i" path="res://scenes/target/character_body_2d.gd" id="1_vcgx3"]
+[ext_resource type="PackedScene" uid="uid://orshyegbw7kt" path="res://scenes/target/pointer.tscn" id="1_irbp4"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
 [ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/Target.tscn" id="4_irbp4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cvx70"]
+[ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
 
 [node name="TargetDisplay" type="Node2D" unique_id=671150416]
 
-[node name="Gunpoint" type="CharacterBody2D" parent="." unique_id=1530237349]
-script = ExtResource("1_vcgx3")
-
-[node name="Sprite2D" type="Sprite2D" parent="Gunpoint" unique_id=1071062310]
-position = Vector2(976, 494)
+[node name="All_targets" type="Node2D" parent="." unique_id=795459499]
+position = Vector2(917.99994, 401.99997)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_rf755")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gunpoint" unique_id=1325219228]
-position = Vector2(976, 494)
-shape = SubResource("CircleShape2D_cvx70")
+[node name="Target" parent="All_targets" unique_id=108669242 instance=ExtResource("4_irbp4")]
+position = Vector2(-2509.9985, -379.9995)
+scale = Vector2(9.999999, 9.999999)
+
+[node name="spawner" type="Node" parent="." unique_id=1132675109]
+
+[node name="Pointer" parent="." unique_id=1731537083 instance=ExtResource("1_irbp4")]
+position = Vector2(917.99994, 401.99997)
+script = ExtResource("4_xe5lj")
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("3_3s77m")]
 
-[node name="Target" parent="." unique_id=108669242 instance=ExtResource("4_irbp4")]
-position = Vector2(48, -46)
+[connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]
+[connection signal="area_exited" from="Pointer" to="Pointer" method="_on_area_exited"]
