@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bif3uqndiykh5" path="res://assets/cockroach.png" id="2_vof6t"]
 [ext_resource type="PackedScene" uid="uid://b56jy0nurj1qb" path="res://scenes/zombie/zombie_enemy.tscn" id="3_wcnkj"]
 [ext_resource type="AudioStream" uid="uid://5hh7a5avm3w2" path="res://assets/around.mp3" id="5_fblyp"]
+[ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_0u8bq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fblyp"]
 atlas = ExtResource("2_vof6t")
@@ -383,3 +384,5 @@ stream = ExtResource("5_fblyp")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"
+
+[node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_0u8bq")]
