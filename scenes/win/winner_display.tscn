@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cc6xltfbf3qoj"]
 
 [ext_resource type="Script" uid="uid://c722iv3dvwtq7" path="res://scenes/win/winner_display.gd" id="1_wnx80"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_3pm4f"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0, 1, 0.047058824, 1, 0.27058825, 0.43529412, 0, 1)
@@ -10,9 +11,6 @@ gradient = SubResource("Gradient_bg")
 width = 1920
 height = 1080
 fill_to = Vector2(0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_pvt6p"]
-font_size = 200
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cljtb"]
 content_margin_left = 36.0
@@ -92,10 +90,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -352.0
-offset_top = -214.5
-offset_right = 352.0
-offset_bottom = 214.5
+offset_left = -113.5
+offset_top = -122.5
+offset_right = 113.5
+offset_bottom = 122.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
@@ -104,7 +102,7 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=161953616]
 layout_mode = 2
 text = "U WON"
-label_settings = SubResource("LabelSettings_pvt6p")
+label_settings = ExtResource("2_3pm4f")
 horizontal_alignment = 1
 
 [node name="Retry" type="Button" parent="VBoxContainer" unique_id=1032498686]
