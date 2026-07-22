@@ -57,7 +57,7 @@ script = ExtResource("4_1yfpb")
 
 [node name="Lava" type="Area2D" parent="Player/Camera2D" unique_id=1128987468]
 position = Vector2(0, 500)
-scale = Vector2(50, 2)
+scale = Vector2(50, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/Lava" unique_id=2082557607]
 material = SubResource("ShaderMaterial_5l7qi")

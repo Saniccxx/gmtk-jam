@@ -19,6 +19,10 @@ var threshold_range = 10000.0
 
 @export var camera_y_follow_speed: float = 4.0
 @export var lava_floor_y: float = 700.0
+@export var lava_safety_margin: float = 80.0
+
+var lava_collision_shape: RectangleShape2D
+var lava_top_y: float = 0.0
 
 var ramp_chance: float = 0.2
 var ramp_angle: float = PI / 5.0
@@ -28,11 +32,20 @@ var ramp_gap_distance: float = 1200.0
 const WIN_DISTANCE = 100000.0
 
 func _ready() -> void:
+	lava_collision_shape = lava.get_node("CollisionShape2D").shape
+	_update_lava_top_y()
+	
 	# ground
 	spawn_platform(Vector2(0, 200), 0.0, Vector2(3.0, 1.0))
 	current_gen_y = 200.0
 	
 	generate_platforms(threshold_range)
+
+
+func _update_lava_top_y() -> void:
+	var global_scale_y = lava.get_global_transform().get_scale().y
+	var half_height = lava_collision_shape.size.y * 0.5 * global_scale_y
+	lava_top_y = lava_floor_y - half_height
 
 func _process(delta: float) -> void:
 	
@@ -102,7 +115,18 @@ func spawn_ramp_sequence() -> void:
 	current_gen_x += platform_spacing_x
 
 
+func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
+	var half_w = base_texture_size.x * scale_multiplier.x * 0.5
+	var half_h = base_texture_size.y * scale_multiplier.y * 0.5
+	
+	var rotated_half_h = abs(half_h * cos(rot)) + abs(half_w * sin(rot))
+	
+	return lava_top_y - lava_safety_margin - rotated_half_h
+
+
 func spawn_platform(pos: Vector2, rot: float, scale_multiplier: Vector2) -> void:
+	pos.y = min(pos.y, get_max_safe_y(rot, scale_multiplier))
+	
 	var platform = StaticBody2D.new()
 	platform.position = pos
 	platform.rotation = rot
