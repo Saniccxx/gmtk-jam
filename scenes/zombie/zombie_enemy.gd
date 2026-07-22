@@ -25,6 +25,13 @@ func _physics_process(delta: float) -> void:
 		var direction: Vector2 = (player.global_position - global_position).normalized()
 		velocity = direction * speed
 		move_and_slide()
+		
+		if direction.x < 0:
+			$Sprite2D.flip_h = true
+		elif direction.x > 0:
+			$Sprite2D.flip_h = false
+	
+	
 
 func take_damage(amount: int) -> void:
 	health -= amount

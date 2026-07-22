@@ -4,13 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dgpcyad6qwe2x" path="res://assets/enemy.jpg" id="2_ntf5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hah5"]
-size = Vector2(900, 900)
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntf5h"]
-size = Vector2(900, 900)
+size = Vector2(64, 64)
 
 [node name="ZombieEnemy" type="CharacterBody2D" unique_id=363887606]
-scale = Vector2(0.07, 0.07)
 collision_layer = 4
 script = ExtResource("1_ntf5h")
 
@@ -18,6 +17,7 @@ script = ExtResource("1_ntf5h")
 shape = SubResource("RectangleShape2D_4hah5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1056398912]
+scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_ntf5h")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=731858879]
