@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var damage: int = 10
 @export var health: int = 30
 
+signal died
+
 var player: CharacterBody2D = null
 
 func _ready() -> void:
@@ -11,6 +13,7 @@ func _ready() -> void:
 	if players.size() > 0:
 		player = players[0]
 	add_to_group("enemy")
+	
 	
 	#$Hitbox.body_entered.connect(_on_hitbox_body_entered)
 
@@ -36,4 +39,5 @@ func _physics_process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
+		died.emit()
 		queue_free()

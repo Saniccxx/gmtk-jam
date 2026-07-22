@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @export var health: int = 100
 
+
 var bullet_scene: PackedScene = preload("res://scenes/zombie/Bullet.tscn")
 
 func _ready() -> void:
@@ -45,5 +46,5 @@ func take_damage(amount: int) -> void:
 	print("Player took ", amount, " damage!")
 	print("Player health: ", health)
 	if health <= 0:
-		print("Player has died!")
+		global.load_death_screen()
 		queue_free()
