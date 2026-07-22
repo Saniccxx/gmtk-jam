@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bayaqynxqmgmk"]
 
+[ext_resource type="Script" uid="uid://bvxne13vhjojt" path="res://scenes/target/target.gd" id="1_ay1m7"]
 [ext_resource type="Texture2D" uid="uid://jnv2yxaq1qh3" path="res://assets/target.png" id="1_v2bc8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvx70"]
@@ -7,9 +8,16 @@ radius = 89.358826
 
 [node name="Target" type="Area2D" unique_id=830670421]
 collision_layer = 2
+script = ExtResource("1_ay1m7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=809704810]
 texture = ExtResource("1_v2bc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304140604]
 shape = SubResource("CircleShape2D_cvx70")
+
+[node name="Timer" type="Timer" parent="." unique_id=1060808196]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

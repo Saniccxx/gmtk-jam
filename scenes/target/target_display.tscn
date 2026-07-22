@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://rt28xat71nv8"]
 
 [ext_resource type="PackedScene" uid="uid://orshyegbw7kt" path="res://scenes/target/pointer.tscn" id="1_irbp4"]
+[ext_resource type="Script" uid="uid://j2q282m0j0a3" path="res://scenes/target/spawner.gd" id="2_xe5lj"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
-[ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/Target.tscn" id="4_irbp4"]
+[ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/target.tscn" id="4_irbp4"]
 [ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
 
 [node name="TargetDisplay" type="Node2D" unique_id=671150416]
@@ -16,6 +17,11 @@ position = Vector2(-2509.9985, -379.9995)
 scale = Vector2(9.999999, 9.999999)
 
 [node name="spawner" type="Node" parent="." unique_id=1132675109]
+script = ExtResource("2_xe5lj")
+target_scene = ExtResource("4_irbp4")
+
+[node name="Timer" type="Timer" parent="spawner" unique_id=969353720]
+autostart = true
 
 [node name="Pointer" parent="." unique_id=1731537083 instance=ExtResource("1_irbp4")]
 position = Vector2(917.99994, 401.99997)
@@ -23,5 +29,6 @@ script = ExtResource("4_xe5lj")
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("3_3s77m")]
 
+[connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]
 [connection signal="area_exited" from="Pointer" to="Pointer" method="_on_area_exited"]
