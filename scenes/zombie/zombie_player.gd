@@ -19,8 +19,6 @@ func _physics_process(delta: float) -> void:
 	elif input_vector.x > 0:
 		$Sprite2D.flip_h = false
 	
-
-	
 	var viewport_size: Vector2 = get_viewport_rect().size
 	var padding: float = 3.0
 	
@@ -29,8 +27,7 @@ func _physics_process(delta: float) -> void:
 	
 	global_position.x = clamp(global_position.x, padding + half_width, viewport_size.x - padding - half_width)
 	global_position.y = clamp(global_position.y, padding + half_height, viewport_size.y - padding - half_height)
-	print(viewport_size.y, " :   ", $Sprite2D.scale.y)
-
+	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		shoot()
