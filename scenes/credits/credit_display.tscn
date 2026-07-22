@@ -1,12 +1,7 @@
 [gd_scene format=3 uid="uid://buhxlaskseoxv"]
 
 [ext_resource type="Script" uid="uid://d03xuwj8tfkbe" path="res://scenes/credits/credit_display.gd" id="1_r0lw1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ae2lh"]
-font_size = 72
-
-[sub_resource type="LabelSettings" id="LabelSettings_r0lw1"]
-font_size = 72
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_dvq7u"]
 
 [node name="CreditDisplay" type="Control" unique_id=1087103056]
 layout_mode = 3
@@ -35,14 +30,14 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "hihiha"
-label_settings = SubResource("LabelSettings_ae2lh")
+label_settings = ExtResource("2_dvq7u")
 horizontal_alignment = 1
 
 [node name="CreatorLabel" type="Label" parent="VBoxContainer" unique_id=1218253601]
 unique_name_in_owner = true
 layout_mode = 2
 text = "black man"
-label_settings = SubResource("LabelSettings_r0lw1")
+label_settings = ExtResource("2_dvq7u")
 horizontal_alignment = 1
 
 [node name="Continue" type="Button" parent="VBoxContainer" unique_id=481316313]
