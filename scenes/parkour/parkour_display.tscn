@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
-font_size = 288
+font_size = 72
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
 shader = ExtResource("5_c82wr")
@@ -37,26 +37,33 @@ script = ExtResource("1_rqnsb")
 scale = Vector2(0.2, 0.2)
 floor_constant_speed = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1061438086]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1061438086]
+scale = Vector2(4.9999995, 4.9999995)
 process_callback = 0
+position_smoothing_enabled = true
 
-[node name="distance_label" type="Label" parent="Camera2D" unique_id=1172696997]
-offset_left = 3083.0
-offset_top = -1889.0
-offset_right = 3541.0
-offset_bottom = -1435.0
+[node name="distance_label" type="Label" parent="Player/Camera2D" unique_id=1172696997]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -229.0
+offset_right = 229.0
+offset_bottom = 454.0
+grow_horizontal = 2
+text = "heh"
 label_settings = SubResource("LabelSettings_1yfpb")
+horizontal_alignment = 1
 script = ExtResource("4_1yfpb")
 
-[node name="Lava" type="Area2D" parent="Camera2D" unique_id=1128987468]
+[node name="Lava" type="Area2D" parent="Player/Camera2D" unique_id=1128987468]
 position = Vector2(0, 500)
 scale = Vector2(50, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Lava" unique_id=2082557607]
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/Lava" unique_id=2082557607]
 material = SubResource("ShaderMaterial_5l7qi")
 texture = SubResource("PlaceholderTexture2D_c82wr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Lava" unique_id=1729884612]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Camera2D/Lava" unique_id=1729884612]
 position = Vector2(-1.0681152e-06, 0)
 shape = SubResource("RectangleShape2D_ndusb")
 
@@ -85,4 +92,4 @@ theme_override_font_sizes/font_size = 160
 text = "FPSSSSSSSSSSSSSSSSSSSSSS"
 script = ExtResource("2_ghnu6")
 
-[connection signal="body_entered" from="Camera2D/Lava" to="." method="_on_lava_body_entered"]
+[connection signal="body_entered" from="Player/Camera2D/Lava" to="." method="_on_lava_body_entered"]

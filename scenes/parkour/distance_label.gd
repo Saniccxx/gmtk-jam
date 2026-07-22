@@ -1,6 +1,6 @@
 extends Label
 
-@onready var player = $"../../Player"
+@onready var player = $"../../../Player"
 
 func _process(_delta: float) -> void:
 	if player:

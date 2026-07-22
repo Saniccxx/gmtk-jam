@@ -1,9 +1,8 @@
 extends Node2D
 
 @onready var player = $Player
-@onready var camera = $Camera2D
 @onready var obstacles = $Obstacles
-@onready var lava = $Camera2D/Lava
+@onready var lava = $Player/Camera2D/Lava
 
 var platform_texture = preload("res://scenes/parkour/assets/platform.png")
 
@@ -36,15 +35,12 @@ func _ready() -> void:
 	generate_platforms(threshold_range)
 
 func _process(delta: float) -> void:
-	if player.global_position.x > camera.global_position.x:
-		camera.global_position.x = player.global_position.x
 	
 	var target_y = player.global_position.y
-	camera.global_position.y = lerp(camera.global_position.y, target_y, camera_y_follow_speed * delta)
 	
 	lava.global_position.y = lava_floor_y
 	
-	var gen_threshold = camera.global_position.x + threshold_range
+	var gen_threshold = player.global_position.x + threshold_range
 	if current_gen_x < gen_threshold:
 		generate_platforms(gen_threshold)
 		
@@ -126,7 +122,7 @@ func spawn_platform(pos: Vector2, rot: float, scale_multiplier: Vector2) -> void
 
 func cleanup_platforms() -> void:
 	for child in obstacles.get_children():
-		if child.global_position.x < camera.global_position.x - threshold_range:
+		if child.global_position.x < player.global_position.x - threshold_range:
 			child.queue_free()
 
 
