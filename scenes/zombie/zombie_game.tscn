@@ -337,8 +337,16 @@ animations = [{
 "speed": 45.0
 }]
 
-[node name="ZombieGame" type="Node2D" unique_id=255044243]
+[sub_resource type="LabelSettings" id="LabelSettings_s0wpy"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_jei5n"]
+font_size = 65
+
+[node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label")]
 script = ExtResource("1_4oaqw")
+time_label = NodePath("CanvasLayer/ZombieHUD/Time")
+health_label = NodePath("CanvasLayer/ZombieHUD/Health")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=377015688]
 z_index = -100
@@ -346,23 +354,28 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
+[node name="Timer" type="Timer" parent="." unique_id=1978488999]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172917783]
 position = Vector2(916.99994, 508)
 scale = Vector2(1.635, 1.635)
 sprite_frames = SubResource("SpriteFrames_jei5n")
 autoplay = "default"
-frame_progress = 0.88319975
+frame_progress = 0.0069395564
 
 [node name="ZombiePlayer" parent="." unique_id=937063102 instance=ExtResource("2_2yv2p")]
 z_index = 1
 position = Vector2(956, 297)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
-position = Vector2(-34, 114)
+position = Vector2(-57, 130)
 scale = Vector2(1.0103086, 0.9953063)
 
 [node name="ZombieEnemy" parent="Enemies" unique_id=363887606 instance=ExtResource("3_wcnkj")]
-position = Vector2(316.735, 686.2209)
+position = Vector2(316.7349, 686.2209)
 
 [node name="ZombieEnemy2" parent="Enemies" unique_id=583660903 instance=ExtResource("3_wcnkj")]
 position = Vector2(669.1025, 792.72076)
@@ -386,3 +399,40 @@ autoplay = true
 bus = &"Music"
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_0u8bq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=180374705]
+
+[node name="ZombieHUD" type="Control" parent="CanvasLayer" unique_id=975607204]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Time" type="Label" parent="CanvasLayer/ZombieHUD" unique_id=197007816]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1.0
+offset_top = 100.0
+offset_right = 2.0
+offset_bottom = 210.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_s0wpy")
+horizontal_alignment = 1
+
+[node name="Health" type="Label" parent="CanvasLayer/ZombieHUD" unique_id=1463385093]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -119.0
+offset_right = 1.0
+offset_bottom = -19.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_jei5n")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
