@@ -45,8 +45,11 @@ func generate_platforms(target_x: float) -> void:
 		var random_y = randf_range(-vertical_range, vertical_range)
 		
 		var random_rot = randf_range(-rotate_range, rotate_range) 
+		
+		var random_scale1 = randf_range(platform_scale[0]-platform_scale_variance, platform_scale[0]+platform_scale_variance)
+		var random_scale2 = randf_range(platform_scale[1]-platform_scale_variance, platform_scale[1]+platform_scale_variance)
 			
-		spawn_platform(Vector2(current_gen_x, random_y), random_rot, Vector2(randf_range(platform_scale[0]-platform_scale_variance, platform_scale[0]+platform_scale_variance), randf_range(platform_scale[1]-platform_scale_variance, platform_scale[1]+platform_scale_variance)))
+		spawn_platform(Vector2(current_gen_x, random_y), random_rot, Vector2(random_scale1, random_scale2))
 		
 		current_gen_x += platform_spacing_x
 
