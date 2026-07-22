@@ -1,10 +1,10 @@
 extends Area2D
 
-@export var speed: float = 500.0
-@export var damage: int = 15
+@export var speed: float = 2000.0
+@export var damage: int = 30
 
 func _ready() -> void:
-	$CollisionShape2D.body_entered.connect(_on_body_entered)
+	pass
 
 func _physics_process(delta: float) -> void:
 #	position += Vector2.RIGHT.rotated(rotation) * speed * delta

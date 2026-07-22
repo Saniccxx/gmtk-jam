@@ -4,12 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://r6l5pcb7eg4i" path="res://assets/Bullet.png" id="1_yl63v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cw1tn"]
-radius = 231.42386
+radius = 11.0
 
 [node name="Bullet" type="Area2D" unique_id=411152076]
+collision_layer = 32
+collision_mask = 4
 script = ExtResource("1_78q3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581148930]
+scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_yl63v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660545731]

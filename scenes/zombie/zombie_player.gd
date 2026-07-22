@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @export var health: int = 100
 
+var bullet_scene: PackedScene = preload("res://scenes/zombie/Bullet.tscn")
+
 func _ready() -> void:
 	add_to_group("player")
 
@@ -27,6 +29,16 @@ func _physics_process(delta: float) -> void:
 	global_position.x = clamp(global_position.x, padding + half_width, viewport_size.x - padding - half_width)
 	global_position.y = clamp(global_position.y, padding + half_height, viewport_size.y - padding - half_height)
 	print(viewport_size.y, " :   ", $Sprite2D.scale.y)
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("click"):
+		shoot()
+
+func shoot() -> void:
+	var bullet: Node2D = bullet_scene.instantiate()
+	bullet.global_position = global_position
+	bullet.look_at(get_global_mouse_position())
+	get_parent().add_child(bullet)
 
 func take_damage(amount: int) -> void:
 	health -= amount
