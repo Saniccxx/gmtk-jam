@@ -25,3 +25,9 @@ func _process(delta: float) -> void:
 		change_scene_random()
 	if Input.is_action_just_pressed("slide"):
 		get_tree().change_scene_to_file("res://scenes/shop/shop_display.tscn")
+	if Input.is_action_just_pressed("1"):
+		get_tree().change_scene_to_file("res://scenes/parkour/parkour_display.tscn")
+	if Input.is_action_just_pressed("2"):
+		get_tree().change_scene_to_file("res://scenes/target/target_display.tscn")
+	if Input.is_action_just_pressed("3"):
+		get_tree().change_scene_to_file("res://scenes/difficulty_selection/difficulty_selection.tscn")
