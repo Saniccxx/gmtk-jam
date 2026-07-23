@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d03xuwj8tfkbe" path="res://scenes/credits/credit_display.gd" id="1_r0lw1"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_dvq7u"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_v7beq"]
 
 [node name="CreditDisplay" type="Control" unique_id=1087103056]
 layout_mode = 3
@@ -42,6 +43,7 @@ horizontal_alignment = 1
 
 [node name="Continue" type="Button" parent="VBoxContainer" unique_id=481316313]
 layout_mode = 2
+theme = ExtResource("3_v7beq")
 text = "Continue
 "
 

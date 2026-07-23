@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ffp81jlq7fon"]
 
+[ext_resource type="Theme" path="res://ui/button_theme.tres" id="1_l6cm7"]
+
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.28804785, 0.000695008, 0.718856, 1, 0.7857334, 0.6477745, 0.43853357, 1)
 
@@ -16,51 +18,6 @@ outline_color = Color(1, 0, 0, 1)
 shadow_size = 6
 shadow_color = Color(0, 0, 0, 0.4)
 shadow_offset = Vector2(0, 4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
-content_margin_left = 36.0
-content_margin_top = 14.0
-content_margin_right = 36.0
-content_margin_bottom = 14.0
-bg_color = Color(0.058824, 0.203922, 0.376471, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.156863, 0.290196, 0.478431, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
-content_margin_left = 36.0
-content_margin_top = 14.0
-content_margin_right = 36.0
-content_margin_bottom = 14.0
-bg_color = Color(0.913725, 0.270588, 0.376471, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
-content_margin_left = 36.0
-content_margin_top = 14.0
-content_margin_right = 36.0
-content_margin_bottom = 14.0
-bg_color = Color(0.086275, 0.129412, 0.243137, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.913725, 0.270588, 0.376471, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
 
 [node name="MainMenu" type="Control" unique_id=1358153646]
 layout_mode = 3
@@ -102,19 +59,12 @@ label_settings = SubResource("LabelSettings_title")
 
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=855837034]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
+theme = ExtResource("1_l6cm7")
 text = "PLAY"
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1248154682]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_normal")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
-theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+theme = ExtResource("1_l6cm7")
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
