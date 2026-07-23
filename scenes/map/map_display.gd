@@ -14,7 +14,10 @@ var minigames = [
 func change_scene_random():
 	global.map_pos = get_node("MapPlayer").position
 	var random_game = minigames[randi() % minigames.size()]
-	get_tree().change_scene_to_file(random_game)
+	if random_game == "res://scenes/zombie/zombie_game.tscn":
+		get_tree().change_scene_to_file("res://scenes/difficulty_selection/difficulty_selection.tscn")
+	else:
+		get_tree().change_scene_to_file(random_game)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
