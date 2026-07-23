@@ -370,7 +370,7 @@ scale = Vector2(1.0103086, 0.9953063)
 script = ExtResource("4_s0wpy")
 
 [node name="SpawnTimer" type="Timer" parent="Enemies" unique_id=849169788]
-wait_time = 0.2
+wait_time = 0.07
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=32806517]

@@ -8,6 +8,8 @@ var gun_names: Array[String] = ["pistol", "uzi", "shotgun", "machinegun"]
 var gun_costs: Array[int] = [0, 100, 2000, 100000]
 var gun_imgs: Array[String] = ["res://assets/pistol.png", "res://assets/uzi.png", "res://assets/shotgun.jpg", "res://assets/machinegun.jpg"]
 var best_owned_gun: int = 3
+enum Difficulty { EASY, MEDIUM, HARD }
+var current_difficulty: Difficulty = Difficulty.MEDIUM
 
 var weapons: Array[Weapon] = [
 	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false),
