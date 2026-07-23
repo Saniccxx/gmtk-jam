@@ -6,14 +6,17 @@ var recoil_normalizer: float = 1
 var clicks = 0
 var due_recoil: float = 0
 var recoil_catchup_speed = 0.5
+var i_frames: float = 1
+var can_hurt = true
 
 func shoot():
 	clicks += 1
 	due_recoil += global.weapons[global.current_gun].recoil
-	print(global.weapons[0].recoil)
 	var suma = 0
 	if len(aimed_targets) == 0:
-		print("life lost")
+		if can_hurt:
+			print("life lost")
+			hurt_timer()
 		return
 	
 	for target in aimed_targets:
@@ -34,6 +37,11 @@ func shoot_timer():
 	var amount = global.weapons[global.current_gun].fire_delay
 	await get_tree().create_timer(amount).timeout
 	can_shoot = true
+
+func hurt_timer():
+	can_hurt = false
+	await get_tree().create_timer(i_frames).timeout
+	can_hurt = true
 
 func _physics_process(delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
