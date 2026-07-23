@@ -95,6 +95,7 @@ script = ExtResource("2_ghnu6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=47778372]
 stream = ExtResource("8_5l7qi")
+volume_db = -20.0
 autoplay = true
 bus = &"Music"
 
