@@ -91,12 +91,16 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_cw1tn")
 text = "EASY"
 
-[node name="EASY2" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1417188958]
+[node name="MEDIUM" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1417188958]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_1y5k2")
 text = " MEDIUM "
 
-[node name="EASY3" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=146369554]
+[node name="HARD" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=146369554]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_g7mqv")
 text = "HARD"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/EASY" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MEDIUM" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/HARD" to="." method="_on_hard_pressed"]
