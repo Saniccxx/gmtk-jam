@@ -6,7 +6,7 @@ extends Control
 
 @onready var label = $VBoxContainer/Label
 @onready var button = $VBoxContainer/Button
-@onready var cost = global.gun_costs[int(item_num)]
+@onready var cost = global.weapons[int(item_num)].cost
 
 func _ready():
 	label.text = str(cost)
