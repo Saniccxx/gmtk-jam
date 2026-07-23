@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 400.0
-@export var health: int = 100
+@export var health: int = 1000
 var can_shoot: bool = true
 
 var bullet_scene: PackedScene = preload("res://scenes/zombie/Bullet.tscn")
@@ -10,7 +10,7 @@ func _ready() -> void:
 	add_to_group("player")
 	global.best_owned_gun = 3
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_vector * speed
 	move_and_slide()
@@ -66,10 +66,9 @@ func spawn_bullet() -> void:
 	bullet.rotation = final_rotation
 	
 	get_parent().add_child(bullet)
+	
 func take_damage(amount: int) -> void:
 	health -= amount
-	print("Player took ", amount, " damage!")
-	print("Player health: ", health)
 	if health <= 0:
 		global.load_death_screen()
 		queue_free()
