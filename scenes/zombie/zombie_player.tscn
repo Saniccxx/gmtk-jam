@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jei5n"]
 size = Vector2(102, 98)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_myxee"]
-size = Vector2(102, 98)
-
 [node name="ZombiePlayer" type="CharacterBody2D" unique_id=937063102]
 collision_layer = 2
 script = ExtResource("1_vmcvx")
@@ -19,10 +16,3 @@ shape = SubResource("RectangleShape2D_jei5n")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=235425663]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_uouef")
-
-[node name="Hitbox" type="Area2D" parent="." unique_id=1493988412]
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=144485750]
-shape = SubResource("RectangleShape2D_myxee")
