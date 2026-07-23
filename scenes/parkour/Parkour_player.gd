@@ -8,7 +8,6 @@ const AIR_ACCEL = 5
 const AIR_FRICTION = 0.5
 const MASS = 3
 const RECOIL_FORCE = 800.0
-const SLIDE_JUMP_BOOST_RATIO = 0.6 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 	
@@ -19,17 +18,7 @@ func _physics_process(delta: float) -> void:
 	var sliding := Input.is_action_pressed("slide")
 
 	if Input.is_action_pressed("jump") and is_on_floor():
-		var final_jump = JUMP_VELOCITY
-		
-		if sliding:
-			var current_speed = velocity.length()
-			
-			if current_speed > SPEED:
-				var extra_speed = current_speed - SPEED
-				var jump_boost = extra_speed * SLIDE_JUMP_BOOST_RATIO
-				final_jump -= jump_boost 
-		
-		velocity.y = final_jump
+		velocity.y = JUMP_VELOCITY
 
 	# walljump
 	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():

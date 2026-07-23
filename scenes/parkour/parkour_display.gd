@@ -27,7 +27,7 @@ var lava_top_y: float = 0.0
 var ramp_chance: float = 0.2
 var ramp_angle: float = PI / 5.0
 var ramp_scale: Vector2 = Vector2(5.0, 1.2)
-var ramp_gap_distance: float = 1200.0
+var ramp_gap_distance: float = 1500.0
 
 const WIN_DISTANCE = 100000.0
 
