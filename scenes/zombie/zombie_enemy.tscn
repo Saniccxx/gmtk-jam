@@ -11,9 +11,11 @@ size = Vector2(64, 64)
 
 [node name="ZombieEnemy" type="CharacterBody2D" unique_id=363887606]
 collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_ntf5h")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247310991]
+[node name="SelfCollision" type="CollisionShape2D" parent="." unique_id=247310991]
+scale = Vector2(0.6, 0.6)
 shape = SubResource("RectangleShape2D_4hah5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1056398912]

@@ -25,11 +25,12 @@ size = Vector2(298, 298)
 script = ExtResource("1_iunym")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1831280720]
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_cvx70")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1263598800]
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_gh2ie")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=264704422]
-zoom = Vector2(0.2, 0.2)

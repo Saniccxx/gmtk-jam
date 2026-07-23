@@ -20,7 +20,6 @@ func _ready() -> void:
 func _on_hitbox_body_entered(body) -> void:
 	if body.is_in_group("player"):
 		if body.has_method("take_damage"):
-			print("Zombie hit the player for ", damage, " damage!")
 			body.take_damage(damage)
 
 func _physics_process(delta: float) -> void:
