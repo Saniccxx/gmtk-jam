@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if phase == 0:
-		if scale[0] >= 10:
+		if scale[0] >= 12:
 			phase = 1
 			if speed == 0:
 				$Timer.wait_time = lifespan - 2
