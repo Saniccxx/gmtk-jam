@@ -1,12 +1,54 @@
 [gd_scene format=3 uid="uid://rt28xat71nv8"]
 
+[ext_resource type="Script" uid="uid://b6uiyirg4nkt2" path="res://scenes/target/target_display.gd" id="1_8sajy"]
 [ext_resource type="PackedScene" uid="uid://orshyegbw7kt" path="res://scenes/target/pointer.tscn" id="1_irbp4"]
 [ext_resource type="Script" uid="uid://j2q282m0j0a3" path="res://scenes/target/spawner.gd" id="2_xe5lj"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
 [ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/target.tscn" id="4_irbp4"]
 [ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
+[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="6_c2lq2"]
+[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="7_aj51f"]
+[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="7_umlhu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_umlhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_umlhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_umlhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aj51f")
+}],
+"loop": 1,
+"name": &"Broken",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c2lq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c2lq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c2lq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aj51f")
+}],
+"loop": 1,
+"name": &"Live",
+"speed": 1.0
+}]
 
 [node name="TargetDisplay" type="Node2D" unique_id=671150416]
+script = ExtResource("1_8sajy")
 
 [node name="All_targets" type="Node2D" parent="." unique_id=795459499]
 position = Vector2(917.99994, 401.99997)
@@ -28,6 +70,53 @@ position = Vector2(917.99994, 401.99997)
 script = ExtResource("4_xe5lj")
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("3_3s77m")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Hud" unique_id=1662981412]
+
+[node name="Hearts" type="HBoxContainer" parent="Hud/CanvasLayer2" unique_id=2084209486]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -80.0
+offset_right = 520.0
+offset_bottom = 20.0
+grow_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=1846130723]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart1" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect" unique_id=600832537]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_cvx70")
+animation = &"Live"
+autoplay = "Live"
+
+[node name="TextureRect2" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=812126584]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart2" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect2" unique_id=1758094373]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_cvx70")
+animation = &"Live"
+autoplay = "Live"
+
+[node name="TextureRect3" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=976301406]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart3" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect3" unique_id=1411983792]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_cvx70")
+animation = &"Live"
+autoplay = "Live"
 
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]

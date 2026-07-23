@@ -1,4 +1,5 @@
 extends Area2D
+signal damage()
 const SPEED = 400.0
 var can_shoot:bool = true
 var aimed_targets = []
@@ -16,6 +17,7 @@ func shoot():
 	if len(aimed_targets) == 0:
 		if can_hurt:
 			print("life lost")
+			damage.emit()
 			hurt_timer()
 		return
 	
