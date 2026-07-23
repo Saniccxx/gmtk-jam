@@ -26,8 +26,8 @@ func _process(delta: float) -> void:
 		if scale[0] <= 0:
 			queue_free()
 		else:
-			scale[0] -= 0.5
-			scale[1] -= 0.5
+			scale[0] -= 0.4
+			scale[1] -= 0.4
 
 
 func _on_timer_timeout() -> void:

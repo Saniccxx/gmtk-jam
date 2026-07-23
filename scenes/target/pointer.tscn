@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c0h75l56qhk2b" path="res://assets/celownik.png" id="1_jvpei"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvx70"]
-radius = 35.128338
+radius = 39.999996
 
 [node name="Pointer" type="Area2D" unique_id=1731537083]
 scale = Vector2(0.1, 0.1)
