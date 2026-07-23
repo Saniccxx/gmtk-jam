@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
-[ext_resource type="AudioStream" uid="uid://bxjb7o86d3yll" path="res://scenes/parkour/assets/huh.wav" id="8_5l7qi"]
+[ext_resource type="AudioStream" uid="uid://cahdbq3vdbphx" path="res://scenes/parkour/assets/calmbeforestorm.wav" id="8_5l7qi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 72
