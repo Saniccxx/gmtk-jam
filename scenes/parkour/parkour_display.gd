@@ -86,8 +86,8 @@ func spawn_standard_platform() -> void:
 
 func spawn_ramp_sequence() -> void:
 	# platforms go up
-	var target_ramp_y = -350.0
-	var lead_up_count = randi_range(3, 5)
+	var target_ramp_y = -550.0
+	var lead_up_count = randi_range(6, 9)
 	var start_y = current_gen_y
 	
 	for i in range(lead_up_count):
@@ -99,21 +99,22 @@ func spawn_ramp_sequence() -> void:
 		var lead_rot = randf_range(-PI / 12.0, PI / 12.0)
 		spawn_platform(Vector2(current_gen_x, current_gen_y), lead_rot, platform_scale)
 		current_gen_x += platform_spacing_x
-
-	# ramp
-	spawn_platform(Vector2(current_gen_x, current_gen_y), ramp_angle, ramp_scale)
+	
 	
 	var ramp_width = base_texture_size.x * ramp_scale.x
 	var ramp_length_x = ramp_width * cos(ramp_angle)
 	var ramp_drop_y = ramp_width * sin(ramp_angle)
 	
 	# Gap und landing thingies
-	current_gen_x += ramp_length_x + ramp_gap_distance
-	current_gen_y = current_gen_y + ramp_drop_y + 100.0
-	spawn_platform(Vector2(current_gen_x, current_gen_y), 0.0, Vector2(2.5, 1.0))
+	var ramp_center_x = current_gen_x + ramp_length_x / 2.0
+	var ramp_center_y = target_ramp_y + ramp_drop_y / 2.0
+	spawn_platform(Vector2(ramp_center_x, ramp_center_y), ramp_angle, ramp_scale)
 	
-	current_gen_x += platform_spacing_x
-
+	current_gen_x = ramp_center_x + ramp_length_x / 2.0 + ramp_gap_distance
+	current_gen_y = ramp_center_y + ramp_drop_y / 2.0 + 100.0
+	spawn_platform(Vector2(current_gen_x, current_gen_y), 0.0, Vector2(5.0, 1.0))
+	
+	current_gen_x += platform_spacing_x*2
 
 func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
 	var half_w = base_texture_size.x * scale_multiplier.x * 0.5
