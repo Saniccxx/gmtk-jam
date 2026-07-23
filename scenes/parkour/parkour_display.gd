@@ -51,8 +51,7 @@ func _update_lava_top_y() -> void:
 	lava_top_y = lava_floor_y - half_height
 
 func _process(delta: float) -> void:
-	
-	var target_y = player.global_position.y
+
 	
 	lava.global_position.y = lava_floor_y
 	
