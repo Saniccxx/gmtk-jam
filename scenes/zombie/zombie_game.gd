@@ -6,6 +6,7 @@ var enemies_left: int = 0
 @onready var timer: Timer = $Timer
 @onready var player: CharacterBody2D = $ZombiePlayer
 
+
 func _ready() -> void:
 	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")
 	enemies_left = enemies.size()
