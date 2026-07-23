@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://csn3ghxwm51ty"]
+
+[ext_resource type="Theme" uid="uid://d0oko6fenona3" path="res://scenes/difficulty_selection/diff_sel.tres" id="1_1y5k2"]
+[ext_resource type="Script" uid="uid://c64dc6nmrht6h" path="res://scenes/difficulty_selection/difficulty_selection.gd" id="1_fcasg"]
+[ext_resource type="Texture2D" uid="uid://d153h08u3odys" path="res://assets/red_background.jpg" id="3_g7mqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw1tn"]
+bg_color = Color(2.9961393e-06, 0.5267913, 1.0588765e-06, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1y5k2"]
+bg_color = Color(0.84486693, 0.84486705, 7.70092e-07, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7mqv"]
+bg_color = Color(0.9333264, 4.813075e-06, 9.62615e-07, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="DifficultySelection" type="Control" unique_id=385214057]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1y5k2")
+script = ExtResource("1_fcasg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=78125956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g7mqv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1450473486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1219631716]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1918874672]
+layout_mode = 2
+text = "SELECT DIFFICULTY"
+
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1082772621]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="EASY" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1608372787]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_cw1tn")
+text = "EASY"
+
+[node name="EASY2" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1417188958]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1y5k2")
+text = " MEDIUM "
+
+[node name="EASY3" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=146369554]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7mqv")
+text = "HARD"
