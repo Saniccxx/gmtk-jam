@@ -12,10 +12,13 @@ var platform_scale_variance = 0.5
 
 var current_gen_x = -1000.0
 var current_gen_y = 0.0
-var platform_spacing_x = 400.0
 var vertical_range = 200.0 
 var rotate_range = PI/6
 var threshold_range = 10000.0
+
+var platform_spacing_x_base = 400.0
+var platform_spacing_x_max = 750.0
+var difficulty_max_distance = 69420.0
 
 @export var camera_y_follow_speed: float = 4.0
 @export var lava_floor_y: float = 700.0
@@ -63,6 +66,16 @@ func _process(delta: float) -> void:
 		global.load_winner_screen()
 
 
+func get_difficulty(x: float) -> float:
+	# 0.0 at the start, 1.0 at max_dist
+	return clamp(x / difficulty_max_distance, 0.0, 1.0)
+
+
+func get_current_spacing_x() -> float:
+	var difficulty = get_difficulty(current_gen_x)
+	return lerp(platform_spacing_x_base, platform_spacing_x_max, difficulty)
+
+
 func generate_platforms(target_x: float) -> void:
 	while current_gen_x < target_x:
 		if randf() < ramp_chance:
@@ -81,7 +94,7 @@ func spawn_standard_platform() -> void:
 			
 	spawn_platform(Vector2(current_gen_x, current_gen_y), random_rot, Vector2(random_scale1, random_scale2))
 	
-	current_gen_x += platform_spacing_x
+	current_gen_x += get_current_spacing_x()
 
 
 func spawn_ramp_sequence() -> void:
@@ -98,7 +111,7 @@ func spawn_ramp_sequence() -> void:
 		
 		var lead_rot = randf_range(-PI / 12.0, PI / 12.0)
 		spawn_platform(Vector2(current_gen_x, current_gen_y), lead_rot, platform_scale)
-		current_gen_x += platform_spacing_x
+		current_gen_x += get_current_spacing_x()
 	
 	
 	var ramp_width = base_texture_size.x * ramp_scale.x
@@ -114,7 +127,7 @@ func spawn_ramp_sequence() -> void:
 	current_gen_y = ramp_center_y + ramp_drop_y / 2.0 + 100.0
 	spawn_platform(Vector2(current_gen_x, current_gen_y), 0.0, Vector2(5.0, 1.0))
 	
-	current_gen_x += platform_spacing_x*2
+	current_gen_x += get_current_spacing_x() * 2.0
 
 func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
 	var half_w = base_texture_size.x * scale_multiplier.x * 0.5
