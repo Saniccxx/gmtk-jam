@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch0de3qg7uh0b"]
 
 [ext_resource type="Script" uid="uid://b30rednyaeri3" path="res://scenes/main_menu/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="2_0ebjn"]
 
 [sub_resource type="Gradient" id="Gradient_bg"]
 colors = PackedColorArray(0.28804785, 0.000695008, 0.718856, 1, 0.7857334, 0.6477745, 0.43853357, 1)
@@ -111,6 +112,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 text = "PLAY"
 
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1632720830]
+layout_mode = 2
+theme = ExtResource("2_0ebjn")
+text = "CREDITS"
+
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1248154682]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -121,4 +127,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
