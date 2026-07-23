@@ -12,7 +12,7 @@ var best_owned_gun: int = 3
 var weapons: Array[Weapon] = [
 	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false),
 	Weapon.new("uzi", 100, "res://assets/uzi.png", 1, 0.1, true),
-	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, 20.0),
+	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, 20.0, 1),
 	Weapon.new("machinegun", 100000, "res://assets/machinegun.jpg", 1, 0.05, true)
 ]
 
@@ -40,7 +40,9 @@ class Weapon:
 	var fire_delay: float
 	var is_auto: bool
 	var spread_angle: float
-	func _init(_name: String, _cost: int, _img_path: String, _bullets_per_shot: int, _fire_delay: float, _is_auto: bool, _spread_angle: float = 0.0) -> void:
+	var pierce: int
+
+	func _init(_name: String, _cost: int, _img_path: String, _bullets_per_shot: int, _fire_delay: float, _is_auto: bool, _spread_angle: float = 0.0, _pierce: int = 0) -> void:
 		name = _name
 		cost = _cost
 		img_path = _img_path
@@ -48,3 +50,4 @@ class Weapon:
 		fire_delay = _fire_delay
 		is_auto = _is_auto
 		spread_angle = _spread_angle
+		pierce = _pierce

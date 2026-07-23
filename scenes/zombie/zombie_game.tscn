@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b3fn55u4js5b0" path="res://scenes/zombie/zombie_game.gd" id="1_4oaqw"]
 [ext_resource type="PackedScene" uid="uid://bng34yh5ad4iv" path="res://scenes/zombie/zombie_player.tscn" id="2_2yv2p"]
 [ext_resource type="Texture2D" uid="uid://bif3uqndiykh5" path="res://assets/cockroach.png" id="2_vof6t"]
-[ext_resource type="PackedScene" uid="uid://b56jy0nurj1qb" path="res://scenes/zombie/zombie_enemy.tscn" id="3_wcnkj"]
 [ext_resource type="Script" uid="uid://ejw6e505vc5p" path="res://scenes/zombie/Spawner.gd" id="4_s0wpy"]
 [ext_resource type="AudioStream" uid="uid://5hh7a5avm3w2" path="res://assets/around.mp3" id="5_fblyp"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_0u8bq"]
@@ -373,24 +372,6 @@ script = ExtResource("4_s0wpy")
 [node name="SpawnTimer" type="Timer" parent="Enemies" unique_id=849169788]
 wait_time = 0.2
 autostart = true
-
-[node name="ZombieEnemy" parent="Enemies" unique_id=363887606 instance=ExtResource("3_wcnkj")]
-position = Vector2(316.7349, 686.2209)
-
-[node name="ZombieEnemy2" parent="Enemies" unique_id=583660903 instance=ExtResource("3_wcnkj")]
-position = Vector2(669.1025, 792.72076)
-
-[node name="ZombieEnemy3" parent="Enemies" unique_id=1213044578 instance=ExtResource("3_wcnkj")]
-position = Vector2(1121.4395, 803.7727)
-
-[node name="ZombieEnemy4" parent="Enemies" unique_id=1776129017 instance=ExtResource("3_wcnkj")]
-position = Vector2(303.86752, 392.84387)
-
-[node name="ZombieEnemy5" parent="Enemies" unique_id=765398875 instance=ExtResource("3_wcnkj")]
-position = Vector2(1594.5623, 771.6217)
-
-[node name="ZombieEnemy6" parent="Enemies" unique_id=211560564 instance=ExtResource("3_wcnkj")]
-position = Vector2(1704.4297, 440.06552)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=32806517]
 stream = ExtResource("5_fblyp")
