@@ -38,6 +38,8 @@ func shoot_timer():
 func _physics_process(delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var velocity = input_vector * SPEED
+	if Input.is_action_pressed("right_click"):
+		velocity *= 2
 	position += velocity * delta
 	position[1] -= due_recoil * recoil_catchup_speed
 	due_recoil -= due_recoil * recoil_catchup_speed
