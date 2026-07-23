@@ -1,8 +1,8 @@
 extends Node
 @export var target_scene: PackedScene
 const padding = 100
-const base_speed = 10
-const max_speed = 30
+const base_speed = 5
+const max_speed = 60
 @onready var difficulty:int = 0
 func get_spawn_spot():
 	var viewport_size = get_parent().get_viewport_rect().size

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jnv2yxaq1qh3" path="res://assets/target.png" id="1_v2bc8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvx70"]
-radius = 97.0
+radius = 95.0
 
 [node name="Target" type="Area2D" unique_id=830670421]
 collision_layer = 2
