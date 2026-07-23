@@ -7,9 +7,9 @@ func _ready() -> void:
 	pass
 
 var minigames = [
-	#"res://scenes/parkour/parkour_display.tscn",
+	"res://scenes/parkour/parkour_display.tscn",
 	"res://scenes/target/target_display.tscn",
-	#"res://scenes/zombie/zombie_game.tscn"
+	"res://scenes/zombie/zombie_game.tscn"
 ]
 func change_scene_random():
 	global.map_pos = get_node("MapPlayer").position
