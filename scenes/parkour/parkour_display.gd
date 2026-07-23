@@ -125,6 +125,8 @@ func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
 	return lava_top_y - lava_safety_margin - rotated_half_h
 
 
+var patch_margin: int = 12 # how many px of the texture border to not stretch
+
 func spawn_platform(pos: Vector2, rot: float, scale_multiplier: Vector2) -> void:
 	pos.y = min(pos.y, get_max_safe_y(rot, scale_multiplier))
 	
@@ -132,14 +134,23 @@ func spawn_platform(pos: Vector2, rot: float, scale_multiplier: Vector2) -> void
 	platform.position = pos
 	platform.rotation = rot
 	
-	var sprite = Sprite2D.new()
-	sprite.texture = platform_texture
-	sprite.scale = scale_multiplier
-	platform.add_child(sprite)
+	var target_size = base_texture_size * scale_multiplier
+	
+	var patch = NinePatchRect.new()
+	patch.texture = platform_texture
+	patch.patch_margin_left = patch_margin
+	patch.patch_margin_right = patch_margin
+	patch.patch_margin_top = patch_margin
+	patch.patch_margin_bottom = patch_margin
+	patch.axis_stretch_horizontal = NinePatchRect.AXIS_STRETCH_MODE_TILE_FIT
+	patch.axis_stretch_vertical = NinePatchRect.AXIS_STRETCH_MODE_TILE_FIT
+	patch.size = target_size
+	patch.position = -target_size / 2.0
+	platform.add_child(patch)
 	
 	var collision = CollisionShape2D.new()
 	var shape = RectangleShape2D.new()
-	shape.size = base_texture_size * scale_multiplier
+	shape.size = target_size
 	collision.shape = shape
 	platform.add_child(collision)
 	
