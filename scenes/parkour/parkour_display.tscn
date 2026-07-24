@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
-[ext_resource type="AudioStream" uid="uid://cgdaniv8j5g88" path="res://scenes/parkour/assets/a.wav" id="8_5l7qi"]
+[ext_resource type="AudioStream" uid="uid://d12rwnkso5d18" path="res://scenes/parkour/assets/pek.wav" id="8_tucp6"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
@@ -95,7 +95,7 @@ text = "FPSSSSSSSSSSSSSSSSSSSSSS"
 script = ExtResource("2_ghnu6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=47778372]
-stream = ExtResource("8_5l7qi")
+stream = ExtResource("8_tucp6")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
