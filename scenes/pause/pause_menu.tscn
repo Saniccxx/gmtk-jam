@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dyyd053pyqgsv"]
+
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="1_46rar"]
+[ext_resource type="Script" uid="uid://c6c5yujrk6o21" path="res://scenes/pause/pause_menu.gd" id="1_rly1s"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="2_rly1s"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2089184364]
+script = ExtResource("1_rly1s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=723794317]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.69411767)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1308764988]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer" unique_id=733306670]
+layout_mode = 2
+text = "PAUSED"
+label_settings = ExtResource("1_46rar")
+
+[node name="resume" type="Button" parent="ColorRect/VBoxContainer" unique_id=1408116606]
+layout_mode = 2
+theme = ExtResource("2_rly1s")
+text = "Resume"
+
+[node name="map" type="Button" parent="ColorRect/VBoxContainer" unique_id=657664127]
+layout_mode = 2
+theme = ExtResource("2_rly1s")
+text = "map"
+
+[node name="main menu" type="Button" parent="ColorRect/VBoxContainer" unique_id=606039375]
+layout_mode = 2
+theme = ExtResource("2_rly1s")
+text = "main menu"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/main menu" to="." method="_on_main_menu_pressed"]

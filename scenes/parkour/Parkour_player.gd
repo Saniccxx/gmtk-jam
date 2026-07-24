@@ -78,6 +78,14 @@ func _physics_process(delta: float) -> void:
 		if sprite.animation != "slide":
 			sprite.animation = "slide"
 			sprite.stop() # no animation
+	elif abs(velocity.x) > 10:
+		if direction == -1:
+			sprite.rotation = 3
+		else:
+			sprite.rotation = 0
+		if sprite.animation != "run":
+			sprite.animation = "run"
+			sprite.play()
 	else:
 		sprite.rotation = 0.0
 		if sprite.animation != "default":

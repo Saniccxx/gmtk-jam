@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player = $Player
 @onready var obstacles = $Obstacles
-@onready var lava = $Player/Camera2D/Lava
+@onready var lava = $Player/Lava
 
 var platform_texture = preload("res://scenes/parkour/assets/platform.png")
 

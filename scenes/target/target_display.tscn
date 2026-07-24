@@ -4,11 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://orshyegbw7kt" path="res://scenes/target/pointer.tscn" id="1_irbp4"]
 [ext_resource type="Script" uid="uid://j2q282m0j0a3" path="res://scenes/target/spawner.gd" id="2_xe5lj"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
-[ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/target.tscn" id="4_irbp4"]
+[ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/Target.tscn" id="4_irbp4"]
 [ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
 [ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="6_c2lq2"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="7_aj51f"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="7_umlhu"]
+[ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="10_umlhu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
@@ -117,6 +118,8 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_cvx70")
 animation = &"Live"
 autoplay = "Live"
+
+[node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("10_umlhu")]
 
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]
