@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
 [ext_resource type="AudioStream" uid="uid://cgdaniv8j5g88" path="res://scenes/parkour/assets/a.wav" id="8_5l7qi"]
+[ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
 shader = ExtResource("5_c82wr")
@@ -98,5 +99,7 @@ stream = ExtResource("8_5l7qi")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
+
+[node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("9_tucp6")]
 
 [connection signal="body_entered" from="Player/Lava" to="." method="_on_lava_body_entered"]
