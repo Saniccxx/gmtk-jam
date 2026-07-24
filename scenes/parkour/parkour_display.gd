@@ -10,7 +10,7 @@ var base_texture_size = Vector2(300.0, 50.0)
 var platform_scale = Vector2(1.0, 1.0) 
 var platform_scale_variance = 0.5
 
-var current_gen_x = -1000.0
+var current_gen_x = 0.0
 var current_gen_y = 0.0
 var vertical_range = 200.0 
 var rotate_range = PI/6
@@ -47,8 +47,11 @@ func _ready() -> void:
 	_update_lava_top_y()
 	
 	# ground
-	spawn_platform(Vector2(0, 200), 0.0, Vector2(3.0, 1.0))
+	var ground_scale = Vector2(3.0, 1.0)
+	spawn_platform(Vector2(0, 200), 0.0, ground_scale)
 	current_gen_y = 200.0
+
+	current_gen_x = base_texture_size.x * ground_scale.x
 	
 	generate_platforms(threshold_range)
 
