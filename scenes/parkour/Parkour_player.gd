@@ -10,7 +10,14 @@ const MASS = 3
 const RECOIL_FORCE = 800.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-	
+
+
+var can_shoot = true
+func shoot() -> void:
+	can_shoot = false
+	await get_tree().create_timer(global.weapons[global.current_gun].fire_delay).timeout
+	can_shoot = true
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * MASS
@@ -27,9 +34,19 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY - SPEED
 
 	# recoil
-	if Input.is_action_just_pressed("click"):
-		var mouse_direction = (get_global_mouse_position() - global_position).normalized()
-		velocity -= mouse_direction * RECOIL_FORCE
+	if global.weapons[global.current_gun].is_auto:
+		if Input.is_action_pressed("click"):
+			if can_shoot:
+				var mouse_direction = (get_global_mouse_position() - global_position).normalized()
+				velocity -= mouse_direction * global.weapons[global.current_gun].recoil*40
+				shoot()
+	else:
+		if Input.is_action_just_pressed("click"):
+			if can_shoot:
+				var mouse_direction = (get_global_mouse_position() - global_position).normalized()
+				velocity -= mouse_direction * global.weapons[global.current_gun].recoil*40
+				shoot()
+			
 
 	var direction := Input.get_axis("move_left", "move_right")
 
