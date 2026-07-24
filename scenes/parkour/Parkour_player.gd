@@ -23,8 +23,8 @@ func _physics_process(delta: float) -> void:
 	# walljump
 	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():
 		var wall_normal = get_wall_normal()
-		velocity.x = wall_normal.x * SPEED
-		velocity.y = JUMP_VELOCITY
+		velocity.x = wall_normal.x * SPEED * 2
+		velocity.y = JUMP_VELOCITY - SPEED
 
 	# recoil
 	if Input.is_action_just_pressed("click"):

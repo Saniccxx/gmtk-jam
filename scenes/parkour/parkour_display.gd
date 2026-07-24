@@ -10,7 +10,7 @@ var base_texture_size = Vector2(300.0, 50.0)
 var platform_scale = Vector2(1.0, 1.0) 
 var platform_scale_variance = 0.5
 
-var current_gen_x = -1000.0
+var current_gen_x = 0.0
 var current_gen_y = 0.0
 var vertical_range = 200.0 
 var rotate_range = PI/6
@@ -32,6 +32,14 @@ var ramp_angle: float = PI / 5.0
 var ramp_scale: Vector2 = Vector2(5.0, 1.2)
 var ramp_gap_distance: float = 1500.0
 
+var walljump_chance: float = 0.15
+var walljump_chimney_width: float = 140.0 
+var walljump_wall_thickness_scale: float = 0.3
+var walljump_wall_height: float = 220.0
+var walljump_step_height: float = 170.0
+var walljump_min_steps: int = 4
+var walljump_max_steps: int = 7
+
 const WIN_DISTANCE = 100000.0
 
 func _ready() -> void:
@@ -39,8 +47,11 @@ func _ready() -> void:
 	_update_lava_top_y()
 	
 	# ground
-	spawn_platform(Vector2(0, 200), 0.0, Vector2(3.0, 1.0))
+	var ground_scale = Vector2(3.0, 1.0)
+	spawn_platform(Vector2(0, 200), 0.0, ground_scale)
 	current_gen_y = 200.0
+
+	current_gen_x = base_texture_size.x * ground_scale.x
 	
 	generate_platforms(threshold_range)
 
@@ -51,8 +62,7 @@ func _update_lava_top_y() -> void:
 	lava_top_y = lava_floor_y - half_height
 
 func _process(delta: float) -> void:
-	
-	var target_y = player.global_position.y
+
 	
 	lava.global_position.y = lava_floor_y
 	
@@ -78,8 +88,11 @@ func get_current_spacing_x() -> float:
 
 func generate_platforms(target_x: float) -> void:
 	while current_gen_x < target_x:
-		if randf() < ramp_chance:
+		var roll = randf()
+		if roll < ramp_chance:
 			spawn_ramp_sequence()
+		elif roll < ramp_chance + walljump_chance:
+			spawn_walljump_sequence()
 		else:
 			spawn_standard_platform()
 
@@ -128,6 +141,40 @@ func spawn_ramp_sequence() -> void:
 	spawn_platform(Vector2(current_gen_x, current_gen_y), 0.0, Vector2(5.0, 1.0))
 	
 	current_gen_x += get_current_spacing_x() * 2.0
+
+func spawn_walljump_sequence() -> void:
+	# always an even number of steps so the pattern lands on a known side:
+	var half_steps = randi_range(ceili(walljump_min_steps / 2.0), floori(walljump_max_steps / 2.0))
+	var num_steps = half_steps * 2
+
+	var wall_width = base_texture_size.x * walljump_wall_thickness_scale
+	var wall_scale = Vector2(walljump_wall_thickness_scale, walljump_wall_height / base_texture_size.y)
+
+	spawn_platform(Vector2(current_gen_x, current_gen_y), 0.0, Vector2(1.0, 1.0))
+	current_gen_x += 250.0
+
+	var left_x = current_gen_x
+	var right_x = left_x + wall_width + walljump_chimney_width
+
+	var approach_surface_y = current_gen_y - base_texture_size.y / 2.0
+	var y = approach_surface_y - walljump_wall_height
+	var top_wall_y = y
+
+	for i in range(num_steps):
+		var wall_x = right_x if i % 2 == 0 else left_x
+		spawn_platform(Vector2(wall_x, y), 0.0, wall_scale)
+		top_wall_y = y
+		y -= walljump_step_height
+
+	var landing_scale = Vector2(1.8, 1.0)
+	var landing_width = base_texture_size.x * landing_scale.x
+	var landing_x = right_x + wall_width / 2.0 + landing_width / 2.0 - 20.0
+	var landing_y = top_wall_y - walljump_wall_height / 2.0 - 40.0
+	spawn_platform(Vector2(landing_x, landing_y), 0.0, landing_scale)
+
+	current_gen_y = landing_y
+	current_gen_x = landing_x + landing_width / 2.0 + get_current_spacing_x()
+
 
 func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
 	var half_w = base_texture_size.x * scale_multiplier.x * 0.5
