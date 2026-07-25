@@ -99,7 +99,12 @@ func generate_platforms(target_x: float) -> void:
 
 func spawn_standard_platform() -> void:
 	var y_drift = randf_range(-80.0, 80.0)
-	current_gen_y = clamp(current_gen_y + y_drift, -vertical_range, vertical_range)
+
+	if current_gen_y < -vertical_range or current_gen_y > vertical_range:
+		var target_edge = -vertical_range if current_gen_y < 0 else vertical_range
+		current_gen_y = lerp(current_gen_y, target_edge, 0.2)
+	else:
+		current_gen_y = clamp(current_gen_y + y_drift, -vertical_range, vertical_range)
 	
 	var random_rot = randf_range(-rotate_range, rotate_range) 
 	var random_scale1 = randf_range(platform_scale[0]-platform_scale_variance, platform_scale[0]+platform_scale_variance)
