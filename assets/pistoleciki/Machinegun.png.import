@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cawjavfl5se4w"
-path="res://.godot/imported/uzi.png-08e5fd6baed4f85f3560927a54ec6a8f.ctex"
+uid="uid://b4xov0tv2ts1e"
+path="res://.godot/imported/Machinegun.png-9c75514343b0644ad33e88caa4bf36dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/uzi.png"
-dest_files=["res://.godot/imported/uzi.png-08e5fd6baed4f85f3560927a54ec6a8f.ctex"]
+source_file="res://assets/pistoleciki/Machinegun.png"
+dest_files=["res://.godot/imported/Machinegun.png-9c75514343b0644ad33e88caa4bf36dc.ctex"]
 
 [params]
 

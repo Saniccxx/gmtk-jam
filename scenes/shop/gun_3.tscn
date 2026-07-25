@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xljyrykfnsqc"]
 
-[ext_resource type="Texture2D" uid="uid://dr8ri2rvd1du8" path="res://assets/machinegun.jpg" id="1_dlgr0"]
+[ext_resource type="Texture2D" uid="uid://b4xov0tv2ts1e" path="res://assets/pistoleciki/Machinegun.png" id="1_dlgr0"]
 
 [node name="Gun3" type="Control" unique_id=1751137341]
 custom_minimum_size = Vector2(100, 100)
