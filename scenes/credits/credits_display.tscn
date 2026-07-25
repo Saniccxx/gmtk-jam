@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bo2p12eunwq82" path="res://scenes/credits/credits_display.gd" id="1_px1p6"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="2_yxutx"]
 [ext_resource type="Texture2D" uid="uid://cqbby2k2mt3xs" path="res://assets/jeff.png" id="4_453ot"]
+[ext_resource type="Texture2D" uid="uid://7y1eax1e7qp" path="res://scenes/credits/hqdefault.jpg" id="5_l7xhn"]
 
 [node name="CreditsDisplay" type="Control" unique_id=324499061]
 layout_mode = 3
@@ -165,11 +166,7 @@ offset_bottom = 470.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Ruter - music, parkour, credit
-menu, credits menu, shaders,
-main menu, death menu,
-win menu, topopisy, clicker, 
-"
+text = "JeiCamMetsej - graphic design o/"
 label_settings = ExtResource("1_b3802")
 horizontal_alignment = 2
 
@@ -179,7 +176,7 @@ offset_right = 200.0
 offset_bottom = 200.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("4_453ot")
+texture = ExtResource("5_l7xhn")
 expand_mode = 1
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
