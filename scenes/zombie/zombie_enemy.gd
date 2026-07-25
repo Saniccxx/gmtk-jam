@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var damage: int = 10
+@export var attack_speed: float = 1.0
 @export var health: int = 30
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var attack_cooldown: Timer = $AttackCooldown
+var player_in_range: bool = false
 signal died
 
 var player: CharacterBody2D = null
@@ -14,11 +16,22 @@ func _ready() -> void:
 	if players.size() > 0:
 		player = players[0]
 	add_to_group("enemy")
+	attack_cooldown.wait_time = attack_speed
 
 func _on_hitbox_body_entered(body) -> void:
 	if body.is_in_group("player"):
+		player_in_range = true
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
+			attack_cooldown.start()
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	player_in_range = false
+	attack_cooldown.stop()
+
+func _on_attack_cooldown_timeout() -> void:
+	if player_in_range and player and player.has_method("take_damage"):
+		player.take_damage(damage)
 
 func _physics_process(_delta: float) -> void:
 	if player:
