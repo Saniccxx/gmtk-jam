@@ -190,7 +190,7 @@ func get_max_safe_y(rot: float, scale_multiplier: Vector2) -> float:
 	return lava_top_y - lava_safety_margin - rotated_half_h
 
 
-var patch_margin: int = 12 # how many px of the texture border to not stretch
+var patch_margin: int = 19 # how many px of the texture border to not stretch
 
 func spawn_platform(pos: Vector2, rot: float, scale_multiplier: Vector2) -> void:
 	pos.y = min(pos.y, get_max_safe_y(rot, scale_multiplier))

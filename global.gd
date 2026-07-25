@@ -9,10 +9,10 @@ enum Difficulty { EASY, MEDIUM, HARD }
 var current_difficulty: Difficulty = Difficulty.EASY
 
 var weapons: Array[Weapon] = [
-	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false, [0, 18], 12),
-	Weapon.new("uzi", 100, "res://assets/uzi.png", 1, 0.1, true, [0, 9], 50),
-	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, [0, 30], 10, 20.0, 1),
-	Weapon.new("machinegun", 100000, "res://assets/machinegun.jpg", 1, 0.05, true, [0, 3], 150)
+	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false, [15, 18], 12),
+	Weapon.new("uzi", 100, "res://assets/uzi.png", 1, 0.1, true, [9, 9], 50),
+	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, [30, 30], 10, 20.0, 1),
+	Weapon.new("machinegun", 100000, "res://assets/machinegun.jpg", 1, 0.05, true, [6.7, 3], 150)
 ]
 
 var current_gun: int = 0
