@@ -10,8 +10,10 @@ const MASS = 3
 const RECOIL_FORCE = 800.0
 const AIR_ROTATION_SPEED = 10.0 
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+enum SlideState { NONE, INTRO, LOOP, OUTRO }
+var slide_state := SlideState.NONE
 
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var can_shoot = true
 
@@ -22,13 +24,31 @@ func shoot() -> void:
 	await get_tree().create_timer(global.weapons[global.current_gun].fire_delay).timeout
 	can_shoot = true
 
+
+func _on_sprite_animation_finished() -> void:
+	if slide_state == SlideState.INTRO:
+		slide_state = SlideState.LOOP
+		sprite.play("slide_loop")
+	elif slide_state == SlideState.OUTRO:
+		slide_state = SlideState.NONE
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * MASS
 
-	var sliding := Input.is_action_pressed("slide")
+	var sliding := Input.is_action_pressed("slide") and is_on_floor()
 
-
+	# only when intro/outro
+	if sliding:
+		if slide_state == SlideState.NONE:
+			slide_state = SlideState.INTRO
+			sprite.animation = "slide_intro"
+			sprite.play()
+	else:
+		if slide_state == SlideState.INTRO or slide_state == SlideState.LOOP:
+			slide_state = SlideState.OUTRO
+			sprite.animation = "slide_outro"
+			sprite.play()
 
 	# recoil
 	if global.weapons[global.current_gun].is_auto:
@@ -79,22 +99,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumping = true
-
+		slide_state = SlideState.NONE
+			
 	# walljump
 	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():
 		var wall_normal = get_wall_normal()
 		velocity.x = wall_normal.x * SPEED * 2
 		velocity.y = JUMP_VELOCITY - SPEED
 		jumping = true
-	
+		slide_state = SlideState.NONE
+
 	if jumping:
 		if sprite.animation != "jump":
 			sprite.animation = "jump"
 			sprite.play()
-	elif sliding and is_on_floor():
-		if sprite.animation != "slide":
-			sprite.animation = "slide"
-			sprite.play()
+	elif slide_state != SlideState.NONE:
+		pass 
 	elif abs(velocity.x) > 10:
 		if direction == -1:
 			sprite.flip_h = 1

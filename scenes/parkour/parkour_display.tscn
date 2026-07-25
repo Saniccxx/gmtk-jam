@@ -36,8 +36,8 @@ scale = Vector2(0.3, 0.3)
 floor_constant_speed = true
 
 [node name="Lava" type="Area2D" parent="Player" unique_id=1128987468]
-position = Vector2(0, 833.3332)
-scale = Vector2(666.6666, 8.333333)
+position = Vector2(0, 1800)
+scale = Vector2(666.667, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Lava" unique_id=2082557607]
 material = SubResource("ShaderMaterial_5l7qi")
