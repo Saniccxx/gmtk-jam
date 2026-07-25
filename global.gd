@@ -9,10 +9,10 @@ enum Difficulty { EASY, MEDIUM, HARD }
 var current_difficulty: Difficulty = Difficulty.EASY
 
 var weapons: Array[Weapon] = [
-	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false, 18),
-	Weapon.new("uzi", 100, "res://assets/uzi.png", 1, 0.1, true, 9),
-	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, 30, 20.0, 1),
-	Weapon.new("machinegun", 100000, "res://assets/machinegun.jpg", 1, 0.05, true, 3)
+	Weapon.new("pistol", 0, "res://assets/pistol.png", 1, 0.1, false, [0, 18], 12),
+	Weapon.new("uzi", 100, "res://assets/uzi.png", 1, 0.1, true, [0, 9], 50),
+	Weapon.new("shotgun", 2000, "res://assets/shotgun.jpg", 15, 0.4, false, [0, 30], 10, 20.0, 1),
+	Weapon.new("machinegun", 100000, "res://assets/machinegun.jpg", 1, 0.05, true, [0, 3], 150)
 ]
 
 var current_gun: int = 0
@@ -40,9 +40,10 @@ class Weapon:
 	var is_auto: bool
 	var spread_angle: float
 	var pierce: int
-	var recoil: int
+	var recoil: Array
+	var ammo: int
 
-	func _init(_name: String, _cost: int, _img_path: String, _bullets_per_shot: int, _fire_delay: float, _is_auto: bool, _recoil: int, _spread_angle: float = 0.0, _pierce: int = 0) -> void:
+	func _init(_name: String, _cost: int, _img_path: String, _bullets_per_shot: int, _fire_delay: float, _is_auto: bool, _recoil: Array, _ammo: int,  _spread_angle: float = 0.0, _pierce: int = 0) -> void:
 		name = _name
 		cost = _cost
 		img_path = _img_path
@@ -52,3 +53,4 @@ class Weapon:
 		spread_angle = _spread_angle
 		pierce = _pierce
 		recoil = _recoil
+		ammo = _ammo

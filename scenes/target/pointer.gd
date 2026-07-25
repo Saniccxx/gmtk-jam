@@ -9,10 +9,15 @@ var due_recoil: float = 0
 var recoil_catchup_speed = 0.5
 var i_frames: float = 1
 var can_hurt = true
+var recoils = []
+
+func _ready() -> void:
+	for i in range(len(global.weapons)):
+		recoils.append(global.weapons[i].recoil[1])
 
 func shoot():
 	clicks += 1
-	due_recoil += global.weapons[global.current_gun].recoil
+	due_recoil += recoils[global.current_gun]
 	var suma = 0
 	if len(aimed_targets) == 0:
 		if can_hurt:
