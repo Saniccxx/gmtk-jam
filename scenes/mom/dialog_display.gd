@@ -103,3 +103,4 @@ func _process(_delta: float) -> void:
 
 func _finish_dialogue() -> void:
 	get_tree().change_scene_to_file("res://scenes/map/map_display.tscn")
+	TimerGlobal.start()

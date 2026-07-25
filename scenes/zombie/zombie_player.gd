@@ -2,13 +2,34 @@ extends CharacterBody2D
 
 @export var speed: float = 400.0
 @export var health: int = 1000
+@export var ShootingSound: AudioStreamPlayer
+@export var ReloadSound: AudioStreamPlayer
+@export var ammo_label: Label
+@onready var reloading_label: Label = get_parent().get_node("CanvasLayer/Reloading")
 var can_shoot: bool = true
+var ammunition: Array[int] = []
+var current_ammo: Array[int] = []
+var is_reloading: bool = false
 
 var bullet_scene: PackedScene = preload("res://scenes/zombie/Bullet.tscn")
 
 func _ready() -> void:
 	add_to_group("player")
-	global.best_owned_gun = 3
+	global.gun_changed.connect(_on_gun_changed)
+	global.best_owned_gun = 3 # delete this line in release
+	for i in range(global.weapons.size()):
+		ammunition.append(global.weapons[i].zombie_ammo)
+		current_ammo.append(global.weapons[i].zombie_ammo)
+	update_ammo_label()
+
+func _on_gun_changed():
+	is_reloading = false
+	ReloadSound.stop()
+	update_ammo_label()
+
+func update_ammo_label():
+	ammo_label.text = str(current_ammo[global.current_gun]) + " / " + str(ammunition[global.current_gun])
+	reloading_label.visible = is_reloading
 
 func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -28,26 +49,37 @@ func _physics_process(_delta: float) -> void:
 	
 	global_position.x = clamp(global_position.x, padding + half_width, viewport_size.x - padding - half_width)
 	global_position.y = clamp(global_position.y, padding + half_height, viewport_size.y - padding - half_height)
-	
-func _process(delta: float) -> void:
-	if global.weapons[global.current_gun].is_auto and can_shoot:
-		if Input.is_action_pressed("click"):
-			shoot()
-	else:
-		if Input.is_action_just_pressed("click") and can_shoot:
-			shoot()
-	#global.weapons.append(global.Weapon.new("pistol", 0, "res://assets/pistol.png", false))
 
-func _input(event: InputEvent) -> void:
-	pass
+
+func _process(delta: float) -> void:
+	var current_weapon = global.weapons[global.current_gun]
+	if current_weapon.is_auto and can_shoot and Input.is_action_pressed("click"):
+		shoot()
+
+func _unhandled_input(event: InputEvent) -> void:
+	var current_weapon = global.weapons[global.current_gun]
+	if not current_weapon.is_auto and event.is_action_pressed("click"):
+		if can_shoot:
+			shoot()
+	if event.is_action_pressed("reload") and current_ammo[global.current_gun] < ammunition[global.current_gun]:
+		reload()
+
+#func _input(event: InputEvent) -> void:
+#	pass
 
 func shoot() -> void:
+	if is_reloading:
+		return
 	can_shoot = false
-
-#	var bullet: Node2D = bullet_scene.instantiate()
-#	bullet.global_position = global_position
-#	bullet.look_at(get_global_mouse_position())
-#	get_parent().add_child(bullet)
+	if current_ammo[global.current_gun] <= 0:
+		reload()
+		can_shoot = true
+		return
+	current_ammo[global.current_gun] -= 1
+	update_ammo_label()
+	
+	ShootingSound.play()
+	
 	for i in range(global.weapons[global.current_gun].bullets_per_shot):
 		spawn_bullet()
 	
@@ -66,7 +98,22 @@ func spawn_bullet() -> void:
 	bullet.rotation = final_rotation
 	
 	get_parent().add_child(bullet)
+
+func reload() -> void:
+	if is_reloading:
+		return
 	
+	is_reloading = true
+	update_ammo_label()
+	ReloadSound.play()
+
+	await get_tree().create_timer(global.weapons[global.current_gun].reload_time).timeout
+	
+	if is_reloading:
+		current_ammo[global.current_gun] = ammunition[global.current_gun]
+		is_reloading = false
+		update_ammo_label()
+
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:

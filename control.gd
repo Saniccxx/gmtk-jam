@@ -8,15 +8,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("scroll_down"):
 		if global.current_gun > 0:
 			global.current_gun -= 1
 			$Gun_img.update_img()
+			global.gun_changed.emit()
 	if Input.is_action_just_pressed("scroll_up"):
 		if global.current_gun < global.best_owned_gun:
 			global.current_gun += 1
 			$Gun_img.update_img()
+			global.gun_changed.emit()
 		
 		
 
