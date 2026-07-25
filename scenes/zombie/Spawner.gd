@@ -23,7 +23,7 @@ func _ready() -> void:
 func _on_spawn_timer_timeout() -> void:
 	spawn_enemy_outside()
 	spawn_timer.wait_time = max(spawn_caps[global.current_difficulty], spawn_timer.wait_time - decrement_times[global.current_difficulty])
-	print("New spawn time: ", spawn_timer.wait_time)
+#	print("New spawn time: ", spawn_timer.wait_time)
 
 #func spawn_enemy() -> void:
 #	var enemy: Node2D = enemy_scene.instantiate()

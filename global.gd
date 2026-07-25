@@ -42,8 +42,13 @@ class Weapon:
 	var pierce: int
 	var recoil: Array
 	var ammo: int
+	var zombie_ammo: int
+	var reload_time: float
 
-	func _init(_name: String, _cost: int, _img_path: String, _bullets_per_shot: int, _fire_delay: float, _is_auto: bool, _recoil: Array, _ammo: int,  _spread_angle: float = 0.0, _pierce: int = 0) -> void:
+	func _init(_name: String, _cost: int, _img_path: String, 
+	_bullets_per_shot: int, _fire_delay: float, _is_auto: bool,
+	_recoil: Array, _ammo: int, _zombie_ammo: int, _reload_time: float, 
+	_spread_angle: float = 0.0, _pierce: int = 0) -> void:
 		name = _name
 		cost = _cost
 		img_path = _img_path
@@ -54,3 +59,5 @@ class Weapon:
 		pierce = _pierce
 		recoil = _recoil
 		ammo = _ammo
+		zombie_ammo = _zombie_ammo
+		reload_time = _reload_time
