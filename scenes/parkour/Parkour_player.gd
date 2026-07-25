@@ -87,8 +87,8 @@ func _physics_process(delta: float) -> void:
 			sprite.flip_h = 1
 		else:
 			sprite.flip_h = 0
-		if sprite.animation != "run":
-			sprite.animation = "run"
+		if sprite.animation != "run_no_hands":
+			sprite.animation = "run_no_hands"
 			sprite.play()
 	else:
 		sprite.rotation = 0
