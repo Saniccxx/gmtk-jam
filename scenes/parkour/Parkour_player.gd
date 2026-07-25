@@ -38,13 +38,13 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("click"):
 			if can_shoot:
 				var mouse_direction = (get_global_mouse_position() - global_position).normalized()
-				velocity -= mouse_direction * global.weapons[global.current_gun].recoil*40
+				velocity -= mouse_direction * global.weapons[global.current_gun].recoil[0]*40
 				shoot()
 	else:
 		if Input.is_action_just_pressed("click"):
 			if can_shoot:
 				var mouse_direction = (get_global_mouse_position() - global_position).normalized()
-				velocity -= mouse_direction * global.weapons[global.current_gun].recoil*40
+				velocity -= mouse_direction * global.weapons[global.current_gun].recoil[0]*40
 				shoot()
 			
 

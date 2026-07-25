@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://cddr6nhm40aws" path="res://scenes/parkour/fps_label.gd" id="2_ghnu6"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
-[ext_resource type="Shader" uid="uid://cmp65foe6ymh0" path="res://scenes/parkour/background.gdshader" id="5_3qyxb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
 [ext_resource type="AudioStream" uid="uid://d12rwnkso5d18" path="res://scenes/parkour/assets/pek.wav" id="8_tucp6"]
@@ -28,9 +27,6 @@ size = Vector2(64, 63.999996)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 72
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qyxb"]
-shader = ExtResource("5_3qyxb")
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
@@ -75,12 +71,12 @@ script = ExtResource("4_1yfpb")
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1665855742]
-material = SubResource("ShaderMaterial_3qyxb")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_ghnu6")]
 
