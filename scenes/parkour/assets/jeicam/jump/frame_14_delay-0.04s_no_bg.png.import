@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://23bq1hco25qo"
-path="res://.godot/imported/MyAnimation0005.png-1f9f12db43fdc3e56544953feb0e5da5.ctex"
+uid="uid://bax2ule3mf2fh"
+path="res://.godot/imported/frame_14_delay-0.04s_no_bg.png-d126150ac3d29b691da4a4d1280cc114.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0005.png"
-dest_files=["res://.godot/imported/MyAnimation0005.png-1f9f12db43fdc3e56544953feb0e5da5.ctex"]
+source_file="res://scenes/parkour/assets/jeicam/jump/frame_14_delay-0.04s_no_bg.png"
+dest_files=["res://.godot/imported/frame_14_delay-0.04s_no_bg.png-d126150ac3d29b691da4a4d1280cc114.ctex"]
 
 [params]
 
