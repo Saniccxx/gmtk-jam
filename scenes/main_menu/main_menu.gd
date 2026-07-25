@@ -1,7 +1,7 @@
 extends Control
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/map/map_display.tscn")
+	get_tree().change_scene_to_file("res://scenes/mom/dialog_display.tscn")
 	TimerGlobal.start()
 
 func _on_quit_pressed() -> void:
