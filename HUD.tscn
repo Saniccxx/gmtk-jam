@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://8sfga1gvcq42" path="res://money_label.gd" id="1_efote"]
 [ext_resource type="Script" uid="uid://bddjkplq42qq0" path="res://control.gd" id="1_ne771"]
 [ext_resource type="Script" uid="uid://5giq0x8mlln2" path="res://gun_img.gd" id="2_ne771"]
-[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="2_vow1y"]
 [ext_resource type="Script" uid="uid://2nxia70ow3k7" path="res://timer_label.gd" id="5_xxqia"]
 
 [node name="Hud" type="Control" unique_id=923602173]
@@ -53,13 +52,6 @@ grow_vertical = 0
 expand_mode = 1
 script = ExtResource("2_ne771")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control" unique_id=595914550]
-layout_mode = 1
-offset_right = 108.0
-offset_bottom = 100.0
-theme_override_constants/icon_max_width = 100
-icon = ExtResource("2_vow1y")
-
 [node name="Timer_label" type="Label" parent="CanvasLayer/Control" unique_id=409893588]
 layout_mode = 1
 anchors_preset = 7
@@ -75,5 +67,3 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 script = ExtResource("5_xxqia")
-
-[connection signal="pressed" from="CanvasLayer/Control/Button" to="CanvasLayer/Control" method="_on_button_pressed"]
