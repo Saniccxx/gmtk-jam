@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c0vbl2xhdxfo4" path="res://scenes/shop/shop_display.gd" id="1_ocb2d"]
 [ext_resource type="PackedScene" uid="uid://c74nq13xm42ne" path="res://scenes/shop/shop_item.tscn" id="2_7m8lc"]
-[ext_resource type="Texture2D" uid="uid://cawjavfl5se4w" path="res://assets/uzi.png" id="3_6xwx5"]
-[ext_resource type="Texture2D" uid="uid://dr8ri2rvd1du8" path="res://assets/machinegun.jpg" id="4_cjj6y"]
-[ext_resource type="Texture2D" uid="uid://blyrd82jefvk6" path="res://assets/shotgun.jpg" id="4_i06sb"]
+[ext_resource type="Texture2D" uid="uid://4btxq20urm20" path="res://assets/pistoleciki/Uzi.png" id="3_i06sb"]
+[ext_resource type="Texture2D" uid="uid://bj3bx3362dpll" path="res://assets/pistoleciki/Shotgun.png" id="4_mbg4h"]
+[ext_resource type="Texture2D" uid="uid://b4xov0tv2ts1e" path="res://assets/pistoleciki/Machinegun.png" id="5_rvypb"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_i06sb"]
+[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="7_mbg4h"]
 
 [node name="ShopDisplay" type="Control" unique_id=1154627393]
 layout_mode = 3
@@ -36,17 +37,24 @@ alignment = 1
 [node name="ShopItem" parent="MarginContainer/HBoxContainer2" unique_id=1310639877 instance=ExtResource("2_7m8lc")]
 layout_mode = 2
 item_num = "1"
-item_icon = ExtResource("3_6xwx5")
+item_icon = ExtResource("3_i06sb")
 
 [node name="ShopItem2" parent="MarginContainer/HBoxContainer2" unique_id=998647294 instance=ExtResource("2_7m8lc")]
 layout_mode = 2
 item_num = "2"
-item_icon = ExtResource("4_i06sb")
+item_icon = ExtResource("4_mbg4h")
 
 [node name="ShopItem3" parent="MarginContainer/HBoxContainer2" unique_id=1716545205 instance=ExtResource("2_7m8lc")]
 layout_mode = 2
 item_num = "3"
-item_icon = ExtResource("4_cjj6y")
+item_icon = ExtResource("5_rvypb")
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_i06sb")]
 layout_mode = 1
+
+[node name="Button" type="Button" parent="." unique_id=2057204224]
+layout_mode = 1
+offset_right = 80.0
+offset_bottom = 80.0
+icon = ExtResource("7_mbg4h")
+expand_icon = true

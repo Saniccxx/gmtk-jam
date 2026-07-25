@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bp6el8omfysbf"]
 
-[ext_resource type="Texture2D" uid="uid://cawjavfl5se4w" path="res://assets/uzi.png" id="1_rxkpn"]
+[ext_resource type="Texture2D" uid="uid://4btxq20urm20" path="res://assets/pistoleciki/Uzi.png" id="1_rxkpn"]
 
 [node name="Gun1" type="Control" unique_id=1751137341]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 3
+anchors_preset = 0
 offset_right = 290.0
 offset_bottom = 342.0
 grow_horizontal = 2

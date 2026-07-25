@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppdlychx5e0s"
-path="res://.godot/imported/Untitled-21.png-a6174ecad3f099f19c03dfc92121270c.ctex"
+uid="uid://4btxq20urm20"
+path="res://.godot/imported/Uzi.png-0828e49e3f589c1c842a9b819dc6c510.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Untitled-21.png"
-dest_files=["res://.godot/imported/Untitled-21.png-a6174ecad3f099f19c03dfc92121270c.ctex"]
+source_file="res://assets/pistoleciki/Uzi.png"
+dest_files=["res://.godot/imported/Uzi.png-0828e49e3f589c1c842a9b819dc6c510.ctex"]
 
 [params]
 
