@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://5hh7a5avm3w2" path="res://assets/around.mp3" id="5_fblyp"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_0u8bq"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="7_s0wpy"]
+[ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="7_sa2u6"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="8_xyjib"]
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="9_sa2u6"]
 
@@ -341,17 +342,17 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jei5n"]
-font_size = 65
+font_size = 100
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s0wpy"]
-font_size = 80
+font_size = 100
+font_color = Color(0, 0, 0, 1)
 
-[node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label", "ammo_label", "reloading_label")]
+[node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label")]
 script = ExtResource("1_4oaqw")
 time_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Time")
 health_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Health")
-ammo_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Ammo")
-reloading_label = NodePath("CanvasLayer/Reloading")
 
 [node name="Timer" type="Timer" parent="." unique_id=1978488999]
 wait_time = 60.0
@@ -391,19 +392,21 @@ bus = &"Music"
 z_index = 5
 
 [node name="Reloading" type="Label" parent="CanvasLayer" unique_id=1643572827]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -437.0
+offset_left = -409.0
 offset_top = -112.0
-offset_right = -213.0
+offset_right = -185.0
 offset_bottom = -57.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("7_sa2u6")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 55
 text = "Reloading..."
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1512516668]
@@ -414,6 +417,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = ExtResource("7_sa2u6")
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 30
@@ -441,9 +445,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 1.0
-offset_top = 100.0
+offset_top = 36.0
 offset_right = 2.0
-offset_bottom = 210.0
+offset_bottom = 146.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 label_settings = SubResource("LabelSettings_s0wpy")
@@ -457,13 +461,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -240.0
-offset_top = -139.0
+offset_top = -160.0
 offset_right = -200.0
-offset_bottom = -43.0
+offset_bottom = -64.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 95
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=1668744476]
 layer = -100

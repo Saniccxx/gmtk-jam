@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8sfga1gvcq42" path="res://money_label.gd" id="1_efote"]
 [ext_resource type="Script" uid="uid://bddjkplq42qq0" path="res://control.gd" id="1_ne771"]
+[ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="2_gv1iq"]
 [ext_resource type="Script" uid="uid://5giq0x8mlln2" path="res://gun_img.gd" id="2_ne771"]
 [ext_resource type="Script" uid="uid://2nxia70ow3k7" path="res://timer_label.gd" id="5_xxqia"]
 
@@ -34,6 +35,7 @@ anchor_right = 1.0
 offset_left = -298.0
 offset_bottom = 125.0
 grow_horizontal = 0
+theme = ExtResource("2_gv1iq")
 theme_override_font_sizes/font_size = 100
 script = ExtResource("1_efote")
 

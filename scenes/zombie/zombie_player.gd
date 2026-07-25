@@ -7,8 +7,6 @@ extends CharacterBody2D
 #@export var ammo_label: Label
 signal update_labels
 
-#@onready var ammo_label: Label = get_parent().get_node("CanvasLayer/ZombieHUD/Ammo")
-@onready var reloading_label: Label = get_parent().get_node("CanvasLayer/Reloading")
 var can_shoot: bool = true
 var ammunition: Array[int] = []
 var current_ammo: Array[int] = []
@@ -23,7 +21,7 @@ func _ready() -> void:
 	for i in range(global.weapons.size()):
 		ammunition.append(global.weapons[i].zombie_ammo)
 		current_ammo.append(global.weapons[i].zombie_ammo)
-	update_ammo_label()
+	update_labels.emit.call_deferred()
 
 func _on_gun_changed():
 	is_reloading = false
