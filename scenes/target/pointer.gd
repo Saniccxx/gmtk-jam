@@ -1,6 +1,7 @@
 extends Area2D
 signal damage()
 signal update_labels()
+signal hitmark(position)
 const SPEED = 400.0
 var can_shoot:bool = true
 var aimed_targets = []
@@ -38,6 +39,7 @@ func shoot():
 		return
 	current_ammo[global.current_gun] -= 1
 	update_labels.emit()
+	hitmark.emit(position)
 	due_recoil += recoil_values[global.current_gun]
 	var suma = 0
 	ShootingSound.play()
@@ -123,7 +125,8 @@ func get_shotgun_spread(radius: float) -> Vector2:
 func shotgun_shoot(target):
 	var suma = 0
 	for bullet in range(global.weapons[2].bullets_per_shot):
-		var bullet_pos = global_position + get_shotgun_spread(16)
+		var bullet_pos = global_position + get_shotgun_spread(25)
+		hitmark.emit(bullet_pos)
 		var distance = bullet_pos.distance_to(target.global_position)
 		if distance < 30:
 			suma += 3

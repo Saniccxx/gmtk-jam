@@ -13,6 +13,9 @@
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="10_xkw8o"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="11_qnf4o"]
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="12_xkw8o"]
+[ext_resource type="PackedScene" uid="uid://c0ommrxrm0i5l" path="res://scenes/target/hitmark.tscn" id="14_xehft"]
+[ext_resource type="Texture2D" uid="uid://bppdlychx5e0s" path="res://scenes/target/assets/Hit_marker.png" id="14_xuo1e"]
+[ext_resource type="Script" uid="uid://bs1ym2il7762l" path="res://scenes/target/hitmark.gd" id="15_tibn5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
@@ -53,6 +56,7 @@ animations = [{
 
 [node name="TargetDisplay" type="Node2D" unique_id=671150416]
 script = ExtResource("1_8sajy")
+hitmarker = ExtResource("14_xehft")
 
 [node name="All_targets" type="Node2D" parent="." unique_id=795459499]
 position = Vector2(917.99994, 401.99997)
@@ -171,6 +175,26 @@ bus = &"SFX"
 stream = ExtResource("12_xkw8o")
 bus = &"SFX"
 
+[node name="Hitmarkers" type="Control" parent="." unique_id=1235116545]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hitmark" type="TextureRect" parent="Hitmarkers" unique_id=670195469]
+layout_mode = 0
+offset_left = 783.0
+offset_top = 390.0
+offset_right = 806.0
+offset_bottom = 412.0
+texture = ExtResource("14_xuo1e")
+expand_mode = 1
+script = ExtResource("15_tibn5")
+
+[node name="Timer" type="Timer" parent="Hitmarkers/Hitmark" unique_id=1444328676]
+wait_time = 0.5
+
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]
 [connection signal="area_exited" from="Pointer" to="Pointer" method="_on_area_exited"]
+[connection signal="timeout" from="Hitmarkers/Hitmark/Timer" to="Hitmarkers/Hitmark" method="_on_timer_timeout"]
