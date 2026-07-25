@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c0ommrxrm0i5l"]
+
+[ext_resource type="Texture2D" uid="uid://bppdlychx5e0s" path="res://scenes/target/assets/Hit_marker.png" id="1_p2mm7"]
+[ext_resource type="Script" uid="uid://bs1ym2il7762l" path="res://scenes/target/hitmark.gd" id="2_ux2eh"]
+
+[node name="Hitmark" type="TextureRect" unique_id=1646549151]
+offset_left = 783.0
+offset_top = 390.0
+offset_right = 806.0
+offset_bottom = 412.0
+texture = ExtResource("1_p2mm7")
+expand_mode = 1
+script = ExtResource("2_ux2eh")
+
+[node name="Timer" type="Timer" parent="." unique_id=162690939]
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
