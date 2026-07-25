@@ -481,8 +481,11 @@ color = Color(0, 0, 0, 1)
 
 [node name="Grey" type="ColorRect" parent="Background" unique_id=682124210]
 z_index = -100
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
 [node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("7_s0wpy")]
