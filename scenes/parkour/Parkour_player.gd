@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 			
 
 	var direction := Input.get_axis("move_left", "move_right")
-
+	var floor_normal = get_floor_normal()
 	if is_on_floor():
 		if sliding:
 			direction = 0
@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 			
 			
 			#wierd thingies which calculate vector of player sliding down
-			var floor_normal = get_floor_normal()
+
 			var slope_tangent = Vector2(floor_normal.y, -floor_normal.x)
 			
 			print(slope_tangent)
@@ -66,13 +66,15 @@ func _physics_process(delta: float) -> void:
 			
 			velocity += downhill * delta * MASS
 			
-			sprite.rotation = floor_normal.angle() + PI / 2
 		else:
 			velocity.x -= GROUND_FRICTION * velocity.x * delta
 			velocity.x += GROUND_ACCEL * direction * SPEED * delta
 	else:
 		velocity.x -= AIR_FRICTION * velocity.x * delta
 		velocity.x += AIR_ACCEL * direction * SPEED * delta
+		
+	if is_on_floor():
+		sprite.rotation = floor_normal.angle() + PI / 2
 
 	if sliding and is_on_floor():
 		if sprite.animation != "slide":
@@ -80,9 +82,9 @@ func _physics_process(delta: float) -> void:
 			sprite.stop() # no animation
 	elif abs(velocity.x) > 10:
 		if direction == -1:
-			sprite.rotation = 3
+			sprite.flip_h = 1
 		else:
-			sprite.rotation = 0
+			sprite.flip_h = 0
 		if sprite.animation != "run":
 			sprite.animation = "run"
 			sprite.play()
