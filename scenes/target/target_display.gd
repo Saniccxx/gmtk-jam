@@ -6,6 +6,8 @@ func _ready() -> void:
 	$Pointer.damage.connect(_remove_heart)
 	$Pointer.update_labels.connect(update_labels)
 	$Pointer.hitmark.connect(place_hitmark)
+	$Hud/CanvasLayer2/Ammo.text = str($Pointer.current_ammo[global.current_gun]) + " / " + str($Pointer.max_ammo[global.current_gun])
+
 
 func update_labels() -> void:
 	$Hud/CanvasLayer2/Ammo.text = str($Pointer.current_ammo[global.current_gun]) + " / " + str($Pointer.max_ammo[global.current_gun])
