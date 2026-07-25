@@ -14,6 +14,9 @@ const AIR_ROTATION_SPEED = 10.0
 
 
 var can_shoot = true
+
+var jumping = false
+
 func shoot() -> void:
 	can_shoot = false
 	await get_tree().create_timer(global.weapons[global.current_gun].fire_delay).timeout
@@ -25,14 +28,7 @@ func _physics_process(delta: float) -> void:
 
 	var sliding := Input.is_action_pressed("slide")
 
-	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# walljump
-	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():
-		var wall_normal = get_wall_normal()
-		velocity.x = wall_normal.x * SPEED * 2
-		velocity.y = JUMP_VELOCITY - SPEED
 
 	# recoil
 	if global.weapons[global.current_gun].is_auto:
@@ -76,12 +72,29 @@ func _physics_process(delta: float) -> void:
 		
 	if is_on_floor():
 		sprite.rotation = floor_normal.angle() + PI / 2
+		jumping = false
 	else:
 		sprite.rotation = lerp_angle(sprite.rotation, 0.0, delta * AIR_ROTATION_SPEED)
-	if sliding and is_on_floor():
+	
+	if Input.is_action_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		jumping = true
+
+	# walljump
+	if Input.is_action_pressed("jump") and is_on_wall() and not is_on_floor():
+		var wall_normal = get_wall_normal()
+		velocity.x = wall_normal.x * SPEED * 2
+		velocity.y = JUMP_VELOCITY - SPEED
+		jumping = true
+	
+	if jumping:
+		if sprite.animation != "jump":
+			sprite.animation = "jump"
+			sprite.play()
+	elif sliding and is_on_floor():
 		if sprite.animation != "slide":
 			sprite.animation = "slide"
-			sprite.stop() # no animation
+			sprite.play()
 	elif abs(velocity.x) > 10:
 		if direction == -1:
 			sprite.flip_h = 1
@@ -96,5 +109,6 @@ func _physics_process(delta: float) -> void:
 			sprite.animation = "default"
 			sprite.play()
 
+	print(jumping)
 
 	move_and_slide()
