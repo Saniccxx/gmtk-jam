@@ -10,6 +10,30 @@
 [ext_resource type="Texture2D" uid="uid://cj5n0qhj0j4u8" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0007.png" id="7_73afq"]
 [ext_resource type="Texture2D" uid="uid://chsj80c6r7bi6" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0008.png" id="8_ny5yb"]
 [ext_resource type="Texture2D" uid="uid://c4mk303s2a0mf" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0009.png" id="9_68ekg"]
+[ext_resource type="Texture2D" uid="uid://dap740d8lx4ul" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0001.png" id="34_0gyg1"]
+[ext_resource type="Texture2D" uid="uid://ctv55043vsfif" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0002.png" id="35_ewisr"]
+[ext_resource type="Texture2D" uid="uid://bl4pw3wp2ynui" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0003.png" id="36_vx0sm"]
+[ext_resource type="Texture2D" uid="uid://bjsbfl15sp0ki" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0004.png" id="37_tc6st"]
+[ext_resource type="Texture2D" uid="uid://dkr5dhm4cgn5f" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0005 - Copy - Copy.png" id="38_03bmp"]
+[ext_resource type="Texture2D" uid="uid://d11onphy4vmsm" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0006 - Copy - Copy.png" id="39_p58uf"]
+[ext_resource type="Texture2D" uid="uid://bnqt1xiyvank3" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0007.png" id="40_nm0ax"]
+[ext_resource type="Texture2D" uid="uid://c768om4fcfhvb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0008.png" id="41_tpy4t"]
+[ext_resource type="Texture2D" uid="uid://cxmmw5t02vqpb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0009.png" id="42_1nq5c"]
+[ext_resource type="Texture2D" uid="uid://caps2h30srrrd" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0010.png" id="43_thn2h"]
+[ext_resource type="Texture2D" uid="uid://chm5c01pdcegs" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0011.png" id="44_vaqgf"]
+[ext_resource type="Texture2D" uid="uid://ds7jpj41pypoh" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0012.png" id="45_pcxde"]
+[ext_resource type="Texture2D" uid="uid://b5seb6yu4xmlj" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0013.png" id="46_lxchy"]
+[ext_resource type="Texture2D" uid="uid://cww6kr5neegxx" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0014.png" id="47_yen6e"]
+[ext_resource type="Texture2D" uid="uid://c3orrku38lutr" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0015.png" id="48_45ohx"]
+[ext_resource type="Texture2D" uid="uid://lgmakwnk7x01" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0016.png" id="49_askar"]
+[ext_resource type="Texture2D" uid="uid://ok4iol06dosg" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0017.png" id="50_y12kd"]
+[ext_resource type="Texture2D" uid="uid://dnssoroq08you" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0018.png" id="51_8xamn"]
+[ext_resource type="Texture2D" uid="uid://m0w1hd46detm" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0019.png" id="52_63p4w"]
+[ext_resource type="Texture2D" uid="uid://csy3omqf7yva7" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0020.png" id="53_taer4"]
+[ext_resource type="Texture2D" uid="uid://dhcfylbnjmi6x" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0021.png" id="54_mxwt6"]
+[ext_resource type="Texture2D" uid="uid://c2f17jvscrl5q" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0022.png" id="55_7y88x"]
+[ext_resource type="Texture2D" uid="uid://c8wi2dw8r36r" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0023.png" id="56_v6w42"]
+[ext_resource type="Texture2D" uid="uid://cq28e4pmootq2" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0024.png" id="57_nif7g"]
 [ext_resource type="Texture2D" uid="uid://c24vb8glw2xhy" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20001.png" id="301_47jjt"]
 [ext_resource type="Texture2D" uid="uid://4x3k50ewq2h7" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20002.png" id="302_nasi8"]
 [ext_resource type="Texture2D" uid="uid://nm7cmvdvmn1h" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20003.png" id="303_6st4e"]
@@ -148,10 +172,82 @@ animations = [{
 "name": &"run",
 "speed": 25.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_0gyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ewisr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vx0sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_tc6st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_03bmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_p58uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_nm0ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_tpy4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1nq5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_thn2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_vaqgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_pcxde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lxchy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_yen6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_45ohx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_askar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_y12kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_8xamn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_63p4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_taer4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_mxwt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_7y88x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_v6w42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_nif7g")
+}],
 "loop": 1,
 "name": &"run_no_hands",
-"speed": 5.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -176,6 +272,7 @@ script = ExtResource("1_i3pqv")
 position = Vector2(-2, -152)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fb6tf")
+animation = &"run_no_hands"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75747721]
