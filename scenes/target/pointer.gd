@@ -26,10 +26,8 @@ func _ready() -> void:
 func _on_gun_changed():
 	is_reloading = false
 	ReloadSound.stop()
-	update_ammo_label()
-	
-func update_ammo_label():
 	update_labels.emit()
+	
 
 func shoot():
 	if is_reloading:
@@ -39,7 +37,7 @@ func shoot():
 		can_shoot = true
 		return
 	current_ammo[global.current_gun] -= 1
-	update_ammo_label()
+	update_labels.emit()
 	due_recoil += recoil_values[global.current_gun]
 	var suma = 0
 	ShootingSound.play()
@@ -69,14 +67,14 @@ func reload():
 		return
 	
 	is_reloading = true
-	update_ammo_label()
+	update_labels.emit()
 	ReloadSound.play()
 	await get_tree().create_timer(global.weapons[global.current_gun].reload_time).timeout
 	
 	if is_reloading:
 		current_ammo[global.current_gun] = max_ammo[global.current_gun]
 		is_reloading = false
-		update_ammo_label()
+		update_labels.emit()
 
 func shoot_timer():
 	can_shoot = false
@@ -94,6 +92,8 @@ func _physics_process(delta: float) -> void:
 	var velocity = input_vector * SPEED
 	if Input.is_action_pressed("right_click"):
 		velocity *= 2
+	if Input.is_action_just_pressed("reload") and current_ammo[global.current_gun] < max_ammo[global.current_gun]:
+		reload()
 	position += velocity * delta
 	position[1] -= due_recoil * recoil_catchup_speed
 	due_recoil -= due_recoil * recoil_catchup_speed
