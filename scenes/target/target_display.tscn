@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="7_aj51f"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="7_umlhu"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="10_umlhu"]
+[ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="10_xkw8o"]
+[ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="11_qnf4o"]
+[ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="12_xkw8o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
@@ -66,9 +69,11 @@ target_scene = ExtResource("4_irbp4")
 [node name="Timer" type="Timer" parent="spawner" unique_id=969353720]
 autostart = true
 
-[node name="Pointer" parent="." unique_id=1731537083 instance=ExtResource("1_irbp4")]
+[node name="Pointer" parent="." unique_id=1731537083 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("1_irbp4")]
 position = Vector2(917.99994, 401.99997)
 script = ExtResource("4_xe5lj")
+ShootingSound = NodePath("../SFX/ShootingSound")
+ReloadSound = NodePath("../SFX/ReloadSound")
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("3_3s77m")]
 
@@ -119,7 +124,52 @@ sprite_frames = SubResource("SpriteFrames_cvx70")
 animation = &"Live"
 autoplay = "Live"
 
+[node name="Reloading" type="Label" parent="Hud/CanvasLayer2" unique_id=1512131868]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -409.0
+offset_top = -112.0
+offset_right = -185.0
+offset_bottom = -57.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("10_xkw8o")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 55
+text = "Reloading..."
+
+[node name="Ammo" type="Label" parent="Hud/CanvasLayer2" unique_id=229606431]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -160.0
+offset_right = -200.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 95
+text = "amamamo"
+
 [node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("10_umlhu")]
+visible = false
+
+[node name="SFX" type="Node" parent="." unique_id=1052703644]
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="SFX" unique_id=1756319239]
+stream = ExtResource("11_qnf4o")
+bus = &"SFX"
+
+[node name="ReloadSound" type="AudioStreamPlayer" parent="SFX" unique_id=1946381666]
+stream = ExtResource("12_xkw8o")
+bus = &"SFX"
 
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]
