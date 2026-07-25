@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://0s07bscxmkxq"]
+
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="1_w4qjy"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_w4qjy")
