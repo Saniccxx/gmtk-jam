@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://xbha7w6r17ob"]
 
 [ext_resource type="Script" uid="uid://c0m6y0krgkfx2" path="res://scenes/zombie/Bullet.gd" id="1_78q3o"]
-[ext_resource type="Texture2D" uid="uid://r6l5pcb7eg4i" path="res://assets/Bullet.png" id="1_yl63v"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_cw1tn"]
-radius = 11.0
+[ext_resource type="Texture2D" uid="uid://btsi037k47bw2" path="res://assets/bullet.png" id="2_78q3o"]
 
 [node name="Bullet" type="Area2D" unique_id=411152076]
 collision_layer = 32
@@ -12,11 +9,12 @@ collision_mask = 16
 script = ExtResource("1_78q3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=581148930]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_yl63v")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_78q3o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660545731]
-shape = SubResource("CircleShape2D_cw1tn")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=39699828]
+scale = Vector2(1.505, 1.505)
+polygon = PackedVector2Array(-9, 7, 1, 7, 5, 6, 7, 4, 8, 3, 8.6747, 0, 8, -2, 6, -5, 1, -6, -3, -6, -6, -6, -9, -6)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

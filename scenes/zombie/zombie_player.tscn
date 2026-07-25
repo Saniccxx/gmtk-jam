@@ -2,17 +2,145 @@
 
 [ext_resource type="Texture2D" uid="uid://bxk67ypqx246e" path="res://assets/player_zombie.png" id="1_uouef"]
 [ext_resource type="Script" uid="uid://ncqah7086r3d" path="res://scenes/zombie/zombie_player.gd" id="1_vmcvx"]
+[ext_resource type="Texture2D" uid="uid://pdwscy30mdna" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0001.png" id="3_2srlj"]
+[ext_resource type="Texture2D" uid="uid://b65eebh6rhrmo" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0002.png" id="4_t3icn"]
+[ext_resource type="Texture2D" uid="uid://pkvx35hqd3mb" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0003.png" id="5_hqcjw"]
+[ext_resource type="Texture2D" uid="uid://buq6dnwq737ht" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0004.png" id="6_i3m8o"]
+[ext_resource type="Texture2D" uid="uid://bqjg2cjsv37lc" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0006.png" id="7_6psjs"]
+[ext_resource type="Texture2D" uid="uid://cj5n0qhj0j4u8" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0007.png" id="8_nqdll"]
+[ext_resource type="Texture2D" uid="uid://chsj80c6r7bi6" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0008.png" id="9_ffgsn"]
+[ext_resource type="Texture2D" uid="uid://c4mk303s2a0mf" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0009.png" id="10_gpt8v"]
+[ext_resource type="Texture2D" uid="uid://bnqt1xiyvank3" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0007.png" id="11_aepys"]
+[ext_resource type="Texture2D" uid="uid://c768om4fcfhvb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0008.png" id="12_j07u8"]
+[ext_resource type="Texture2D" uid="uid://cxmmw5t02vqpb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0009.png" id="13_g85r7"]
+[ext_resource type="Texture2D" uid="uid://caps2h30srrrd" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0010.png" id="14_t2nme"]
+[ext_resource type="Texture2D" uid="uid://chm5c01pdcegs" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0011.png" id="15_0w78r"]
+[ext_resource type="Texture2D" uid="uid://ds7jpj41pypoh" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0012.png" id="16_qhwe2"]
+[ext_resource type="Texture2D" uid="uid://b5seb6yu4xmlj" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0013.png" id="17_bigox"]
+[ext_resource type="Texture2D" uid="uid://cww6kr5neegxx" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0014.png" id="18_irca2"]
+[ext_resource type="Texture2D" uid="uid://c3orrku38lutr" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0015.png" id="19_exo70"]
+[ext_resource type="Texture2D" uid="uid://lgmakwnk7x01" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0016.png" id="20_yuht1"]
+[ext_resource type="Texture2D" uid="uid://ok4iol06dosg" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0017.png" id="21_vi03s"]
+[ext_resource type="Texture2D" uid="uid://dnssoroq08you" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0018.png" id="22_i8tt4"]
+[ext_resource type="Texture2D" uid="uid://m0w1hd46detm" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0019.png" id="23_r2m2k"]
+[ext_resource type="Texture2D" uid="uid://csy3omqf7yva7" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0020.png" id="24_40ilj"]
+[ext_resource type="Texture2D" uid="uid://dhcfylbnjmi6x" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0021.png" id="25_2sdb3"]
+[ext_resource type="Texture2D" uid="uid://c2f17jvscrl5q" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0022.png" id="26_o7vsi"]
+[ext_resource type="Texture2D" uid="uid://c8wi2dw8r36r" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0023.png" id="27_cqxxm"]
+[ext_resource type="Texture2D" uid="uid://cq28e4pmootq2" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0024.png" id="28_bc55f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jei5n"]
-size = Vector2(102, 98)
+size = Vector2(70, 141)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jei5n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2srlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t3icn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hqcjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i3m8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6psjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nqdll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ffgsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gpt8v")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_aepys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j07u8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g85r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t2nme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0w78r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qhwe2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bigox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_irca2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_exo70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yuht1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vi03s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_i8tt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_r2m2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_40ilj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2sdb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_o7vsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_cqxxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bc55f")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 25.0
+}]
 
 [node name="ZombiePlayer" type="CharacterBody2D" unique_id=937063102]
 collision_layer = 2
 script = ExtResource("1_vmcvx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1828650098]
+position = Vector2(-9, -17)
+scale = Vector2(1.11, 1.11)
 shape = SubResource("RectangleShape2D_jei5n")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=235425663]
+visible = false
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_uouef")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=59451213]
+position = Vector2(-6, -48)
+scale = Vector2(0.745, 0.745)
+sprite_frames = SubResource("SpriteFrames_jei5n")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.5108918

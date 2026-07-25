@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
 @export var speed: float = 400.0
-@export var health: int = 1000
+@export var health: int = 100
 @export var ShootingSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
-#@export var ammo_label: Label
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+var can_take_damage: bool = true
+@export var invulnerability_time: float = 0.7
+
 signal update_labels
 
 var can_shoot: bool = true
@@ -30,15 +34,34 @@ func _on_gun_changed():
 func update_ammo_label():
 	update_labels.emit()
 
+func play_animation(anim_name: String, flipped_h: bool = false) -> void:
+	match anim_name:
+		"idle":
+			animated_sprite.position = Vector2(-6, -53)
+			animated_sprite.scale = Vector2(0.725, 0.725)
+		"run":
+			animated_sprite.position = Vector2(-40 if not flipped_h else 20, -98)
+			animated_sprite.scale = Vector2(1.035, 1.035)
+	
+	animated_sprite.play(anim_name)
+
+func update_animation(dir: Vector2) -> void:
+	if dir != Vector2.ZERO:
+		play_animation("run", dir.x < 0)
+	else:
+		play_animation("idle", dir.x < 0)
+		
+	if dir.x < 0:
+		animated_sprite.flip_h = true
+	elif dir.x > 0:
+		animated_sprite.flip_h = false
+
 func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_vector * speed
 	move_and_slide()
 	
-	if input_vector.x < 0:
-		$Sprite2D.flip_h = true
-	elif input_vector.x > 0:
-		$Sprite2D.flip_h = false
+	update_animation(input_vector)
 	
 	var viewport_size: Vector2 = get_viewport_rect().size
 	var padding: float = 3.0
@@ -114,7 +137,14 @@ func reload() -> void:
 		update_ammo_label()
 
 func take_damage(amount: int) -> void:
+	if not can_take_damage:
+		return
+	animated_sprite.modulate.a = 0.5
+	can_take_damage = false
 	health -= amount
 	if health <= 0:
 		global.load_death_screen()
 		queue_free()
+	await get_tree().create_timer(invulnerability_time).timeout
+	can_take_damage = true
+	animated_sprite.modulate.a = 1.0

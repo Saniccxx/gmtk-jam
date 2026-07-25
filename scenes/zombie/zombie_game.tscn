@@ -382,7 +382,7 @@ autostart = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=32806517]
 stream = ExtResource("5_fblyp")
-volume_db = -10.0
+volume_db = -25.0
 autoplay = true
 bus = &"Music"
 
