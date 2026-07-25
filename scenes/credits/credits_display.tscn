@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://d36fwg8wqlm8h" path="res://scenes/credits/marker_2d.gd" id="3_l7xhn"]
 [ext_resource type="Texture2D" uid="uid://cqbby2k2mt3xs" path="res://assets/jeff.png" id="4_453ot"]
 [ext_resource type="Texture2D" uid="uid://bwpo3trhftwrp" path="res://scenes/credits/profilowe/96191787.png" id="5_c3trd"]
-[ext_resource type="Texture2D" uid="uid://7y1eax1e7qp" path="res://scenes/credits/hqdefault.jpg" id="5_l7xhn"]
-[ext_resource type="Texture2D" uid="uid://ca14ysmu3tqrx" path="res://scenes/credits/profilowe/DSC_9480b.png" id="6_rh3k1"]
+[ext_resource type="Texture2D" uid="uid://7y1eax1e7qp" path="res://scenes/credits/profilowe/hqdefault.jpg" id="5_l7xhn"]
+[ext_resource type="Texture2D" uid="uid://cis87r8qf5f1f" path="res://scenes/credits/profilowe/Budda.png" id="5_uh2la"]
 
 [node name="CreditsDisplay" type="Control" unique_id=324499061]
 layout_mode = 3
@@ -17,22 +17,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_px1p6")
-
-[node name="Back" type="Button" parent="." unique_id=308794958]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -767.25
-offset_top = -56.0
-offset_right = 767.25
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_yxutx")
-theme_override_font_sizes/font_size = 23
-text = "Back"
 
 [node name="middle" type="Marker2D" parent="." unique_id=1323207239]
 position = Vector2(960, 510)
@@ -89,23 +73,24 @@ offset_top = -470.0
 offset_right = 920.0
 grow_vertical = 0
 
-[node name="Rutra" type="Label" parent="middle/Tobias" unique_id=548946501]
+[node name="Tobias" type="Label" parent="middle/Tobias" unique_id=548946501]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -720.0
+offset_left = -696.0
+offset_right = 74.0
 offset_bottom = 470.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Ruter - music, parkour, credit
-menu, credits menu, shaders,
-main menu, death menu,
-win menu, topopisy, clicker, 
-"
-label_settings = ExtResource("1_b3802")
-horizontal_alignment = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 58
+text = "TOBIAS   
+Target Practice minigame,
+Item shop,
+This credits screen, 
+Game design"
 
 [node name="TextureRect" type="TextureRect" parent="middle/Tobias" unique_id=1164875519]
 layout_mode = 1
@@ -117,7 +102,7 @@ offset_right = 200.0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("6_rh3k1")
+texture = ExtResource("5_uh2la")
 expand_mode = 5
 stretch_mode = 5
 
@@ -184,5 +169,29 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 texture = ExtResource("5_l7xhn")
 expand_mode = 1
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1254659001]
+points = PackedVector2Array(0, 510, 2000, 510)
+width = 2.0
+
+[node name="Line2D2" type="Line2D" parent="." unique_id=1978485825]
+points = PackedVector2Array(960, 0, 960, 1100)
+width = 2.0
+
+[node name="Back" type="Button" parent="." unique_id=308794958]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -767.25
+offset_top = -60.0
+offset_right = 767.25
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_yxutx")
+theme_override_font_sizes/font_size = 23
+text = "Back"
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

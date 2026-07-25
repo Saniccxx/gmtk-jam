@@ -63,7 +63,7 @@ position = Vector2(917.99994, 401.99997)
 scale = Vector2(0.1, 0.1)
 
 [node name="Target" parent="All_targets" unique_id=108669242 instance=ExtResource("4_irbp4")]
-position = Vector2(-2509.9985, -379.9995)
+position = Vector2(99999, 0)
 scale = Vector2(9.999999, 9.999999)
 
 [node name="spawner" type="Node" parent="." unique_id=1132675109]
@@ -183,10 +183,10 @@ offset_bottom = 40.0
 
 [node name="Hitmark" type="TextureRect" parent="Hitmarkers" unique_id=670195469]
 layout_mode = 0
-offset_left = 783.0
-offset_top = 390.0
-offset_right = 806.0
-offset_bottom = 412.0
+offset_left = 924.0
+offset_top = -386.0
+offset_right = 947.0
+offset_bottom = -364.0
 texture = ExtResource("14_xuo1e")
 expand_mode = 1
 script = ExtResource("15_tibn5")

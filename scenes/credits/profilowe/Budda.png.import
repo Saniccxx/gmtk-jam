@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jnv2yxaq1qh3"
-path="res://.godot/imported/target.png-52c019dda84da6fc854650719104c4ec.ctex"
+uid="uid://cis87r8qf5f1f"
+path="res://.godot/imported/Budda.png-5ba45b5564ea448cce5552ccff64e56d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/target.png"
-dest_files=["res://.godot/imported/target.png-52c019dda84da6fc854650719104c4ec.ctex"]
+source_file="res://scenes/credits/profilowe/Budda.png"
+dest_files=["res://.godot/imported/Budda.png-5ba45b5564ea448cce5552ccff64e56d.ctex"]
 
 [params]
 
