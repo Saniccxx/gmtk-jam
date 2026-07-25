@@ -17,7 +17,6 @@ var bullet_scene: PackedScene = preload("res://scenes/zombie/Bullet.tscn")
 func _ready() -> void:
 	add_to_group("player")
 	global.gun_changed.connect(_on_gun_changed)
-	global.best_owned_gun = 3 # delete this line in release
 	for i in range(global.weapons.size()):
 		ammunition.append(global.weapons[i].zombie_ammo)
 		current_ammo.append(global.weapons[i].zombie_ammo)

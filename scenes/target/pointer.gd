@@ -1,24 +1,49 @@
 extends Area2D
 signal damage()
+signal update_labels()
 const SPEED = 400.0
 var can_shoot:bool = true
 var aimed_targets = []
-var recoil_normalizer: float = 1
-var clicks = 0
 var due_recoil: float = 0
 var recoil_catchup_speed = 0.5
 var i_frames: float = 1
 var can_hurt = true
-var recoils = []
+var recoil_values = []
+var max_ammo: Array[int] = []
+var current_ammo: Array[int] = []
+var is_reloading: bool = false
+
+@export var ShootingSound: AudioStreamPlayer
+@export var ReloadSound: AudioStreamPlayer
 
 func _ready() -> void:
+	global.gun_changed.connect(_on_gun_changed)
 	for i in range(len(global.weapons)):
-		recoils.append(global.weapons[i].recoil[1])
+		recoil_values.append(global.weapons[i].recoil[1])
+		max_ammo.append(global.weapons[i].ammo)
+		current_ammo.append(global.weapons[i].ammo)
+		
+func _on_gun_changed():
+	is_reloading = false
+	ReloadSound.stop()
+	update_ammo_label()
+	
+func update_ammo_label():
+	update_labels.emit()
 
 func shoot():
-	clicks += 1
-	due_recoil += recoils[global.current_gun]
+	if is_reloading:
+		return
+	if current_ammo[global.current_gun] <= 0:
+		reload()
+		can_shoot = true
+		return
+	current_ammo[global.current_gun] -= 1
+	update_ammo_label()
+	due_recoil += recoil_values[global.current_gun]
 	var suma = 0
+	ShootingSound.play()
+
 	if len(aimed_targets) == 0:
 		if can_hurt:
 			print("life lost")
@@ -39,6 +64,20 @@ func shoot():
 	global.money += suma
 	return
 	
+func reload():
+	if is_reloading:
+		return
+	
+	is_reloading = true
+	update_ammo_label()
+	ReloadSound.play()
+	await get_tree().create_timer(global.weapons[global.current_gun].reload_time).timeout
+	
+	if is_reloading:
+		current_ammo[global.current_gun] = max_ammo[global.current_gun]
+		is_reloading = false
+		update_ammo_label()
+
 func shoot_timer():
 	can_shoot = false
 	var amount = global.weapons[global.current_gun].fire_delay
