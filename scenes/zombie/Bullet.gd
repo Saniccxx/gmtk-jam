@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var speed: float = 2000.0
-@export var damage: int = 30
+@export var damage: int = 100
 var pierce: int = 0
 
 func _ready() -> void:
