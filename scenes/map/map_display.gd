@@ -1,33 +1,69 @@
 extends Node2D
 
+@onready var map_player: CharacterBody2D = $MapPlayer
+@onready var interact_label: Label = $PromptLayer/PromptLabel
 
-# Called when the node enters the scene tree for the first time.
+var minigames := {
+	"parkour": "res://scenes/parkour/parkour_display.tscn",
+	"target": "res://scenes/target/target_display.tscn",
+	"zombie": "res://scenes/difficulty_selection/difficulty_selection.tscn"
+}
+
+var zone_display_names := {
+	"parkour": "Parkour",
+	"target": "Target Practice",
+	"zombie": "Zombie Survival"
+}
+
+
+var current_zones: Array[String] = []
+
 func _ready() -> void:
-	get_node("MapPlayer").position = global.map_pos
-	pass
+	if global.map_pos != Vector2.ZERO:
+		map_player.position = global.map_pos
 
-var minigames = [
-	"res://scenes/parkour/parkour_display.tscn",
-	"res://scenes/target/target_display.tscn",
-	"res://scenes/zombie/zombie_game.tscn"
-]
-func change_scene_random():
-	global.map_pos = get_node("MapPlayer").position
-	var random_game = minigames[randi() % minigames.size()]
-	if random_game == "res://scenes/zombie/zombie_game.tscn":
-		get_tree().change_scene_to_file("res://scenes/difficulty_selection/difficulty_selection.tscn")
-	else:
-		get_tree().change_scene_to_file(random_game)
+	$ParkourArea.body_entered.connect(_on_zone_entered.bind("parkour"))
+	$ParkourArea.body_exited.connect(_on_zone_exited.bind("parkour"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("accept"):
-		change_scene_random()
+	$TargetArea.body_entered.connect(_on_zone_entered.bind("target"))
+	$TargetArea.body_exited.connect(_on_zone_exited.bind("target"))
+
+	$ZombieArea.body_entered.connect(_on_zone_entered.bind("zombie"))
+	$ZombieArea.body_exited.connect(_on_zone_exited.bind("zombie"))
+
+	interact_label.visible = false
+
+func _on_zone_entered(body: Node, zone_name: String) -> void:
+	if body != map_player:
+		return
+	if not current_zones.has(zone_name):
+		current_zones.append(zone_name)
+	_update_prompt()
+
+func _on_zone_exited(body: Node, zone_name: String) -> void:
+	if body != map_player:
+		return
+	current_zones.erase(zone_name)
+	_update_prompt()
+
+func _update_prompt() -> void:
+	if current_zones.is_empty():
+		interact_label.visible = false
+		return
+	var zone_name: String = current_zones[current_zones.size() - 1]
+	interact_label.text = "Press [Enter] to play " + zone_display_names[zone_name]
+	interact_label.visible = true
+
+func enter_game(zone_name: String) -> void:
+	global.map_pos = map_player.position
+	get_tree().change_scene_to_file(minigames[zone_name])
+
+func go_to_shop() -> void:
+	global.map_pos = map_player.position
+	get_tree().change_scene_to_file("res://scenes/shop/shop_display.tscn")
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("accept") and not current_zones.is_empty():
+		enter_game(current_zones[current_zones.size() - 1])
 	if Input.is_action_just_pressed("slide"):
-		get_tree().change_scene_to_file("res://scenes/shop/shop_display.tscn")
-	if Input.is_action_just_pressed("1"):
-		get_tree().change_scene_to_file("res://scenes/parkour/parkour_display.tscn")
-	if Input.is_action_just_pressed("2"):
-		get_tree().change_scene_to_file("res://scenes/target/target_display.tscn")
-	if Input.is_action_just_pressed("3"):
-		get_tree().change_scene_to_file("res://scenes/difficulty_selection/difficulty_selection.tscn")
+		go_to_shop()
