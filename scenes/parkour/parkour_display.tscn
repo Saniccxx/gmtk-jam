@@ -31,6 +31,8 @@ font_size = 72
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
 
+[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
+
 [node name="Player" parent="." unique_id=689076596 instance=ExtResource("2_tyibk")]
 scale = Vector2(0.3, 0.3)
 floor_constant_speed = true
@@ -64,8 +66,6 @@ text = "heh"
 label_settings = SubResource("LabelSettings_1yfpb")
 horizontal_alignment = 1
 script = ExtResource("4_1yfpb")
-
-[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1555202411]
 layer = -1
