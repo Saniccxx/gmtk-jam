@@ -4,7 +4,10 @@ extends CharacterBody2D
 @export var health: int = 1000
 @export var ShootingSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
-@export var ammo_label: Label
+#@export var ammo_label: Label
+signal update_labels
+
+#@onready var ammo_label: Label = get_parent().get_node("CanvasLayer/ZombieHUD/Ammo")
 @onready var reloading_label: Label = get_parent().get_node("CanvasLayer/Reloading")
 var can_shoot: bool = true
 var ammunition: Array[int] = []
@@ -28,8 +31,7 @@ func _on_gun_changed():
 	update_ammo_label()
 
 func update_ammo_label():
-	ammo_label.text = str(current_ammo[global.current_gun]) + " / " + str(ammunition[global.current_gun])
-	reloading_label.visible = is_reloading
+	update_labels.emit()
 
 func _physics_process(_delta: float) -> void:
 	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -51,7 +53,7 @@ func _physics_process(_delta: float) -> void:
 	global_position.y = clamp(global_position.y, padding + half_height, viewport_size.y - padding - half_height)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var current_weapon = global.weapons[global.current_gun]
 	if current_weapon.is_auto and can_shoot and Input.is_action_pressed("click"):
 		shoot()

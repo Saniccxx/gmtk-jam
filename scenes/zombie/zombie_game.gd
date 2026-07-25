@@ -5,17 +5,23 @@ var enemies_left: int = 0
 @export var health_label: Label
 @onready var timer: Timer = $Timer
 @onready var player: CharacterBody2D = $ZombiePlayer
-
+@export var ammo_label: Label
+@export var reloading_label: Label
 
 func _ready() -> void:
 	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")
 	enemies_left = enemies.size()
+	player.update_labels.connect(_update_labels)
 	$Enemies.enemy_spawned.connect(_on_enemy_spawned)
 	for enemy in enemies:
 		enemy.died.connect(_on_enemy_died)
 
 func _on_enemy_spawned() -> void:
 	enemies_left += 1
+
+func _update_labels() -> void:
+	ammo_label.text = str(player.current_ammo[global.current_gun]) + " / " + str(player.ammunition[global.current_gun])
+	reloading_label.visible = player.is_reloading
 
 func _process(delta: float) -> void:
 	if time_label:
