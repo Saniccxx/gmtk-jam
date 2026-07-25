@@ -346,10 +346,12 @@ font_size = 65
 [sub_resource type="LabelSettings" id="LabelSettings_s0wpy"]
 font_size = 80
 
-[node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label")]
+[node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label", "ammo_label", "reloading_label")]
 script = ExtResource("1_4oaqw")
 time_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Time")
 health_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Health")
+ammo_label = NodePath("CanvasLayer/MarginContainer/ZombieHUD/Ammo")
+reloading_label = NodePath("CanvasLayer/Reloading")
 
 [node name="Timer" type="Timer" parent="." unique_id=1978488999]
 wait_time = 60.0
@@ -361,14 +363,12 @@ visible = false
 position = Vector2(916.99994, 508)
 scale = Vector2(1.635, 1.635)
 sprite_frames = SubResource("SpriteFrames_jei5n")
-autoplay = "default"
 
-[node name="ZombiePlayer" parent="." unique_id=937063102 node_paths=PackedStringArray("ShootingSound", "ReloadSound", "ammo_label") instance=ExtResource("2_2yv2p")]
+[node name="ZombiePlayer" parent="." unique_id=937063102 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("2_2yv2p")]
 z_index = 1
 position = Vector2(956, 297)
 ShootingSound = NodePath("../SFX/ShootingSound")
 ReloadSound = NodePath("../SFX/ReloadSound")
-ammo_label = NodePath("../CanvasLayer/MarginContainer/ZombieHUD/Ammo")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
 position = Vector2(-57, 130)

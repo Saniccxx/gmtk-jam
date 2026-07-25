@@ -8,6 +8,7 @@ const AIR_ACCEL = 5
 const AIR_FRICTION = 0.5
 const MASS = 3
 const RECOIL_FORCE = 800.0
+const AIR_ROTATION_SPEED = 10.0 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -75,7 +76,8 @@ func _physics_process(delta: float) -> void:
 		
 	if is_on_floor():
 		sprite.rotation = floor_normal.angle() + PI / 2
-
+	else:
+		sprite.rotation = lerp_angle(sprite.rotation, 0.0, delta * AIR_ROTATION_SPEED)
 	if sliding and is_on_floor():
 		if sprite.animation != "slide":
 			sprite.animation = "slide"
@@ -89,7 +91,7 @@ func _physics_process(delta: float) -> void:
 			sprite.animation = "run"
 			sprite.play()
 	else:
-		sprite.rotation = 0.0
+		sprite.rotation = 0
 		if sprite.animation != "default":
 			sprite.animation = "default"
 			sprite.play()
