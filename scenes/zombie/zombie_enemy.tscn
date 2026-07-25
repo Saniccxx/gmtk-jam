@@ -2,31 +2,150 @@
 
 [ext_resource type="Script" uid="uid://buhqpqtje6va0" path="res://scenes/zombie/zombie_enemy.gd" id="1_ntf5h"]
 [ext_resource type="Texture2D" uid="uid://dgpcyad6qwe2x" path="res://assets/enemy.jpg" id="2_ntf5h"]
+[ext_resource type="Texture2D" uid="uid://dyh7dlara2oi2" path="res://assets/zombie/MyAnimation0001.png" id="3_lit7h"]
+[ext_resource type="Texture2D" uid="uid://c8n41l84fdkl" path="res://assets/zombie/MyAnimation0002.png" id="4_4ugbw"]
+[ext_resource type="Texture2D" uid="uid://cpra1rbmb2ptp" path="res://assets/zombie/MyAnimation0003.png" id="5_76tcb"]
+[ext_resource type="Texture2D" uid="uid://cor3vqag7a216" path="res://assets/zombie/MyAnimation0004.png" id="6_t2vup"]
+[ext_resource type="Texture2D" uid="uid://c8oegowdohirv" path="res://assets/zombie/MyAnimation0005.png" id="7_xseiv"]
+[ext_resource type="Texture2D" uid="uid://cwqgb6qojylsj" path="res://assets/zombie/MyAnimation0006.png" id="8_6gk26"]
+[ext_resource type="Texture2D" uid="uid://bo1m5s5s3q3ji" path="res://assets/zombie/MyAnimation0007.png" id="9_ojs0j"]
+[ext_resource type="Texture2D" uid="uid://dth4nvra34qd5" path="res://assets/zombie/MyAnimation0008.png" id="10_1j817"]
+[ext_resource type="Texture2D" uid="uid://y8nrs03kdhja" path="res://assets/zombie/MyAnimation0009.png" id="11_v3jv5"]
+[ext_resource type="Texture2D" uid="uid://baomd7j36en8c" path="res://assets/zombie/MyAnimation0010.png" id="12_a2ys0"]
+[ext_resource type="Texture2D" uid="uid://bcglky4s3xnd1" path="res://assets/zombie/MyAnimation0011.png" id="13_5i1su"]
+[ext_resource type="Texture2D" uid="uid://2et3hihyve2h" path="res://assets/zombie/MyAnimation0012.png" id="14_dttia"]
+[ext_resource type="Texture2D" uid="uid://cd2wggn584lp3" path="res://assets/zombie/MyAnimation0013.png" id="15_lv8qj"]
+[ext_resource type="Texture2D" uid="uid://uvh2tm1dg5wh" path="res://assets/zombie/MyAnimation0014.png" id="16_oebbg"]
+[ext_resource type="Texture2D" uid="uid://dpc55686rypa" path="res://assets/zombie/MyAnimation0015.png" id="17_ef7he"]
+[ext_resource type="Texture2D" uid="uid://r6yb580i75pi" path="res://assets/zombie/MyAnimation0016.png" id="18_u53du"]
+[ext_resource type="Texture2D" uid="uid://bpqpwakv3e1t4" path="res://assets/zombie/MyAnimation0017.png" id="19_5x347"]
+[ext_resource type="Texture2D" uid="uid://dfrgegev3kwh2" path="res://assets/zombie/MyAnimation0018.png" id="20_duaul"]
+[ext_resource type="Texture2D" uid="uid://db0sbh48r1gb2" path="res://assets/zombie/MyAnimation0019.png" id="21_ra2rw"]
+[ext_resource type="Texture2D" uid="uid://bcn56op3mqaw4" path="res://assets/zombie/MyAnimation0020.png" id="22_6da2s"]
+[ext_resource type="Texture2D" uid="uid://dowimf7hxk8mg" path="res://assets/zombie/MyAnimation0021.png" id="23_yqqnl"]
+[ext_resource type="Texture2D" uid="uid://cem2wa74vdnah" path="res://assets/zombie/MyAnimation0022.png" id="24_i82dt"]
+[ext_resource type="Texture2D" uid="uid://c3hi4c3s7lqu1" path="res://assets/zombie/MyAnimation0023.png" id="25_pmnd3"]
+[ext_resource type="Texture2D" uid="uid://8cew772cuqgm" path="res://assets/zombie/MyAnimation0024.png" id="26_c5l5w"]
+[ext_resource type="Texture2D" uid="uid://ciabrs8kunm15" path="res://assets/zombie/MyAnimation0025.png" id="27_fb0n3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hah5"]
-size = Vector2(64, 64)
+size = Vector2(29.999998, 83.33333)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btquf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lit7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ugbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76tcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t2vup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xseiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6gk26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ojs0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1j817")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v3jv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a2ys0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5i1su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dttia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lv8qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_oebbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ef7he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u53du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_5x347")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_duaul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ra2rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6da2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_yqqnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_i82dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pmnd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c5l5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fb0n3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ntf5h"]
-size = Vector2(64, 64)
+size = Vector2(26, 60)
 
 [node name="ZombieEnemy" type="CharacterBody2D" unique_id=363887606]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_ntf5h")
+metadata/_edit_vertical_guides_ = [205.0]
 
 [node name="SelfCollision" type="CollisionShape2D" parent="." unique_id=247310991]
-scale = Vector2(0.6, 0.6)
+position = Vector2(-5, 8)
+scale = Vector2(1.155, 1.155)
 shape = SubResource("RectangleShape2D_4hah5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1056398912]
+visible = false
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_ntf5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900629545]
+position = Vector2(-1, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_btquf")
+autoplay = "default"
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=731858879]
 collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=525969197]
+position = Vector2(-5, 5)
+scale = Vector2(1.84, 1.84)
 shape = SubResource("RectangleShape2D_ntf5h")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
