@@ -12,6 +12,13 @@ func _ready() -> void:
 func update_labels() -> void:
 	$Hud/CanvasLayer2/Ammo.text = str($Pointer.current_ammo[global.current_gun]) + " / " + str($Pointer.max_ammo[global.current_gun])
 	$Hud/CanvasLayer2/Reloading.visible = $Pointer.is_reloading
+	if global.current_gun == 3:
+		$Pointer.ShootingSound = $SFX/Machinegun
+	elif global.current_gun == 2:
+		$Pointer.ShootingSound = $SFX/ShootingSound
+	else:
+		$Pointer.ShootingSound = $SFX/ShootingSound
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

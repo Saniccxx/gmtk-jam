@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="2_6widt"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="3_8rakm"]
+[ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="4_0u43w"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
@@ -49,6 +50,10 @@ stream = ExtResource("2_6widt")
 
 [node name="Shoot" type="AudioStreamPlayer" parent="SFX" unique_id=833954713]
 stream = ExtResource("3_8rakm")
+
+[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=572724340]
+stream = ExtResource("4_0u43w")
+volume_db = -25.0
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1087105394]
 scroll_scale = Vector2(0.01, 0.01)
@@ -128,7 +133,7 @@ grow_vertical = 0
 text = "Ammothingyishere"
 label_settings = SubResource("LabelSettings_rj0wi")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=47778372]
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=47778372]
 stream = ExtResource("8_tucp6")
 volume_db = -25.0
 autoplay = true
