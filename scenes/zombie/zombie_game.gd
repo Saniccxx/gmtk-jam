@@ -25,7 +25,7 @@ func _update_labels() -> void:
 	if global.current_gun == 3:
 		$ZombiePlayer.ShootingSound = $SFX/Machinegun
 	elif global.current_gun == 2:
-		$ZombiePlayer.ShootingSound = $SFX/ShootingSound
+		$ZombiePlayer.ShootingSound = $SFX/Shotgun
 	else:
 		$ZombiePlayer.ShootingSound = $SFX/ShootingSound
 

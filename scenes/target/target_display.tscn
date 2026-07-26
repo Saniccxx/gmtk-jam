@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://duxqq2olvu61q" path="res://scenes/target/assets/coin_break/MyAnimation0014.png" id="21_as3kt"]
 [ext_resource type="Texture2D" uid="uid://c1of1788yaarw" path="res://scenes/target/assets/coin_break/MyAnimation0015.png" id="22_5hgbv"]
 [ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="29_c5676"]
+[ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="30_5ykpq"]
+[ext_resource type="AudioStream" uid="uid://cifrkh7wclkv1" path="res://scenes/target/assets/target.wav" id="33_r8omx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
@@ -345,9 +347,12 @@ bus = &"SFX"
 stream = ExtResource("12_xkw8o")
 bus = &"SFX"
 
-[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=1336653361]
+[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=1991474585]
 stream = ExtResource("29_c5676")
-volume_db = -25.0
+volume_db = -15.0
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=1146394696]
+stream = ExtResource("30_5ykpq")
 
 [node name="Hitmarkers" type="Control" parent="." unique_id=1235116545]
 layout_mode = 3
@@ -367,6 +372,9 @@ script = ExtResource("15_tibn5")
 
 [node name="Timer" type="Timer" parent="Hitmarkers/Hitmark" unique_id=1444328676]
 wait_time = 0.5
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=591828654]
+stream = ExtResource("33_r8omx")
 
 [connection signal="timeout" from="spawner/Timer" to="spawner" method="_on_timer_timeout"]
 [connection signal="area_entered" from="Pointer" to="Pointer" method="_on_area_entered"]

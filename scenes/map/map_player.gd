@@ -1,25 +1,44 @@
 extends CharacterBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	pass
+@export var speed: float = 400.0
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		velocity.x = direction * SPEED
+
+
+func _ready() -> void:
+	add_to_group("player")
+
+func play_animation(anim_name: String, flipped_h: bool = false) -> void:
+	match anim_name:
+		"idle":
+			animated_sprite.position = Vector2(-6, -53)
+			animated_sprite.scale = Vector2(0.725, 0.725)
+		"run":
+			animated_sprite.position = Vector2(-40 if not flipped_h else 20, -98)
+			animated_sprite.scale = Vector2(1.035, 1.035)
+	
+	animated_sprite.play(anim_name)
+
+func update_animation(dir: Vector2) -> void:
+	if dir != Vector2.ZERO:
+		play_animation("run", dir.x < 0)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		play_animation("idle", dir.x < 0)
+		
+	if dir.x < 0:
+		animated_sprite.flip_h = true
+	elif dir.x > 0:
+		animated_sprite.flip_h = false
 
-	var direction2 := Input.get_axis("move_up", "move_down")
-	if direction2:
-		velocity.y = direction2 * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
+func _physics_process(_delta: float) -> void:
+	var input_vector := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_vector * speed
 	move_and_slide()
+	
+	update_animation(input_vector)
+
+
+
+#func _input(event: InputEvent) -> void:
+#	pass

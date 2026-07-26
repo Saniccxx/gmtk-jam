@@ -40,7 +40,6 @@ var walljump_step_height: float = 170.0
 var walljump_min_steps: int = 4
 var walljump_max_steps: int = 7
 
-const WIN_DISTANCE = 100000.0
 
 @onready var ammo_label: Label = $Hud/CanvasLayer2/AmmoLabel
 
@@ -69,7 +68,7 @@ func _process(delta: float) -> void:
 	if global.current_gun == 3:
 		$Player.ShootingSound = $SFX/Machinegun
 	elif global.current_gun == 2:
-		$Player.ShootingSound = $SFX/Shoot
+		$Player.ShootingSound = $SFX/Shotgun
 	else:
 		$Player.ShootingSound = $SFX/Shoot
 	
@@ -80,9 +79,7 @@ func _process(delta: float) -> void:
 		generate_platforms(gen_threshold)
 		
 	cleanup_platforms()
-	
-	if player.global_position.x >= WIN_DISTANCE:
-		global.load_winner_screen()
+
 
 
 func get_difficulty(x: float) -> float:

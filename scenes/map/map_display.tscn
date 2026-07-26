@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="4_pnlec"]
 [ext_resource type="Texture2D" uid="uid://b3sybl1y2ivqp" path="res://scenes/parkour/assets/platform.png" id="4_s1iqf"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="5_ilqgx"]
+[ext_resource type="Texture2D" uid="uid://da2j1pfe3pkgv" path="res://scenes/parkour/assets/Untitled-asda_no_bg.png" id="6_6yohk"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="6_v1ud3"]
+[ext_resource type="Texture2D" uid="uid://4lf27qc5augu" path="res://scenes/parkour/assets/Untitled-12.png" id="7_ojmxi"]
+[ext_resource type="Texture2D" uid="uid://csoc2rm1px6fb" path="res://scenes/parkour/assets/Untitled-s2.png" id="8_17l7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_zone150"]
 size = Vector2(150, 150)
@@ -52,9 +55,20 @@ position = Vector2(0, 200)
 [node name="ZombieArea" type="Area2D" parent="." unique_id=1425917496]
 position = Vector2(0, -1000)
 
-[node name="Cabinet" type="Polygon2D" parent="ZombieArea" unique_id=230964674]
-color = Color(0.8, 0.2, 0.2, 1)
-polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
+[node name="Cabinet" type="TextureRect" parent="ZombieArea" unique_id=397745186]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -35.0
+offset_right = 225.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_6yohk")
 
 [node name="Label" type="Label" parent="ZombieArea" unique_id=1099025405]
 anchors_preset = 7
@@ -62,9 +76,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -142.5
-offset_top = -101.0
-offset_right = 142.5
+offset_left = -140.0
+offset_top = -144.0
+offset_right = 145.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "ZOMBIE"
@@ -78,9 +93,20 @@ shape = SubResource("RectangleShape2D_zone150")
 [node name="ParkourArea" type="Area2D" parent="." unique_id=649988335]
 position = Vector2(1000, 0)
 
-[node name="Cabinet" type="Polygon2D" parent="ParkourArea" unique_id=710593632]
-color = Color(0.2, 0.8, 0.3, 1)
-polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
+[node name="Cabinet" type="TextureRect" parent="ParkourArea" unique_id=962886072]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -75.0
+offset_right = 185.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ojmxi")
 
 [node name="Label" type="Label" parent="ParkourArea" unique_id=306375923]
 anchors_preset = 7
@@ -88,9 +114,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -175.0
-offset_top = -101.0
-offset_right = 175.0
+offset_left = -217.0
+offset_top = -191.0
+offset_right = 133.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "PARKOUR"
@@ -104,9 +131,21 @@ shape = SubResource("RectangleShape2D_zone150")
 [node name="TargetArea" type="Area2D" parent="." unique_id=1079659498]
 position = Vector2(-1000, 0)
 
-[node name="Cabinet" type="Polygon2D" parent="TargetArea" unique_id=531429830]
-color = Color(0.9, 0.6, 0.1, 1)
-polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
+[node name="Cabinet" type="TextureRect" parent="TargetArea" unique_id=846595802]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -75.0
+offset_right = 265.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ojmxi")
+flip_h = true
 
 [node name="Label" type="Label" parent="TargetArea" unique_id=534185439]
 anchors_preset = 7
@@ -114,9 +153,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -151.0
-offset_top = -101.0
-offset_right = 151.0
+offset_left = -111.0
+offset_top = -186.0
+offset_right = 191.0
+offset_bottom = -85.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "TARGET"
@@ -130,9 +170,20 @@ shape = SubResource("RectangleShape2D_zone150")
 [node name="ShopArea" type="Area2D" parent="." unique_id=-1294967286]
 position = Vector2(0, 1000)
 
-[node name="Cabinet" type="Polygon2D" parent="ShopArea" unique_id=-1294967285]
-color = Color(0.3, 0.5, 0.9, 1)
-polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
+[node name="Cabinet" type="TextureRect" parent="ShopArea" unique_id=1137753611]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -115.0
+offset_right = 225.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_17l7p")
 
 [node name="Label" type="Label" parent="ShopArea" unique_id=-1294967284]
 anchors_preset = 7
@@ -140,9 +191,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -96.5
-offset_top = -101.0
-offset_right = 96.5
+offset_left = -96.0
+offset_top = -205.0
+offset_right = 97.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "SHOP"
