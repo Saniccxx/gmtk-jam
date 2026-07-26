@@ -16,6 +16,23 @@
 [ext_resource type="Script" uid="uid://bb2ql1kpb85x2" path="res://scenes/parkour/cloud_paralax.gd" id="9_rj0wi"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
 [ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="11_xo2lo"]
+[ext_resource type="Texture2D" uid="uid://tp2xgpxttcl5" path="res://scenes/target/assets/coin_break/MyAnimation0001.png" id="15_1jxqc"]
+[ext_resource type="Texture2D" uid="uid://d1lstf55yvp8h" path="res://scenes/target/assets/coin_break/MyAnimation0002.png" id="16_utlqp"]
+[ext_resource type="Texture2D" uid="uid://dwyr30x6thk8" path="res://scenes/target/assets/coin_break/MyAnimation0003.png" id="17_go82x"]
+[ext_resource type="Texture2D" uid="uid://e8273ni526gl" path="res://scenes/target/assets/coin_break/MyAnimation0004.png" id="18_fkfj6"]
+[ext_resource type="Texture2D" uid="uid://cser1eftewdbj" path="res://scenes/target/assets/coin_break/MyAnimation0005.png" id="19_7usss"]
+[ext_resource type="Texture2D" uid="uid://diin7fcbq7a8g" path="res://scenes/target/assets/coin_break/MyAnimation0006.png" id="20_ytpro"]
+[ext_resource type="Texture2D" uid="uid://dnsb2coh40bd4" path="res://scenes/target/assets/coin_break/MyAnimation0007.png" id="21_5njjt"]
+[ext_resource type="Texture2D" uid="uid://cs68m1t7n5s0o" path="res://scenes/target/assets/coin_break/MyAnimation0008.png" id="22_2fquk"]
+[ext_resource type="Texture2D" uid="uid://c8cc0b702yog5" path="res://scenes/target/assets/coin_break/MyAnimation0009.png" id="23_15qdq"]
+[ext_resource type="Texture2D" uid="uid://b7h0rjabjo4so" path="res://scenes/target/assets/coin_break/MyAnimation0010.png" id="24_w1gmu"]
+[ext_resource type="Texture2D" uid="uid://b2mm51lslvjoa" path="res://scenes/target/assets/coin_break/MyAnimation0011.png" id="25_k0l6j"]
+[ext_resource type="Texture2D" uid="uid://ifnd68wcwmkn" path="res://scenes/target/assets/coin_break/MyAnimation0012.png" id="26_tpj45"]
+[ext_resource type="Texture2D" uid="uid://cmi1hl0tba81f" path="res://scenes/target/assets/coin_break/MyAnimation0013.png" id="27_l8kbm"]
+[ext_resource type="Texture2D" uid="uid://duxqq2olvu61q" path="res://scenes/target/assets/coin_break/MyAnimation0014.png" id="28_d0leq"]
+[ext_resource type="Texture2D" uid="uid://c1of1788yaarw" path="res://scenes/target/assets/coin_break/MyAnimation0015.png" id="29_jaqsr"]
+[ext_resource type="Texture2D" uid="uid://bycnirmliripv" path="res://assets/coin.png" id="30_7e4v0"]
+[ext_resource type="Texture2D" uid="uid://cglnql552c6lc" path="res://assets/coin_up.png" id="31_7uj43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
 shader = ExtResource("5_c82wr")
@@ -38,6 +55,191 @@ font = ExtResource("11_xo2lo")
 font_size = 72
 font_color = Color(0, 0, 0, 1)
 outline_size = 15
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa03w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_1jxqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_utlqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_go82x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fkfj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7usss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ytpro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5njjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_2fquk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_15qdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_w1gmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_k0l6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tpj45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_l8kbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_d0leq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_jaqsr")
+}],
+"loop": 0,
+"name": &"Break",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7uj43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}],
+"loop": 1,
+"name": &"coin_1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7uj43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}],
+"loop": 1,
+"name": &"coin_2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7e4v0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7uj43")
+}],
+"loop": 1,
+"name": &"coin_3",
+"speed": 2.0
+}]
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
@@ -71,7 +273,7 @@ script = ExtResource("9_rj0wi")
 [node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
 
 [node name="Player" parent="." unique_id=689076596 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("2_tyibk")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.7, 0.7)
 floor_constant_speed = true
 ShootingSound = NodePath("../SFX/Shoot")
 ReloadSound = NodePath("../SFX/Reload")
@@ -134,6 +336,51 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Ammothingyishere"
 label_settings = SubResource("LabelSettings_rj0wi")
+
+[node name="Hearts" type="HBoxContainer" parent="Hud/CanvasLayer2" unique_id=2048146457]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -80.0
+offset_right = 520.0
+offset_bottom = 20.0
+grow_vertical = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=1936563513]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart1" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect" unique_id=830839693]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_wa03w")
+animation = &"coin_1"
+autoplay = "coin_1"
+
+[node name="TextureRect2" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=579609141]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart2" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect2" unique_id=157357245]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_wa03w")
+animation = &"Break"
+autoplay = "coin_2"
+
+[node name="TextureRect3" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=142948223]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+expand_mode = 1
+
+[node name="Heart3" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect3" unique_id=1220289359]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_wa03w")
+animation = &"coin_3"
+autoplay = "coin_3"
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=47778372]
 stream = ExtResource("8_tucp6")
