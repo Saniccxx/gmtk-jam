@@ -6,36 +6,82 @@
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
 [ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/target.tscn" id="4_irbp4"]
 [ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
-[ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="7_aj51f"]
-[ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="7_umlhu"]
+[ext_resource type="Texture2D" uid="uid://tp2xgpxttcl5" path="res://scenes/target/assets/coin_break/MyAnimation0001.png" id="8_2y1bn"]
+[ext_resource type="Texture2D" uid="uid://d1lstf55yvp8h" path="res://scenes/target/assets/coin_break/MyAnimation0002.png" id="9_c5676"]
 [ext_resource type="Texture2D" uid="uid://bycnirmliripv" path="res://assets/coin.png" id="10_2k2j1"]
+[ext_resource type="Texture2D" uid="uid://dwyr30x6thk8" path="res://scenes/target/assets/coin_break/MyAnimation0003.png" id="10_5ykpq"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="10_umlhu"]
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="10_xkw8o"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="11_qnf4o"]
+[ext_resource type="Texture2D" uid="uid://e8273ni526gl" path="res://scenes/target/assets/coin_break/MyAnimation0004.png" id="11_r8omx"]
 [ext_resource type="Texture2D" uid="uid://cglnql552c6lc" path="res://assets/coin_up.png" id="11_uvku7"]
+[ext_resource type="Texture2D" uid="uid://cser1eftewdbj" path="res://scenes/target/assets/coin_break/MyAnimation0005.png" id="12_5n7x0"]
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="12_xkw8o"]
+[ext_resource type="Texture2D" uid="uid://diin7fcbq7a8g" path="res://scenes/target/assets/coin_break/MyAnimation0006.png" id="13_mek10"]
+[ext_resource type="Texture2D" uid="uid://dnsb2coh40bd4" path="res://scenes/target/assets/coin_break/MyAnimation0007.png" id="14_082q0"]
 [ext_resource type="PackedScene" uid="uid://c0ommrxrm0i5l" path="res://scenes/target/hitmark.tscn" id="14_xehft"]
 [ext_resource type="Texture2D" uid="uid://bppdlychx5e0s" path="res://scenes/target/assets/Hit_marker.png" id="14_xuo1e"]
+[ext_resource type="Texture2D" uid="uid://cs68m1t7n5s0o" path="res://scenes/target/assets/coin_break/MyAnimation0008.png" id="15_2suy1"]
 [ext_resource type="Script" uid="uid://bs1ym2il7762l" path="res://scenes/target/hitmark.gd" id="15_tibn5"]
+[ext_resource type="Texture2D" uid="uid://c8cc0b702yog5" path="res://scenes/target/assets/coin_break/MyAnimation0009.png" id="16_mb0xv"]
+[ext_resource type="Texture2D" uid="uid://b7h0rjabjo4so" path="res://scenes/target/assets/coin_break/MyAnimation0010.png" id="17_2lqq3"]
+[ext_resource type="Texture2D" uid="uid://b2mm51lslvjoa" path="res://scenes/target/assets/coin_break/MyAnimation0011.png" id="18_1gr6f"]
+[ext_resource type="Texture2D" uid="uid://ifnd68wcwmkn" path="res://scenes/target/assets/coin_break/MyAnimation0012.png" id="19_f2iyi"]
+[ext_resource type="Texture2D" uid="uid://cmi1hl0tba81f" path="res://scenes/target/assets/coin_break/MyAnimation0013.png" id="20_qb4ql"]
+[ext_resource type="Texture2D" uid="uid://duxqq2olvu61q" path="res://scenes/target/assets/coin_break/MyAnimation0014.png" id="21_as3kt"]
+[ext_resource type="Texture2D" uid="uid://c1of1788yaarw" path="res://scenes/target/assets/coin_break/MyAnimation0015.png" id="22_5hgbv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_umlhu")
+"texture": ExtResource("8_2y1bn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_umlhu")
+"texture": ExtResource("9_c5676")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_umlhu")
+"texture": ExtResource("10_5ykpq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_aj51f")
+"texture": ExtResource("11_r8omx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5n7x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mek10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_082q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2suy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mb0xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2lqq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_1gr6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_f2iyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_qb4ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_as3kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5hgbv")
 }],
-"loop": 1,
-"name": &"Broken",
-"speed": 1.0
+"loop": 0,
+"name": &"Break",
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -236,7 +282,7 @@ expand_mode = 1
 [node name="Heart2" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect2" unique_id=1758094373]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_cvx70")
-animation = &"coin_2"
+animation = &"Break"
 autoplay = "coin_2"
 
 [node name="TextureRect3" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=976301406]
@@ -247,9 +293,9 @@ expand_mode = 1
 [node name="Heart3" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect3" unique_id=1411983792]
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_cvx70")
-animation = &"coin_2"
+animation = &"coin_3"
 autoplay = "coin_3"
-frame_progress = 0.124221444
+frame_progress = 0.57838064
 
 [node name="Reloading" type="Label" parent="Hud/CanvasLayer2" unique_id=1512131868]
 visible = false
