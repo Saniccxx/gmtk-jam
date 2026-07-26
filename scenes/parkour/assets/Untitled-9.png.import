@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsi037k47bw2"
-path="res://.godot/imported/Bullet.png-2e9bba9af11ca82e859ae4493ba60850.ctex"
+uid="uid://bqxth34upcnpa"
+path="res://.godot/imported/Untitled-9.png-baa2e7958fd211a497823b2a6d63fb9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bullet.png"
-dest_files=["res://.godot/imported/Bullet.png-2e9bba9af11ca82e859ae4493ba60850.ctex"]
+source_file="res://scenes/parkour/assets/Untitled-9.png"
+dest_files=["res://.godot/imported/Untitled-9.png-baa2e7958fd211a497823b2a6d63fb9d.ctex"]
 
 [params]
 
