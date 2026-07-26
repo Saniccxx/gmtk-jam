@@ -37,6 +37,7 @@ func _on_gun_changed() -> void:
 	ReloadSound.stop()
 
 func shoot() -> void:
+	
 	if is_reloading:
 		return
 	can_shoot = false

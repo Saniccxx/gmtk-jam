@@ -22,6 +22,12 @@ func _on_enemy_spawned() -> void:
 func _update_labels() -> void:
 	ammo_label.text = str(player.current_ammo[global.current_gun]) + " / " + str(player.ammunition[global.current_gun])
 	reloading_label.visible = player.is_reloading
+	if global.current_gun == 3:
+		$ZombiePlayer.ShootingSound = $SFX/Machinegun
+	elif global.current_gun == 2:
+		$ZombiePlayer.ShootingSound = $SFX/ShootingSound
+	else:
+		$ZombiePlayer.ShootingSound = $SFX/ShootingSound
 
 func _process(_delta: float) -> void:
 	if time_label:

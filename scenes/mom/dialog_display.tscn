@@ -4,9 +4,22 @@
 [ext_resource type="AudioStream" uid="uid://c22u2jn3pl2dc" path="res://scenes/parkour/assets/badmom.wav" id="2_utc5l"]
 [ext_resource type="Texture2D" uid="uid://ceofjealdpvko" path="res://scenes/parkour/assets/Untitled-1a.png" id="2_wnn3p"]
 [ext_resource type="Texture2D" uid="uid://cx1ujksesu411" path="res://scenes/parkour/assets/Untitled-3l.png" id="3_20h2d"]
-[ext_resource type="Texture2D" uid="uid://c5e35875fu6ih" path="res://scenes/parkour/assets/Untitled-d4.png" id="4_yesko"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="5_20h2d"]
+[ext_resource type="Texture2D" uid="uid://bau21o28ktumr" path="res://scenes/parkour/assets/Untitled-4d.png" id="5_84a1m"]
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="6_84a1m"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="6_m7mak"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_20seg"]
+font = ExtResource("6_84a1m")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_luapr"]
+font = ExtResource("6_84a1m")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
 
 [node name="DialogDisplay" type="Control" unique_id=1765881269]
 layout_mode = 3
@@ -58,40 +71,33 @@ label_settings = ExtResource("5_20h2d")
 
 [node name="DialogBox" type="TextureRect" parent="." unique_id=637199440]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 761.0
-offset_right = 1820.0
-offset_bottom = 1061.0
-texture = ExtResource("4_yesko")
-flip_h = true
+offset_left = 430.0
+offset_top = 115.0
+offset_right = 1230.0
+offset_bottom = 415.0
+texture = ExtResource("5_84a1m")
 flip_v = true
-
-[node name="SpeakerLabel" type="Label" parent="DialogBox" unique_id=1891501962]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 175.0
-offset_bottom = 64.0
-label_settings = ExtResource("5_20h2d")
 
 [node name="TextLabel" type="Label" parent="DialogBox" unique_id=2063878624]
 unique_name_in_owner = true
+custom_maximum_size = Vector2(556, 136)
 layout_mode = 0
-offset_left = 23.0
-offset_top = 84.0
-offset_right = 802.0
-offset_bottom = 133.0
-label_settings = ExtResource("5_20h2d")
+offset_left = 123.0
+offset_top = 64.0
+offset_right = 644.0
+offset_bottom = 200.0
+label_settings = SubResource("LabelSettings_20seg")
+autowrap_mode = 3
 
 [node name="ContinueHint" type="Label" parent="DialogBox" unique_id=355985286]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
-offset_left = 1641.0
-offset_top = 132.0
-offset_right = 1739.0
-offset_bottom = 155.0
+offset_left = 448.0
+offset_top = 167.0
+offset_right = 665.0
+offset_bottom = 232.0
 text = "Press [Enter]"
-label_settings = ExtResource("5_20h2d")
+label_settings = SubResource("LabelSettings_luapr")
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="." unique_id=1152928758]
 visible = false
