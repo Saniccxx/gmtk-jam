@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b30rednyaeri3" path="res://scenes/main_menu/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="2_0ebjn"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_ob46e"]
+[ext_resource type="AudioStream" uid="uid://b4imwgsm0i6ew" path="res://scenes/parkour/assets/winda.mp3" id="4_uqeha"]
 
 [node name="MainMenu" type="Control" unique_id=1358153646]
 layout_mode = 3
@@ -58,6 +59,11 @@ text = "CREDITS"
 layout_mode = 2
 theme = ExtResource("2_0ebjn")
 text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1298036653]
+stream = ExtResource("4_uqeha")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

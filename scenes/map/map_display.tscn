@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://b7mgk00h8ccly" path="res://scenes/map/map_display.gd" id="1_dtnn4"]
 [ext_resource type="PackedScene" uid="uid://bs5rlbw05hguf" path="res://scenes/map/Map_player.tscn" id="2_dtnn4"]
 [ext_resource type="AudioStream" uid="uid://cahdbq3vdbphx" path="res://scenes/parkour/assets/calmbeforestorm.wav" id="2_exba2"]
-[ext_resource type="Texture2D" uid="uid://bc3gw08w2ukfr" path="res://assets/tiel.png" id="3_tt585"]
+[ext_resource type="Texture2D" uid="uid://bfa73350i3hr6" path="res://scenes/parkour/assets/asd6.png" id="3_v1ud3"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="4_ilqgx"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="4_pnlec"]
 [ext_resource type="Texture2D" uid="uid://b3sybl1y2ivqp" path="res://scenes/parkour/assets/platform.png" id="4_s1iqf"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="5_ilqgx"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="6_v1ud3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_zone150"]
 size = Vector2(150, 150)
@@ -25,8 +26,8 @@ bus = &"Music"
 [node name="Floor" type="Polygon2D" parent="Room" unique_id=1864910970]
 texture_repeat = 2
 scale = Vector2(2, 2)
-texture = ExtResource("3_tt585")
-texture_scale = Vector2(5, 5)
+texture = ExtResource("3_v1ud3")
+texture_scale = Vector2(6, 6)
 polygon = PackedVector2Array(-150, -600, 150, -600, 150, -150, 600, -150, 600, 150, 150, 150, 150, 600, -150, 600, -150, 150, -600, 150, -600, -150, -150, -150)
 
 [node name="Walls" type="StaticBody2D" parent="Room" unique_id=-1294967295]
@@ -56,11 +57,18 @@ color = Color(0.8, 0.2, 0.2, 1)
 polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
 
 [node name="Label" type="Label" parent="ZombieArea" unique_id=1099025405]
-offset_left = -75.0
-offset_top = -105.0
-offset_right = 75.0
-offset_bottom = -75.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.5
+offset_top = -101.0
+offset_right = 142.5
+grow_horizontal = 2
+grow_vertical = 0
 text = "ZOMBIE"
+label_settings = ExtResource("6_v1ud3")
 horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZombieArea" unique_id=1151301459]
@@ -75,11 +83,18 @@ color = Color(0.2, 0.8, 0.3, 1)
 polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
 
 [node name="Label" type="Label" parent="ParkourArea" unique_id=306375923]
-offset_left = -75.0
-offset_top = -105.0
-offset_right = 75.0
-offset_bottom = -75.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -101.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "PARKOUR"
+label_settings = ExtResource("6_v1ud3")
 horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ParkourArea" unique_id=494966762]
@@ -94,11 +109,18 @@ color = Color(0.9, 0.6, 0.1, 1)
 polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
 
 [node name="Label" type="Label" parent="TargetArea" unique_id=534185439]
-offset_left = -75.0
-offset_top = -105.0
-offset_right = 75.0
-offset_bottom = -75.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -101.0
+offset_right = 151.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "TARGET"
+label_settings = ExtResource("6_v1ud3")
 horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea" unique_id=376710683]
@@ -113,11 +135,18 @@ color = Color(0.3, 0.5, 0.9, 1)
 polygon = PackedVector2Array(-70, -70, 70, -70, 70, 70, -70, 70)
 
 [node name="Label" type="Label" parent="ShopArea" unique_id=-1294967284]
-offset_left = -75.0
-offset_top = -105.0
-offset_right = 75.0
-offset_bottom = -75.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.5
+offset_top = -101.0
+offset_right = 96.5
+grow_horizontal = 2
+grow_vertical = 0
 text = "SHOP"
+label_settings = ExtResource("6_v1ud3")
 horizontal_alignment = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShopArea" unique_id=-1294967283]
