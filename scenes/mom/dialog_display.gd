@@ -2,12 +2,12 @@ extends Control
 var dialogue_tree := {
 	"start": {
 		"speaker": "Mom",
-		"text": "Okay! We gotta go now, you have DEUSTCH test tomorrow.",
+		"text": "Okay! We gotta go now, you have school tomorrow.",
 		"next": "kid_choice"
 	},
 	"kid_choice": {
 		"speaker": "Kid",
-		"text": "Can I still play?!",
+		"text": "",
 		"choices": [
 			{"text": "\"Please, just a little while?\"", "next": "mom_response_asking"},
 			{"text": "\"One more time! I'm gonna win big!\"", "next": "mom_response_confident"},
@@ -31,12 +31,17 @@ var dialogue_tree := {
 	},
 	"mom_grants_time": {
 		"speaker": "Mom",
-		"text": "Here's the deal: you have 10 minutes. Try to earn 100,000 credits before time's up, okay?",
+		"text": "Here's the deal: you have 10 minutes to finish.",
+		"next": "mom_last"
+	},
+	"mom_last": {
+		"speaker": "Mom",
+		"text": "If you earn 100,000 tickets by then, we will return tomorrow",
 		"next": "kid_final"
 	},
 	"kid_final": {
 		"speaker": "Kid",
-		"text": "Got it! Ten minutes, 100,000 credits. I'm on it!",
+		"text": "Got it! Ten minutes, 100,000 tickets. I'm on it!",
 		"next": "end"
 	},
 	"end": {
