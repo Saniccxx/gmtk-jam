@@ -52,4 +52,4 @@ func _on_enemy_died() -> void:
 
 func _on_timer_timeout() -> void:
 	global.money += reward
-	global.load_winner_screen()
+	global.load_winn_screen()
