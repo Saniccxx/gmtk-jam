@@ -4,40 +4,23 @@
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_3pm4f"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_1ccse"]
 
-[sub_resource type="Gradient" id="Gradient_bg"]
-colors = PackedColorArray(0, 1, 0.047058824, 1, 0.27058825, 0.43529412, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_a05h5"]
-gradient = SubResource("Gradient_bg")
-width = 1920
-height = 1080
-fill_to = Vector2(0, 1)
-
 [node name="WinnerDisplay" type="Control" unique_id=1784500990]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wnx80")
 
-[node name="Background" type="TextureRect" parent="." unique_id=351325093]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1265363789]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_a05h5")
+color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1549850654]
 layout_mode = 1
@@ -46,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -113.5
-offset_top = -122.5
-offset_right = 113.5
-offset_bottom = 122.5
+offset_left = -181.0
+offset_top = -123.0
+offset_right = 181.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
@@ -57,19 +40,13 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=161953616]
 layout_mode = 2
-text = "U WON"
+text = "YOU WON!"
 label_settings = ExtResource("2_3pm4f")
 horizontal_alignment = 1
-
-[node name="Retry" type="Button" parent="VBoxContainer" unique_id=1032498686]
-layout_mode = 2
-theme = ExtResource("3_1ccse")
-text = "RETRY"
 
 [node name="Map Display" type="Button" parent="VBoxContainer" unique_id=1842502185]
 layout_mode = 2
 theme = ExtResource("3_1ccse")
-text = "MAP DISPLAY"
+text = "QUIT"
 
-[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="VBoxContainer/Map Display" to="." method="_on_map_display_pressed"]

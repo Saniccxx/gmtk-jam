@@ -3,7 +3,13 @@ extends Node
 
 signal gun_changed
 var map_pos: Vector2 = Vector2(0,0)
-var money: int = 0
+
+var money: int = 0:
+	set(value):
+		money = value
+		if money >= 100000:
+			load_winner_screen()
+
 var best_owned_gun: int = 0
 enum Difficulty { EASY, MEDIUM, HARD }
 var current_difficulty: Difficulty = Difficulty.EASY
