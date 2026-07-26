@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://bo2p12eunwq82" path="res://scenes/credits/credits_display.gd" id="1_px1p6"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="2_yxutx"]
 [ext_resource type="Script" uid="uid://d36fwg8wqlm8h" path="res://scenes/credits/marker_2d.gd" id="3_l7xhn"]
-[ext_resource type="Texture2D" uid="uid://cqbby2k2mt3xs" path="res://assets/jeff.png" id="4_453ot"]
 [ext_resource type="Texture2D" uid="uid://bwpo3trhftwrp" path="res://scenes/credits/profilowe/96191787.png" id="5_c3trd"]
 [ext_resource type="Texture2D" uid="uid://7y1eax1e7qp" path="res://scenes/credits/profilowe/hqdefault.jpg" id="5_l7xhn"]
 [ext_resource type="Texture2D" uid="uid://cis87r8qf5f1f" path="res://scenes/credits/profilowe/Budda.png" id="5_uh2la"]
+[ext_resource type="Texture2D" uid="uid://cnl03rshumllw" path="res://assets/av.jpg" id="6_c3trd"]
 
 [node name="CreditsDisplay" type="Control" unique_id=324499061]
 layout_mode = 3
@@ -117,15 +117,13 @@ grow_horizontal = 0
 
 [node name="Rutra" type="Label" parent="middle/Saniccxx" unique_id=434427541]
 layout_mode = 1
-offset_right = 720.0
+offset_left = -12.755
+offset_right = 717.245
 offset_bottom = 470.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Ruter - music, parkour, credit
-menu, credits menu, shaders,
-main menu, death menu,
-win menu, topopisy, clicker, 
-"
+text = "Sanuuu - zombie game, architecture, 
+SFX processing."
 label_settings = ExtResource("1_b3802")
 
 [node name="TextureRect" type="TextureRect" parent="middle/Saniccxx" unique_id=1340697202]
@@ -138,7 +136,7 @@ offset_bottom = 200.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-texture = ExtResource("4_453ot")
+texture = ExtResource("6_c3trd")
 expand_mode = 1
 
 [node name="Jeicammetsej" type="Control" parent="middle" unique_id=269515197]
@@ -157,9 +155,10 @@ offset_bottom = 470.0
 grow_horizontal = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "JeiCamMetsej - graphic design o/"
+text = "JeiCamMetsej -
+ graphic design "
 label_settings = ExtResource("1_b3802")
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="middle/Jeicammetsej" unique_id=1531095493]
 layout_mode = 1
