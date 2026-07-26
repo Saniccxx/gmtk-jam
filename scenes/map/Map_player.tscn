@@ -124,7 +124,6 @@ animations = [{
 }]
 
 [node name="MapPlayer" type="CharacterBody2D" unique_id=937063102]
-collision_layer = 2
 script = ExtResource("1_iunym")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1828650098]

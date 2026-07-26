@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsi037k47bw2"
-path="res://.godot/imported/bullet.png-c68d06721d4ad8b0013707b0a51654af.ctex"
+uid="uid://lgm42wxksoki"
+path="res://.godot/imported/uzi.png-9e600a5a064e31f4392bcc71f39ea035.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-c68d06721d4ad8b0013707b0a51654af.ctex"]
+source_file="res://assets/hands_with_guns/uzi.png"
+dest_files=["res://.godot/imported/uzi.png-9e600a5a064e31f4392bcc71f39ea035.ctex"]
 
 [params]
 
