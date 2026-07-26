@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var damage: int = 10
 @export var attack_speed: float = 1.0
 @export var health: int = 30
+@export var base_reward: int = 50
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_cooldown: Timer = $AttackCooldown
 var player_in_range: bool = false
@@ -50,4 +51,5 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		died.emit()
+		global.add_zombie_kill_reward(base_reward) # Award points on kill
 		queue_free()
