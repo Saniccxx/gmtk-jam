@@ -273,7 +273,7 @@ script = ExtResource("9_rj0wi")
 [node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
 
 [node name="Player" parent="." unique_id=689076596 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("2_tyibk")]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.7, 0.7)
 floor_constant_speed = true
 ShootingSound = NodePath("../SFX/Shoot")
 ReloadSound = NodePath("../SFX/Reload")
