@@ -40,8 +40,6 @@ func _process(_delta: float) -> void:
 
 func _on_enemy_died() -> void:
 	enemies_left -= 1
-#	if enemies_left <= 0:
-#		global.load_winner_screen()
 
 func _on_timer_timeout() -> void:
 	global.load_winner_screen()
