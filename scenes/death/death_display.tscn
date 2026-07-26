@@ -44,12 +44,6 @@ text = "You died"
 label_settings = ExtResource("2_lk75r")
 horizontal_alignment = 1
 
-[node name="Tickets" type="Label" parent="VBoxContainer" unique_id=758196130]
-layout_mode = 2
-text = "Achieved tickets"
-label_settings = ExtResource("2_lk75r")
-horizontal_alignment = 1
-
 [node name="Retry" type="Button" parent="VBoxContainer" unique_id=899991489]
 layout_mode = 2
 theme = ExtResource("3_msc60")
