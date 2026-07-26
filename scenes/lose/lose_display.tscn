@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://dvff6jr5q6iia"]
+[gd_scene format=3 uid="uid://d0whd11dxk56c"]
 
-[ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/death/death_display.gd" id="1_xwwag"]
-[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_lk75r"]
-[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_msc60"]
+[ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/lose/lose_display.gd" id="1_khgew"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_hd2t0"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_rff60"]
 
 [node name="DeathDisplay" type="Control" unique_id=1417985601]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xwwag")
+script = ExtResource("1_khgew")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=412030490]
 layout_mode = 1
@@ -40,25 +40,13 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1907093]
 layout_mode = 2
-text = "You died"
-label_settings = ExtResource("2_lk75r")
+text = "Time is up!"
+label_settings = ExtResource("2_hd2t0")
 horizontal_alignment = 1
-
-[node name="Tickets" type="Label" parent="VBoxContainer" unique_id=758196130]
-layout_mode = 2
-text = "Achieved tickets"
-label_settings = ExtResource("2_lk75r")
-horizontal_alignment = 1
-
-[node name="Retry" type="Button" parent="VBoxContainer" unique_id=899991489]
-layout_mode = 2
-theme = ExtResource("3_msc60")
-text = "RETRY"
 
 [node name="Map Display" type="Button" parent="VBoxContainer" unique_id=2078000593]
 layout_mode = 2
-theme = ExtResource("3_msc60")
-text = "MAP DISPLAY"
+theme = ExtResource("3_rff60")
+text = "QUIT"
 
-[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="VBoxContainer/Map Display" to="." method="_on_map_display_pressed"]

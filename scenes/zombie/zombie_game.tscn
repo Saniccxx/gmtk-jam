@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="9_sa2u6"]
 [ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="11_h14ri"]
 [ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="12_1yk41"]
+[ext_resource type="AudioStream" uid="uid://086tcr1kmfk7" path="res://assets/sounds/error.wav" id="13_oe2t2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fblyp"]
 atlas = ExtResource("2_vof6t")
@@ -369,11 +370,12 @@ position = Vector2(916.99994, 508)
 scale = Vector2(1.635, 1.635)
 sprite_frames = SubResource("SpriteFrames_jei5n")
 
-[node name="ZombiePlayer" parent="." unique_id=937063102 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("2_2yv2p")]
+[node name="ZombiePlayer" parent="." unique_id=937063102 node_paths=PackedStringArray("ShootingSound", "ReloadSound", "DamageTakenSound") instance=ExtResource("2_2yv2p")]
 z_index = 1
-position = Vector2(956, 297)
+position = Vector2(960, 540)
 ShootingSound = NodePath("../SFX/ShootingSound")
 ReloadSound = NodePath("../SFX/ReloadSound")
+DamageTakenSound = NodePath("../SFX/DamageTaken")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
 position = Vector2(-57, 130)
@@ -402,9 +404,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -409.0
-offset_top = -112.0
+offset_top = -93.0
 offset_right = -185.0
-offset_bottom = -57.0
+offset_bottom = -37.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("7_sa2u6")
@@ -436,9 +438,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -119.0
+offset_top = -100.0
 offset_right = 1.0
-offset_bottom = -19.0
+offset_bottom = 1.0
 grow_vertical = 0
 theme = ExtResource("7_sa2u6")
 label_settings = SubResource("LabelSettings_jei5n")
@@ -466,9 +468,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -240.0
-offset_top = -160.0
+offset_top = -140.0
 offset_right = -200.0
-offset_bottom = -64.0
+offset_bottom = -44.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -515,6 +517,10 @@ volume_db = -15.0
 
 [node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=1644754915]
 stream = ExtResource("12_1yk41")
+
+[node name="DamageTaken" type="AudioStreamPlayer" parent="SFX" unique_id=2077627622]
+stream = ExtResource("13_oe2t2")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]

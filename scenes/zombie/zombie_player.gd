@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @export var health: int = 100
 @export var ShootingSound: AudioStreamPlayer
-@export var ShotgunSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
+@export var DamageTakenSound: AudioStreamPlayer
 
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -183,6 +183,7 @@ func take_damage(amount: int) -> void:
 	animated_sprite.modulate.a = 0.5
 	can_take_damage = false
 	health -= amount
+	DamageTakenSound.play()
 	if health <= 0:
 		global.load_death_screen()
 		queue_free()

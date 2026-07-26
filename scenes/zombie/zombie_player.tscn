@@ -145,7 +145,7 @@ scale = Vector2(0.745, 0.745)
 sprite_frames = SubResource("SpriteFrames_jei5n")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.3460655
+frame_progress = 0.41057682
 
 [node name="Shoulders" type="Node2D" parent="." unique_id=71446107]
 position = Vector2(-9, -39)
@@ -156,4 +156,4 @@ scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_6psjs")
 
 [node name="Muzzle" type="Node2D" parent="Shoulders/HandsWithGun" unique_id=2025540162]
-position = Vector2(272, -32)
+position = Vector2(416, -32)

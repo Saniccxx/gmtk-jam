@@ -3,7 +3,13 @@ extends Node
 
 signal gun_changed
 var map_pos: Vector2 = Vector2(0,0)
-var money: int = 0
+
+var money: int = 0:
+	set(value):
+		money = value
+		if money >= 100000:
+			load_winner_screen()
+
 var best_owned_gun: int = 0
 enum Difficulty { EASY, MEDIUM, HARD }
 var current_difficulty: Difficulty = Difficulty.EASY
@@ -30,6 +36,9 @@ func load_death_screen() -> void:
 func load_winner_screen() -> void:
 	last_minigame_path = get_tree().current_scene.scene_file_path
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/win/winner_display.tscn")
+	
+func lose_game() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/lose/lose_display.tscn")
 
 class Weapon:
 	var name: String
