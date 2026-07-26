@@ -10,6 +10,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	modulate.a = $Timer.time_left / 0.5
+	scale.x = 0.5 + ($Timer.time_left / 0.5) /2
+	scale.y = 0.5 + ($Timer.time_left / 0.5) /2
 
 
 func _on_timer_timeout() -> void:
