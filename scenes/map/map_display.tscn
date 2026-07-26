@@ -236,6 +236,7 @@ text = "main menu"
 visible = false
 
 [node name="Tutorial" parent="." unique_id=1301851083 instance=ExtResource("13_jtbyp")]
+visible = false
 
 [connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/main menu" to="PauseMenu" method="_on_main_menu_pressed"]
 

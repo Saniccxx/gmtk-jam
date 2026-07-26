@@ -64,7 +64,8 @@ func _update_prompt() -> void:
 
 func enter_game(zone_name: String) -> void:
 	global.map_pos = map_player.position
-	get_tree().change_scene_to_file(minigames[zone_name])
+	$Tutorial.true_ready(minigames[zone_name])
+	#get_tree().change_scene_to_file(minigames[zone_name])
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("accept") and not current_zones.is_empty():

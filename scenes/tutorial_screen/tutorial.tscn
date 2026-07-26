@@ -2,7 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cjngcnoecpu5r" path="res://scenes/tutorial_screen/tutorial.gd" id="1_4lrv4"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_h1ge6"]
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="3_h1ge6"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_hmw16"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hmw16"]
+font = ExtResource("3_h1ge6")
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
 
 [node name="Tutorial" type="CanvasLayer" unique_id=1301851083]
 script = ExtResource("1_4lrv4")
@@ -11,9 +18,9 @@ script = ExtResource("1_4lrv4")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 505.0
+offset_left = 450.0
 offset_top = -1.0
-offset_right = -398.0
+offset_right = -450.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -45,7 +52,7 @@ text = "
 
 
 "
-label_settings = ExtResource("2_h1ge6")
+label_settings = SubResource("LabelSettings_hmw16")
 
 [node name="play" type="Button" parent="ColorRect/VBoxContainer" unique_id=128189765]
 layout_mode = 2
