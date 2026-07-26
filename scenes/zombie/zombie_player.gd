@@ -100,10 +100,7 @@ func shoot() -> void:
 		return
 	current_ammo[global.current_gun] -= 1
 	update_ammo_label()
-	if global.weapons[global.current_gun].name == "shotgun":
-		ShotgunSound.play()
-	else:
-		ShootingSound.play()
+	ShootingSound.play()
 	
 	for i in range(global.weapons[global.current_gun].bullets_per_shot):
 		spawn_bullet()

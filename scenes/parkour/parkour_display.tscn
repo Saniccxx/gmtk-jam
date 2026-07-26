@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="3_8rakm"]
 [ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="4_0u43w"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
+[ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="5_5yxl4"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
 [ext_resource type="Texture2D" uid="uid://0w1f5fek16kp" path="res://scenes/parkour/assets/jeicam/sun/Untitled-16.png" id="7_6widt"]
@@ -51,7 +52,10 @@ stream = ExtResource("3_8rakm")
 
 [node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=572724340]
 stream = ExtResource("4_0u43w")
-volume_db = -25.0
+volume_db = -15.0
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=101409313]
+stream = ExtResource("5_5yxl4")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1087105394]
 scroll_scale = Vector2(0.01, 0.01)

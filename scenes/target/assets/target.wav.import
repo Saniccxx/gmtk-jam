@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cifrkh7wclkv1"
-path="res://.godot/imported/target.wav-82bf3eb5f8788de39e373cfa669665a3.sample"
+path="res://.godot/imported/target.wav-5d8a045d7a1fdf86364ad48e2d1a853d.sample"
 
 [deps]
 
-source_file="res://scenes/parkour/assets/target.wav"
-dest_files=["res://.godot/imported/target.wav-82bf3eb5f8788de39e373cfa669665a3.sample"]
+source_file="res://scenes/target/assets/target.wav"
+dest_files=["res://.godot/imported/target.wav-5d8a045d7a1fdf86364ad48e2d1a853d.sample"]
 
 [params]
 
