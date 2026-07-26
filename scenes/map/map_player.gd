@@ -9,22 +9,21 @@ extends CharacterBody2D
 func _ready() -> void:
 	add_to_group("player")
 
-func play_animation(anim_name: String, flipped_h: bool = false) -> void:
+func play_animation(anim_name: String) -> void:
 	match anim_name:
 		"idle":
 			animated_sprite.position = Vector2(-6, -53)
 			animated_sprite.scale = Vector2(0.725, 0.725)
 		"run":
-			animated_sprite.position = Vector2(-40 if not flipped_h else 20, -98)
+			animated_sprite.position = Vector2(-40 if not animated_sprite.flip_h else 20, -98)
 			animated_sprite.scale = Vector2(1.035, 1.035)
-	
 	animated_sprite.play(anim_name)
 
 func update_animation(dir: Vector2) -> void:
 	if dir != Vector2.ZERO:
-		play_animation("run", dir.x < 0)
+		play_animation("run")
 	else:
-		play_animation("idle", dir.x < 0)
+		play_animation("idle")
 		
 	if dir.x < 0:
 		animated_sprite.flip_h = true

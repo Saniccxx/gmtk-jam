@@ -140,8 +140,7 @@ texture = ExtResource("2_t2c8g")
 position = Vector2(-6, -48)
 scale = Vector2(0.745, 0.745)
 sprite_frames = SubResource("SpriteFrames_jei5n")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5108918
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=625542261]
