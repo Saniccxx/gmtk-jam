@@ -478,15 +478,18 @@ theme_override_font_sizes/font_size = 95
 [node name="Background" type="CanvasLayer" parent="." unique_id=1668744476]
 layer = -100
 
-[node name="Black" type="ColorRect" parent="Background" unique_id=377015688]
-visible = false
+[node name="Control" type="Control" parent="Background" unique_id=1039332532]
 z_index = -100
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Grey" type="ColorRect" parent="Background" unique_id=682124210]
+[node name="Grey" type="ColorRect" parent="Background/Control" unique_id=682124210]
 z_index = -100
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
