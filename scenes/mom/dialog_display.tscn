@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx1ujksesu411" path="res://scenes/parkour/assets/Untitled-3l.png" id="3_20h2d"]
 [ext_resource type="Texture2D" uid="uid://c5e35875fu6ih" path="res://scenes/parkour/assets/Untitled-d4.png" id="4_yesko"]
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="5_20h2d"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="6_m7mak"]
 
 [node name="DialogDisplay" type="Control" unique_id=1765881269]
 layout_mode = 3
@@ -106,6 +107,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_m7mak")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1000395052]
 stream = ExtResource("2_utc5l")
