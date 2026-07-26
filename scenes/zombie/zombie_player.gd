@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @export var health: int = 100
 @export var ShootingSound: AudioStreamPlayer
+@export var ShotgunSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -99,8 +100,10 @@ func shoot() -> void:
 		return
 	current_ammo[global.current_gun] -= 1
 	update_ammo_label()
-	
-	ShootingSound.play()
+	if global.weapons[global.current_gun].name == "shotgun":
+		ShotgunSound.play()
+	else:
+		ShootingSound.play()
 	
 	for i in range(global.weapons[global.current_gun].bullets_per_shot):
 		spawn_bullet()
