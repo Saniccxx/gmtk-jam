@@ -2,14 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://bxk67ypqx246e" path="res://assets/player_zombie.png" id="1_uouef"]
 [ext_resource type="Script" uid="uid://ncqah7086r3d" path="res://scenes/zombie/zombie_player.gd" id="1_vmcvx"]
-[ext_resource type="Texture2D" uid="uid://pdwscy30mdna" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0001.png" id="3_2srlj"]
-[ext_resource type="Texture2D" uid="uid://b65eebh6rhrmo" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0002.png" id="4_t3icn"]
-[ext_resource type="Texture2D" uid="uid://pkvx35hqd3mb" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0003.png" id="5_hqcjw"]
-[ext_resource type="Texture2D" uid="uid://buq6dnwq737ht" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0004.png" id="6_i3m8o"]
-[ext_resource type="Texture2D" uid="uid://bqjg2cjsv37lc" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0006.png" id="7_6psjs"]
-[ext_resource type="Texture2D" uid="uid://cj5n0qhj0j4u8" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0007.png" id="8_nqdll"]
-[ext_resource type="Texture2D" uid="uid://chsj80c6r7bi6" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0008.png" id="9_ffgsn"]
-[ext_resource type="Texture2D" uid="uid://c4mk303s2a0mf" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0009.png" id="10_gpt8v"]
+[ext_resource type="Texture2D" uid="uid://x2xxk87jri5w" path="res://assets/hands_with_guns/pistol.png" id="2_6psjs"]
+[ext_resource type="Texture2D" uid="uid://b43ai8thqft0k" path="res://assets/idle_no_hands/MyAnimation0001.png" id="3_2srlj"]
+[ext_resource type="Texture2D" uid="uid://lgm42wxksoki" path="res://assets/hands_with_guns/uzi.png" id="3_nqdll"]
+[ext_resource type="Texture2D" uid="uid://c4bxqe1pbgxrl" path="res://assets/hands_with_guns/shotgun.png" id="4_ffgsn"]
+[ext_resource type="Texture2D" uid="uid://55h0ou0svw5u" path="res://assets/idle_no_hands/MyAnimation0002.png" id="4_t3icn"]
+[ext_resource type="Texture2D" uid="uid://cfi1sfgmkt064" path="res://assets/hands_with_guns/minigun.png" id="5_gpt8v"]
+[ext_resource type="Texture2D" uid="uid://bcnh1eswsl3uq" path="res://assets/idle_no_hands/MyAnimation0003.png" id="5_hqcjw"]
+[ext_resource type="Texture2D" uid="uid://cpi8kfrlmompx" path="res://assets/idle_no_hands/MyAnimation0004.png" id="6_i3m8o"]
+[ext_resource type="Texture2D" uid="uid://b6m7cpodec5x6" path="res://assets/idle_no_hands/MyAnimation0006.png" id="7_6psjs"]
+[ext_resource type="Texture2D" uid="uid://cbft1kmcgejnj" path="res://assets/idle_no_hands/MyAnimation0007.png" id="8_nqdll"]
+[ext_resource type="Texture2D" uid="uid://l3hlagyv3fud" path="res://assets/idle_no_hands/MyAnimation0008.png" id="9_ffgsn"]
+[ext_resource type="Texture2D" uid="uid://chtsu8ft8w2do" path="res://assets/idle_no_hands/MyAnimation0009.png" id="10_gpt8v"]
 [ext_resource type="Texture2D" uid="uid://bnqt1xiyvank3" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0007.png" id="11_aepys"]
 [ext_resource type="Texture2D" uid="uid://c768om4fcfhvb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0008.png" id="12_j07u8"]
 [ext_resource type="Texture2D" uid="uid://cxmmw5t02vqpb" path="res://scenes/parkour/assets/jeicam/run_no_hands/MyAnimation0009.png" id="13_g85r7"]
@@ -120,12 +124,16 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 25.0
+"speed": 30.0
 }]
 
 [node name="ZombiePlayer" type="CharacterBody2D" unique_id=937063102]
 collision_layer = 2
 script = ExtResource("1_vmcvx")
+pistol_texture = ExtResource("2_6psjs")
+uzi_texture = ExtResource("3_nqdll")
+shotgun_texture = ExtResource("4_ffgsn")
+machinegun_texture = ExtResource("5_gpt8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1828650098]
 position = Vector2(-9, -17)
@@ -141,6 +149,17 @@ texture = ExtResource("1_uouef")
 position = Vector2(-6, -48)
 scale = Vector2(0.745, 0.745)
 sprite_frames = SubResource("SpriteFrames_jei5n")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5108918
+frame_progress = 0.034464724
+
+[node name="Shoulders" type="Node2D" parent="." unique_id=71446107]
+position = Vector2(-9, -39)
+
+[node name="HandsWithGun" type="Sprite2D" parent="Shoulders" unique_id=1147589589]
+position = Vector2(31, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_6psjs")
+
+[node name="Muzzle" type="Node2D" parent="Shoulders/HandsWithGun" unique_id=2025540162]
+position = Vector2(256, -48)
