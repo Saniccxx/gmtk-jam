@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d0oko6fenona3" path="res://scenes/difficulty_selection/diff_sel.tres" id="1_1y5k2"]
 [ext_resource type="Script" uid="uid://c64dc6nmrht6h" path="res://scenes/difficulty_selection/difficulty_selection.gd" id="1_fcasg"]
+[ext_resource type="AudioStream" uid="uid://cpwx4tbbjleuc" path="res://assets/sounds/gong.wav" id="4_g7mqv"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_1y5k2"]
 
 [sub_resource type="Theme" id="Theme_p8orn"]
@@ -66,6 +67,12 @@ text = " MEDIUM "
 [node name="HARD" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=146369554]
 layout_mode = 2
 text = "HARD"
+
+[node name="GongSound" type="AudioStreamPlayer" parent="." unique_id=286671656]
+stream = ExtResource("4_g7mqv")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/EASY" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonContainer/MEDIUM" to="." method="_on_medium_pressed"]
