@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://d12rwnkso5d18" path="res://scenes/parkour/assets/pek.wav" id="8_tucp6"]
 [ext_resource type="Script" uid="uid://bb2ql1kpb85x2" path="res://scenes/parkour/cloud_paralax.gd" id="9_rj0wi"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="11_xo2lo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
 shader = ExtResource("5_c82wr")
@@ -31,6 +32,12 @@ size = Vector2(64, 63.999996)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_rj0wi"]
+font = ExtResource("11_xo2lo")
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 15
 
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
@@ -104,6 +111,22 @@ grow_vertical = 2
 color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_ghnu6")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Hud" unique_id=2031143292]
+
+[node name="AmmoLabel" type="Label" parent="Hud/CanvasLayer2" unique_id=1808886220]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -74.0
+offset_right = 173.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Ammothingyishere"
+label_settings = SubResource("LabelSettings_rj0wi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=47778372]
 stream = ExtResource("8_tucp6")
