@@ -14,7 +14,8 @@ var max_ammo: Array[int] = []
 var current_ammo: Array[int] = []
 var is_reloading: bool = false
 var damage_mults: Array[int]= [1, 2, 3, 16]
-
+@onready var badsound = $"../SFX/zly"
+@onready var goodsound = $"../SFX/dobry"
 @export var ShootingSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
 
@@ -49,6 +50,7 @@ func shoot():
 		if can_hurt:
 			print("life lost")
 			damage.emit()
+			badsound.play()
 			hurt_timer()
 		if global.current_gun == 2:
 			shotgun_shoot(1, false)
@@ -61,6 +63,7 @@ func shoot():
 		var distance = global_position.distance_to(target.global_position)
 		if distance < 30:
 			suma += 3
+			goodsound.play()
 		elif distance < 55:
 			suma += 2
 		else: suma += 1
@@ -149,6 +152,7 @@ func shotgun_shoot(target, hit=true):
 		var distance = bullet_pos.distance_to(target.global_position)
 		if distance < 30:
 			suma += 3
+			goodsound.play()
 		elif distance < 55:
 			suma += 2
 		else: suma += 1

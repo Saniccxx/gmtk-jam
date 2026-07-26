@@ -32,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://c1of1788yaarw" path="res://scenes/target/assets/coin_break/MyAnimation0015.png" id="22_5hgbv"]
 [ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="29_c5676"]
 [ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="30_5ykpq"]
+[ext_resource type="AudioStream" uid="uid://086tcr1kmfk7" path="res://assets/sounds/error.wav" id="31_mek10"]
+[ext_resource type="AudioStream" uid="uid://brbnwa25rl25m" path="res://assets/sounds/correct.wav" id="32_082q0"]
 [ext_resource type="AudioStream" uid="uid://cifrkh7wclkv1" path="res://scenes/target/assets/target.wav" id="33_r8omx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvx70"]
@@ -353,6 +355,13 @@ volume_db = -15.0
 
 [node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=1146394696]
 stream = ExtResource("30_5ykpq")
+
+[node name="zly" type="AudioStreamPlayer" parent="SFX" unique_id=3544529]
+stream = ExtResource("31_mek10")
+
+[node name="dobry" type="AudioStreamPlayer" parent="SFX" unique_id=549536170]
+stream = ExtResource("32_082q0")
+volume_db = -25.0
 
 [node name="Hitmarkers" type="Control" parent="." unique_id=1235116545]
 layout_mode = 3
