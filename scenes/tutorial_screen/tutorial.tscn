@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b45u5mo4ynvrk"]
+
+[ext_resource type="Script" uid="uid://cjngcnoecpu5r" path="res://scenes/tutorial_screen/tutorial.gd" id="1_4lrv4"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_h1ge6"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_hmw16"]
+
+[node name="Tutorial" type="CanvasLayer" unique_id=1301851083]
+script = ExtResource("1_4lrv4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=855189306]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -903.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.69411767)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=157490979]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.5
+offset_top = -391.5
+offset_right = 363.5
+offset_bottom = 391.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="ColorRect/VBoxContainer" unique_id=1728748050]
+layout_mode = 2
+label_settings = ExtResource("2_h1ge6")
+horizontal_alignment = 1
+
+[node name="Tresc" type="Label" parent="ColorRect/VBoxContainer" unique_id=148450840]
+layout_mode = 2
+text = "
+
+
+"
+label_settings = ExtResource("2_h1ge6")
+
+[node name="play" type="Button" parent="ColorRect/VBoxContainer" unique_id=128189765]
+layout_mode = 2
+theme = ExtResource("3_hmw16")
+text = "Play"
+
+[node name="map" type="Button" parent="ColorRect/VBoxContainer" unique_id=1315320661]
+layout_mode = 2
+theme = ExtResource("3_hmw16")
+text = "Back to map"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/map" to="." method="_on_map_pressed"]
