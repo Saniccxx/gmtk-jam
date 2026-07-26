@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="gmtk-jam"
+config/name="Doodle Arcade"
 run/main_scene="uid://ch0de3qg7uh0b"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/stretch_mode=0
 boot_splash/image="uid://chi4f1lij68ug"
-config/icon="res://icon.svg"
+config/icon="uid://cx221ibwp33h5"
 
 [audio]
 
