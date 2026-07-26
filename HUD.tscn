@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="2_gv1iq"]
 [ext_resource type="Script" uid="uid://5giq0x8mlln2" path="res://gun_img.gd" id="2_ne771"]
 [ext_resource type="Script" uid="uid://2nxia70ow3k7" path="res://timer_label.gd" id="5_xxqia"]
+[ext_resource type="Texture2D" uid="uid://bqxth34upcnpa" path="res://scenes/parkour/assets/Untitled-9.png" id="6_gv1iq"]
 
 [node name="Hud" type="Control" unique_id=923602173]
 layout_mode = 3
@@ -38,6 +39,11 @@ grow_horizontal = 0
 theme = ExtResource("2_gv1iq")
 theme_override_font_sizes/font_size = 100
 script = ExtResource("1_efote")
+
+[node name="Untitled9" type="Sprite2D" parent="CanvasLayer/Control/Money_label" unique_id=67805753]
+position = Vector2(-50, 50)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_gv1iq")
 
 [node name="Gun_img" type="TextureRect" parent="CanvasLayer/Control" unique_id=2050013809]
 layout_mode = 1
