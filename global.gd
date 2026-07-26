@@ -11,7 +11,7 @@ var current_difficulty: Difficulty = Difficulty.EASY
 var weapons: Array[Weapon] = [
 	Weapon.new("pistol", 0, "res://assets/pistoleciki/pistol.png", 1, 0.1, false, [15, 18], 12, 12, 1.0),
 	Weapon.new("uzi", 100, "res://assets/pistoleciki/Uzi.png", 1, 0.1, true, [9, 9], 50, 50, 1.7),
-	Weapon.new("shotgun", 2000, "res://assets/pistoleciki/shotgun.png", 15, 0.4, false, [30, 30], 10, 10, 2.0, 20.0, 1),
+	Weapon.new("shotgun", 2000, "res://assets/pistoleciki/shotgun.png", 15, 0.4, false, [45, 30], 10, 10, 2.0, 20.0, 1),
 	Weapon.new("machinegun", 100000, "res://assets/pistoleciki/Machinegun.png", 1, 0.05, true, [6.7, 3], 150, 150, 2.5)
 ]
 
