@@ -1,5 +1,6 @@
 extends Node
 
+
 signal gun_changed
 var map_pos: Vector2 = Vector2(0,0)
 
@@ -21,24 +22,8 @@ var weapons: Array[Weapon] = [
 ]
 
 var current_gun: int = 0
+
 var last_minigame_path: String = ""
-
-# --- NEW: Helper to get difficulty multiplier ---
-func get_difficulty_multiplier() -> float:
-	match current_difficulty:
-		Difficulty.EASY:
-			return 1.0
-		Difficulty.MEDIUM:
-			return 1.5
-		Difficulty.HARD:
-			return 2.5
-		_:
-			return 1.0
-
-# --- NEW: Reward function for Zombie kill ---
-func add_zombie_kill_reward(base_reward: int = 50) -> void:
-	var total_earned = int(base_reward * get_difficulty_multiplier())
-	money += total_earned
 
 func set_current_gun(new_gun):
 	current_gun = new_gun

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dvff6jr5q6iia"]
 
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cikx8e8t002hr" path="res://scenes/death/death_display.gd" id="1_xwwag"]
+=======
+[ext_resource type="Script" uid="uid://dss4smaclls4g" path="res://scenes/death/death_display.gd" id="1_xwwag"]
+>>>>>>> parent of 7f0511a (zombie points)
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_lk75r"]
 [ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_msc60"]
 
@@ -41,6 +45,12 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1907093]
 layout_mode = 2
 text = "You died"
+label_settings = ExtResource("2_lk75r")
+horizontal_alignment = 1
+
+[node name="Tickets" type="Label" parent="VBoxContainer" unique_id=758196130]
+layout_mode = 2
+text = "Achieved tickets"
 label_settings = ExtResource("2_lk75r")
 horizontal_alignment = 1
 

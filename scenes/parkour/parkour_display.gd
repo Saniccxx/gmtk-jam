@@ -13,10 +13,6 @@ var base_texture_size = Vector2(300.0, 50.0)
 var platform_scale = Vector2(1.0, 1.0) 
 var platform_scale_variance = 0.5
 
-var max_meters_reached: int = 0
-@export var pixels_per_meter: float = 100.0 # Convert 100 pixels to 1 meter
-@export var points_per_meter: int = 5        # Award 5 money per meter
-
 var current_gen_x = 0.0
 var current_gen_y = 0.0
 var vertical_range = 200.0 
