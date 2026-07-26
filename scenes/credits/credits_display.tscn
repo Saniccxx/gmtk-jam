@@ -122,8 +122,10 @@ offset_right = 717.245
 offset_bottom = 470.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Sanuuu - zombie game, architecture, 
-SFX processing."
+text = "Sanuuu - zombie game, 
+architecture, 
+SFX processing.
+"
 label_settings = ExtResource("1_b3802")
 
 [node name="TextureRect" type="TextureRect" parent="middle/Saniccxx" unique_id=1340697202]
