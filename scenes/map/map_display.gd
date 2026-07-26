@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var map_player: CharacterBody2D = $MapPlayer
-@onready var interact_label: Label = $PromptLayer/PromptLabel
+@onready var prompt_layer: CanvasLayer = $PromptLayer
+@onready var interact_label: Label = $PromptLayer/PopupPanel/PromptLabel
 
 var minigames := {
 	"parkour": "res://scenes/parkour/parkour_display.tscn",
@@ -16,7 +17,6 @@ var zone_display_names := {
 	"zombie": "Zombie Survival",
 	"shop": "Shop"
 }
-
 
 var current_zones: Array[String] = []
 
@@ -36,7 +36,7 @@ func _ready() -> void:
 	$ShopArea.body_entered.connect(_on_zone_entered.bind("shop"))
 	$ShopArea.body_exited.connect(_on_zone_exited.bind("shop"))
 
-	interact_label.visible = false
+	prompt_layer.visible = false
 
 func _on_zone_entered(body: Node, zone_name: String) -> void:
 	if body != map_player:
@@ -53,19 +53,21 @@ func _on_zone_exited(body: Node, zone_name: String) -> void:
 
 func _update_prompt() -> void:
 	if current_zones.is_empty():
-		interact_label.visible = false
+		prompt_layer.visible = false
 		return
+		
 	var zone_name: String = current_zones[current_zones.size() - 1]
+	
 	if zone_name == "shop":
-		interact_label.text = "Press [Enter] to enter the Shop"
+		interact_label.text = "Press Enter to Enter Shop"
 	else:
-		interact_label.text = "Press [Enter] to play " + zone_display_names[zone_name]
-	interact_label.visible = true
+		interact_label.text = "Press Enter to Enter " + zone_display_names[zone_name] + ""
+		
+	prompt_layer.visible = true
 
 func enter_game(zone_name: String) -> void:
 	global.map_pos = map_player.position
 	$Tutorial.true_ready(minigames[zone_name])
-	#get_tree().change_scene_to_file(minigames[zone_name])
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("accept") and not current_zones.is_empty():
