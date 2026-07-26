@@ -31,3 +31,4 @@ func _process(delta):
 		running = false
 		time_changed.emit(0)
 		timer_finished.emit()
+		global.lose_game()
