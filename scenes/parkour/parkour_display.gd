@@ -27,6 +27,10 @@ var difficulty_max_distance = 69420.0
 @export var lava_floor_y: float = 700.0
 @export var lava_safety_margin: float = 80.0
 
+# --- MONEY / DISTANCE TRACKING ---
+@export var pixels_per_meter: float = 100.0 # Pixels equal to 1 meter (adjust as needed)
+var max_meters_reached: int = 0
+
 var lava_collision_shape: RectangleShape2D
 var lava_top_y: float = 0.0
 
@@ -43,7 +47,6 @@ var walljump_step_height: float = 170.0
 var walljump_min_steps: int = 4
 var walljump_max_steps: int = 7
 
-
 @onready var ammo_label: Label = $Hud/CanvasLayer2/AmmoLabel
 
 func _ready() -> void:
@@ -58,6 +61,9 @@ func _ready() -> void:
 	current_gen_x = base_texture_size.x * ground_scale.x
 	
 	generate_platforms(threshold_range)
+	
+	# Initialize distance tracking
+	max_meters_reached = max(0, int(player.global_position.x / pixels_per_meter))
 
 
 func _update_lava_top_y() -> void:
@@ -85,7 +91,15 @@ func _process(delta: float) -> void:
 		generate_platforms(gen_threshold)
 		
 	cleanup_platforms()
+	_track_distance_and_add_money()
 
+
+func _track_distance_and_add_money() -> void:
+	var current_meters: int = max(0, int(player.global_position.x / pixels_per_meter))
+	if current_meters > max_meters_reached:
+		var new_meters = current_meters - max_meters_reached
+		global.money += new_meters
+		max_meters_reached = current_meters
 
 
 func get_difficulty(x: float) -> float:
