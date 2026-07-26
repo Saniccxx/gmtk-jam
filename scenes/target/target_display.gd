@@ -36,4 +36,6 @@ func _remove_heart():
 	if lives_left == 1:
 		$Hud/CanvasLayer2/Hearts/TextureRect/Heart1.play("Break")
 	lives_left -= 1
+	if lives_left == 0:
+		get_tree().change_scene_to_file("res://scenes/death/death_display.tscn")
 	
