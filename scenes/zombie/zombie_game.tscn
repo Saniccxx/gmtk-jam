@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bng34yh5ad4iv" path="res://scenes/zombie/zombie_player.tscn" id="2_2yv2p"]
 [ext_resource type="Texture2D" uid="uid://bif3uqndiykh5" path="res://assets/cockroach.png" id="2_vof6t"]
 [ext_resource type="Script" uid="uid://ejw6e505vc5p" path="res://scenes/zombie/Spawner.gd" id="4_s0wpy"]
-[ext_resource type="AudioStream" uid="uid://5hh7a5avm3w2" path="res://assets/around.mp3" id="5_fblyp"]
+[ext_resource type="AudioStream" uid="uid://cww70fjos84kv" path="res://scenes/parkour/assets/kindaworks.wav" id="5_1yk41"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_0u8bq"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="7_s0wpy"]
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="7_sa2u6"]
@@ -385,8 +385,7 @@ wait_time = 0.07
 autostart = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=32806517]
-stream = ExtResource("5_fblyp")
-volume_db = -25.0
+stream = ExtResource("5_1yk41")
 autoplay = true
 bus = &"Music"
 
