@@ -8,6 +8,8 @@ var enemies_left: int = 0
 @onready var ammo_label: Label = $CanvasLayer/MarginContainer/ZombieHUD/Ammo
 @onready var reloading_label: Label = $CanvasLayer/Reloading
 
+var reward: int = 0
+
 func _ready() -> void:
 	var enemies: Array[Node] = get_tree().get_nodes_in_group("enemy")
 	enemies_left = enemies.size()
@@ -15,6 +17,13 @@ func _ready() -> void:
 	$Enemies.enemy_spawned.connect(_on_enemy_spawned)
 	for enemy in enemies:
 		enemy.died.connect(_on_enemy_died)
+	match global.current_difficulty:
+		global.Difficulty.EASY:
+			reward = 500
+		global.Difficulty.MEDIUM:
+			reward = 1000
+		global.Difficulty.HARD:
+			reward = 2000
 
 func _on_enemy_spawned() -> void:
 	enemies_left += 1
@@ -42,4 +51,5 @@ func _on_enemy_died() -> void:
 	enemies_left -= 1
 
 func _on_timer_timeout() -> void:
+	global.money += reward
 	global.load_winner_screen()
