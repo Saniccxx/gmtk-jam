@@ -67,4 +67,3 @@ func get_random_outside_position() -> Vector2:
 			spawn_pos.y = randf_range(0, screen_size.y)
 
 	return spawn_pos
-
