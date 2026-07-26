@@ -346,10 +346,12 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_jei5n"]
 font_size = 100
 font_color = Color(0, 0, 0, 1)
+outline_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_s0wpy"]
 font_size = 100
 font_color = Color(0, 0, 0, 1)
+outline_size = 20
 
 [node name="ZombieGame" type="Node2D" unique_id=255044243 node_paths=PackedStringArray("time_label", "health_label")]
 script = ExtResource("1_4oaqw")
@@ -440,6 +442,7 @@ offset_top = -119.0
 offset_right = 1.0
 offset_bottom = -19.0
 grow_vertical = 0
+theme = ExtResource("7_sa2u6")
 label_settings = SubResource("LabelSettings_jei5n")
 
 [node name="Time" type="Label" parent="CanvasLayer/MarginContainer/ZombieHUD" unique_id=197007816]
@@ -453,6 +456,7 @@ offset_right = 2.0
 offset_bottom = 146.0
 grow_horizontal = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_sa2u6")
 label_settings = SubResource("LabelSettings_s0wpy")
 horizontal_alignment = 1
 
@@ -506,6 +510,11 @@ bus = &"SFX"
 
 [node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=1104588676]
 stream = ExtResource("11_h14ri")
+bus = &"SFX"
+
+[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=302598240]
+stream = ExtResource("11_h14ri")
+volume_db = -25.0
 volume_db = -15.0
 
 [node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=1644754915]
