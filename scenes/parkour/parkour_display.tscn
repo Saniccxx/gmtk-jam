@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://bxk48v2svnl6b"]
 
 [ext_resource type="Script" uid="uid://cg5gy6dcs0ho5" path="res://scenes/parkour/parkour_display.gd" id="1_rqnsb"]
-[ext_resource type="Script" uid="uid://cddr6nhm40aws" path="res://scenes/parkour/fps_label.gd" id="2_ghnu6"]
+[ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="2_6widt"]
 [ext_resource type="PackedScene" uid="uid://hbvb4mnln3cw" path="res://scenes/parkour/Parkour_player.tscn" id="2_tyibk"]
+[ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="3_8rakm"]
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
+[ext_resource type="Texture2D" uid="uid://0w1f5fek16kp" path="res://scenes/parkour/assets/jeicam/sun/Untitled-16.png" id="7_6widt"]
+[ext_resource type="Script" uid="uid://cn630d5ca2brr" path="res://scenes/parkour/sun.gd" id="8_8rakm"]
 [ext_resource type="AudioStream" uid="uid://d12rwnkso5d18" path="res://scenes/parkour/assets/pek.wav" id="8_tucp6"]
+[ext_resource type="Script" uid="uid://bb2ql1kpb85x2" path="res://scenes/parkour/cloud_paralax.gd" id="9_rj0wi"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="11_xo2lo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
 shader = ExtResource("5_c82wr")
@@ -28,12 +33,41 @@ size = Vector2(64, 63.999996)
 [sub_resource type="LabelSettings" id="LabelSettings_1yfpb"]
 font_size = 72
 
+[sub_resource type="LabelSettings" id="LabelSettings_rj0wi"]
+font = ExtResource("11_xo2lo")
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+outline_size = 15
+
 [node name="Parkour_map" type="Node2D" unique_id=1919236221]
 script = ExtResource("1_rqnsb")
 
-[node name="Player" parent="." unique_id=689076596 instance=ExtResource("2_tyibk")]
+[node name="SFX" type="Node2D" parent="." unique_id=637589319]
+
+[node name="Reload" type="AudioStreamPlayer" parent="SFX" unique_id=1756519196]
+stream = ExtResource("2_6widt")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="SFX" unique_id=833954713]
+stream = ExtResource("3_8rakm")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1087105394]
+scroll_scale = Vector2(0.01, 0.01)
+
+[node name="Sun" type="Sprite2D" parent="Parallax2D" unique_id=1816627984]
+position = Vector2(1757, 191)
+texture = ExtResource("7_6widt")
+script = ExtResource("8_8rakm")
+
+[node name="CloudParalax" type="Parallax2D" parent="." unique_id=490732713]
+script = ExtResource("9_rj0wi")
+
+[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
+
+[node name="Player" parent="." unique_id=689076596 node_paths=PackedStringArray("ShootingSound", "ReloadSound") instance=ExtResource("2_tyibk")]
 scale = Vector2(0.3, 0.3)
 floor_constant_speed = true
+ShootingSound = NodePath("../SFX/Shoot")
+ReloadSound = NodePath("../SFX/Reload")
 
 [node name="Lava" type="Area2D" parent="Player" unique_id=1128987468]
 position = Vector2(0, 1800)
@@ -65,8 +99,6 @@ label_settings = SubResource("LabelSettings_1yfpb")
 horizontal_alignment = 1
 script = ExtResource("4_1yfpb")
 
-[node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1555202411]
 layer = -1
 
@@ -80,15 +112,21 @@ color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("6_ghnu6")]
 
-[node name="FPSLabel" type="Label" parent="Hud" unique_id=993973077]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 368.0
-offset_right = 72.0
-offset_bottom = 398.0
-theme_override_font_sizes/font_size = 160
-text = "FPSSSSSSSSSSSSSSSSSSSSSS"
-script = ExtResource("2_ghnu6")
+[node name="CanvasLayer2" type="CanvasLayer" parent="Hud" unique_id=2031143292]
+
+[node name="AmmoLabel" type="Label" parent="Hud/CanvasLayer2" unique_id=1808886220]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -74.0
+offset_right = 173.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Ammothingyishere"
+label_settings = SubResource("LabelSettings_rj0wi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=47778372]
 stream = ExtResource("8_tucp6")

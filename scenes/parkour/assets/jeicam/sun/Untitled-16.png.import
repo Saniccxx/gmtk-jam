@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsi037k47bw2"
-path="res://.godot/imported/Untitled-1.png-90ab317527783674aa7e028967dc941a.ctex"
+uid="uid://0w1f5fek16kp"
+path="res://.godot/imported/Untitled-16.png-ee1de1c6624b688d0df25a852934a02b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Untitled-1.png"
-dest_files=["res://.godot/imported/Untitled-1.png-90ab317527783674aa7e028967dc941a.ctex"]
+source_file="res://scenes/parkour/assets/jeicam/sun/Untitled-16.png"
+dest_files=["res://.godot/imported/Untitled-16.png-ee1de1c6624b688d0df25a852934a02b.ctex"]
 
 [params]
 

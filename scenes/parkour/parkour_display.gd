@@ -42,6 +42,8 @@ var walljump_max_steps: int = 7
 
 const WIN_DISTANCE = 100000.0
 
+@onready var ammo_label: Label = $Hud/CanvasLayer2/AmmoLabel
+
 func _ready() -> void:
 	lava_collision_shape = lava.get_node("CollisionShape2D").shape
 	_update_lava_top_y()
@@ -62,7 +64,7 @@ func _update_lava_top_y() -> void:
 	lava_top_y = lava_floor_y - half_height
 
 func _process(delta: float) -> void:
-
+	ammo_label.text = "Ammo: %d" % player.current_ammo[global.current_gun]
 	
 	lava.global_position.y = lava_floor_y
 	
