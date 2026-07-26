@@ -10,7 +10,8 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoulders: Node2D = $Shoulders
 @onready var hands_with_gun: Sprite2D = $Shoulders/HandsWithGun
-
+@onready var muzzle: Node2D = $Shoulders/HandsWithGun/Muzzle
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 @export var pistol_texture: Texture2D
 @export var uzi_texture: Texture2D
@@ -54,24 +55,23 @@ func _on_gun_changed():
 func update_ammo_label():
 	update_labels.emit()
 
-func play_animation(anim_name: String, flipped_h: bool = false) -> void:
+func play_animation(anim_name: String) -> void:
 	match anim_name:
 		"idle":
 			animated_sprite.position = Vector2(-6, -53)
 			animated_sprite.scale = Vector2(0.725, 0.725)
-			shoulders.position = Vector2(-9, -39)
+			shoulders.position = Vector2(-9 if not animated_sprite.flip_h else 0, -39)
 		"run":
-			animated_sprite.position = Vector2(-40 if not flipped_h else 20, -98)
+			animated_sprite.position = Vector2(-40 if not animated_sprite.flip_h else 20, -98)
 			animated_sprite.scale = Vector2(1.035, 1.035)
-			shoulders.position = Vector2(-3 if not flipped_h else -15, -26)
-	
+			shoulders.position = Vector2(-3 if not animated_sprite.flip_h else -15, -26)
 	animated_sprite.play(anim_name)
 
 func update_animation(dir: Vector2) -> void:
 	if dir != Vector2.ZERO:
-		play_animation("run", dir.x < 0)
+		play_animation("run")
 	else:
-		play_animation("idle", dir.x < 0)
+		play_animation("idle")
 		
 	if dir.x < 0:
 		animated_sprite.flip_h = true
@@ -84,15 +84,25 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 	update_animation(input_vector)
-	
+
 	var viewport_size: Vector2 = get_viewport_rect().size
 	var padding: float = 3.0
 	
-	var half_width: float = ($Sprite2D.texture.get_width() * $Sprite2D.scale.x) / 2.0
-	var half_height: float = ($Sprite2D.texture.get_height() * $Sprite2D.scale.y) / 2.0
+	var rect_shape: RectangleShape2D = collision_shape.shape as RectangleShape2D
 	
-	global_position.x = clamp(global_position.x, padding + half_width, viewport_size.x - padding - half_width)
-	global_position.y = clamp(global_position.y, padding + half_height, viewport_size.y - padding - half_height)
+	if rect_shape:
+		var extents: Vector2 = (rect_shape.size / 2.0) * collision_shape.scale.abs() * scale.abs()
+		
+		var shape_offset: Vector2 = collision_shape.position * scale
+		
+		var min_x: float = padding + extents.x - shape_offset.x
+		var max_x: float = viewport_size.x - padding - extents.x - shape_offset.x
+		var min_y: float = padding + extents.y - shape_offset.y
+		var max_y: float = viewport_size.y - padding - extents.y - shape_offset.y
+		
+		global_position.x = clamp(global_position.x, min_x, max_x)
+		global_position.y = clamp(global_position.y, min_y, max_y)
+
 
 
 func _process(_delta: float) -> void:
@@ -132,13 +142,14 @@ func shoot() -> void:
 
 func spawn_bullet() -> void:
 	var bullet: Node2D = bullet_scene.instantiate()
+	var muzzle_pos: Vector2 = muzzle.global_position
 	
-	var base_rotation: float = global_position.angle_to_point(get_global_mouse_position())
+	var base_rotation: float = muzzle_pos.angle_to_point(get_global_mouse_position())
 
 	var random_spread: float = randf_range(-global.weapons[global.current_gun].spread_angle / 2.0, global.weapons[global.current_gun].spread_angle / 2.0)
 	var final_rotation: float = base_rotation + deg_to_rad(random_spread)
 
-	bullet.global_position = global_position
+	bullet.global_position = muzzle_pos
 	bullet.rotation = final_rotation
 	
 	get_parent().add_child(bullet)
