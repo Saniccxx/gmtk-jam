@@ -56,7 +56,8 @@ func shoot() -> void:
 		return
 	can_shoot = false
 	if current_ammo[global.current_gun] <= 0:
-		reload()
+		if is_on_floor():
+			reload()
 		can_shoot = true
 		return
 	current_ammo[global.current_gun] -= 1
@@ -83,7 +84,8 @@ func spawn_bullet() -> void:
 	get_parent().add_child(bullet)
 
 func reload() -> void:
-	if is_reloading:
+	# Reload only if player is on the ground and not already reloading
+	if is_reloading or not is_on_floor():
 		return
 
 	is_reloading = true
@@ -101,10 +103,6 @@ func _on_sprite_animation_finished() -> void:
 	elif slide_state == SlideState.OUTRO:
 		slide_state = SlideState.NONE
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("reload") and current_ammo[global.current_gun] < ammunition[global.current_gun]:
-		reload()
-
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta * MASS
@@ -119,6 +117,10 @@ func _physics_process(delta: float) -> void:
 			slide_state = SlideState.OUTRO
 			sprite.animation = "slide_outro"
 			sprite.play()
+
+	# --- AUTOMATIC RELOAD ON GROUND ---
+	if is_on_floor() and not is_reloading and current_ammo[global.current_gun] <= 0:
+		reload()
 
 	# recoil + shooting
 	if global.weapons[global.current_gun].is_auto:
