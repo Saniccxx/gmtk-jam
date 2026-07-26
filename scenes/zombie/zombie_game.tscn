@@ -10,8 +10,8 @@
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="7_sa2u6"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="8_xyjib"]
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="9_sa2u6"]
-[ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="11_h14ri"]
 [ext_resource type="AudioStream" uid="uid://u8vxhmbvytom" path="res://assets/sounds/minigun.wav" id="11_h14ri"]
+[ext_resource type="AudioStream" uid="uid://c88no7kkluedk" path="res://assets/sounds/shotgun.wav" id="12_1yk41"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fblyp"]
 atlas = ExtResource("2_vof6t")
@@ -371,7 +371,7 @@ sprite_frames = SubResource("SpriteFrames_jei5n")
 z_index = 1
 position = Vector2(956, 297)
 ShootingSound = NodePath("../SFX/ShootingSound")
-ShotgunSound = NodePath("../SFX/ShotgunSound")
+ShotgunSound = NodePath("")
 ReloadSound = NodePath("../SFX/ReloadSound")
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1212332318]
@@ -504,12 +504,12 @@ bus = &"SFX"
 stream = ExtResource("9_sa2u6")
 bus = &"SFX"
 
-[node name="ShotgunSound" type="AudioStreamPlayer" parent="SFX" unique_id=1320444805]
+[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=1104588676]
 stream = ExtResource("11_h14ri")
-bus = &"SFX"
-[node name="Machinegun" type="AudioStreamPlayer" parent="SFX" unique_id=302598240]
-stream = ExtResource("11_h14ri")
-volume_db = -25.0
+volume_db = -15.0
+
+[node name="Shotgun" type="AudioStreamPlayer" parent="SFX" unique_id=1644754915]
+stream = ExtResource("12_1yk41")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Enemies/SpawnTimer" to="Enemies" method="_on_spawn_timer_timeout"]

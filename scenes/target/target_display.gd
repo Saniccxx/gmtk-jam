@@ -15,7 +15,7 @@ func update_labels() -> void:
 	if global.current_gun == 3:
 		$Pointer.ShootingSound = $SFX/Machinegun
 	elif global.current_gun == 2:
-		$Pointer.ShootingSound = $SFX/ShootingSound
+		$Pointer.ShootingSound = $SFX/Shotgun
 	else:
 		$Pointer.ShootingSound = $SFX/ShootingSound
 

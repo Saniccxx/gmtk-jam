@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 	if global.current_gun == 3:
 		$Player.ShootingSound = $SFX/Machinegun
 	elif global.current_gun == 2:
-		$Player.ShootingSound = $SFX/Shoot
+		$Player.ShootingSound = $SFX/Shotgun
 	else:
 		$Player.ShootingSound = $SFX/Shoot
 	
