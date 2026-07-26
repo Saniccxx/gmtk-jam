@@ -6,13 +6,15 @@ extends Node2D
 var minigames := {
 	"parkour": "res://scenes/parkour/parkour_display.tscn",
 	"target": "res://scenes/target/target_display.tscn",
-	"zombie": "res://scenes/difficulty_selection/difficulty_selection.tscn"
+	"zombie": "res://scenes/difficulty_selection/difficulty_selection.tscn",
+	"shop": "res://scenes/shop/shop_display.tscn"
 }
 
 var zone_display_names := {
 	"parkour": "Parkour",
 	"target": "Target Practice",
-	"zombie": "Zombie Survival"
+	"zombie": "Zombie Survival",
+	"shop": "Shop"
 }
 
 
@@ -30,6 +32,9 @@ func _ready() -> void:
 
 	$ZombieArea.body_entered.connect(_on_zone_entered.bind("zombie"))
 	$ZombieArea.body_exited.connect(_on_zone_exited.bind("zombie"))
+
+	$ShopArea.body_entered.connect(_on_zone_entered.bind("shop"))
+	$ShopArea.body_exited.connect(_on_zone_exited.bind("shop"))
 
 	interact_label.visible = false
 
@@ -51,19 +56,16 @@ func _update_prompt() -> void:
 		interact_label.visible = false
 		return
 	var zone_name: String = current_zones[current_zones.size() - 1]
-	interact_label.text = "Press [Enter] to play " + zone_display_names[zone_name]
+	if zone_name == "shop":
+		interact_label.text = "Press [Enter] to enter the Shop"
+	else:
+		interact_label.text = "Press [Enter] to play " + zone_display_names[zone_name]
 	interact_label.visible = true
 
 func enter_game(zone_name: String) -> void:
 	global.map_pos = map_player.position
 	get_tree().change_scene_to_file(minigames[zone_name])
 
-func go_to_shop() -> void:
-	global.map_pos = map_player.position
-	get_tree().change_scene_to_file("res://scenes/shop/shop_display.tscn")
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("accept") and not current_zones.is_empty():
 		enter_game(current_zones[current_zones.size() - 1])
-	if Input.is_action_just_pressed("slide"):
-		go_to_shop()
