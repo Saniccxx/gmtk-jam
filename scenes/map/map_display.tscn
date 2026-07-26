@@ -209,17 +209,26 @@ shape = SubResource("RectangleShape2D_zone150")
 [node name="PromptLayer" type="CanvasLayer" parent="." unique_id=1120088500]
 visible = false
 
-[node name="PromptLabel" type="Label" parent="PromptLayer" unique_id=1073291224]
-anchors_preset = 5
+[node name="PopupPanel" type="PanelContainer" parent="PromptLayer" unique_id=505001439]
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -200.0
-offset_right = 200.0
-offset_bottom = 31.0
+anchor_bottom = 1.0
+offset_left = -351.0
+offset_top = -230.0
+offset_right = 351.0
+offset_bottom = -128.99988
 grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PromptLabel" type="Label" parent="PromptLayer/PopupPanel" unique_id=1073291224]
+layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Press [Enter] to play"
+text = "Press Enter to Enter"
+label_settings = ExtResource("6_v1ud3")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("4_ilqgx")]
 visible = false
