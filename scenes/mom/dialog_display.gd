@@ -53,8 +53,8 @@ var current_node_id := "start"
 @onready var text_label: Label = $DialogBox/TextLabel
 @onready var continue_hint: Label = $DialogBox/ContinueHint
 @onready var choices_container: VBoxContainer = $ChoicesContainer
-@onready var mom_portrait: ColorRect = $Mom
-@onready var kid_portrait: ColorRect = $Kid
+@onready var mom_portrait: TextureRect = $Mom
+@onready var kid_portrait: TextureRect = $Kid
 
 func _ready() -> void:
 	choices_container.visible = false
