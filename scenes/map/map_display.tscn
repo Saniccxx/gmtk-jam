@@ -12,6 +12,7 @@
 [ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="6_v1ud3"]
 [ext_resource type="Texture2D" uid="uid://4lf27qc5augu" path="res://scenes/parkour/assets/Untitled-12.png" id="7_ojmxi"]
 [ext_resource type="Texture2D" uid="uid://csoc2rm1px6fb" path="res://scenes/parkour/assets/Untitled-s2.png" id="8_17l7p"]
+[ext_resource type="PackedScene" uid="uid://b45u5mo4ynvrk" path="res://scenes/tutorial_screen/tutorial.tscn" id="13_jtbyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_zone150"]
 size = Vector2(150, 150)
@@ -233,6 +234,8 @@ text = "main menu"
 
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("4_pnlec")]
 visible = false
+
+[node name="Tutorial" parent="." unique_id=1301851083 instance=ExtResource("13_jtbyp")]
 
 [connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/main menu" to="PauseMenu" method="_on_main_menu_pressed"]
 
