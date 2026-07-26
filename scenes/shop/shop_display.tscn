@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3bx3362dpll" path="res://assets/pistoleciki/Shotgun.png" id="4_mbg4h"]
 [ext_resource type="Texture2D" uid="uid://b4xov0tv2ts1e" path="res://assets/pistoleciki/Machinegun.png" id="5_rvypb"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_i06sb"]
-[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="7_mbg4h"]
+[ext_resource type="Texture2D" uid="uid://4qicpgustlo" path="res://assets/strzalka.png" id="7_mbg4h"]
 
 [node name="ShopDisplay" type="Control" unique_id=1154627393]
 layout_mode = 3
@@ -54,7 +54,11 @@ layout_mode = 1
 
 [node name="Button" type="Button" parent="." unique_id=2057204224]
 layout_mode = 1
-offset_right = 80.0
-offset_bottom = 80.0
+offset_right = 120.0
+offset_bottom = 120.0
+rotation = 1.5707964
+pivot_offset = Vector2(60, 60)
 icon = ExtResource("7_mbg4h")
 expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
