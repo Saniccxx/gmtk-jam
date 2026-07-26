@@ -83,12 +83,16 @@ func reload():
 		update_labels.emit()
 
 func shoot_timer():
+	if get_tree() == null:
+		return
 	can_shoot = false
 	var amount = global.weapons[global.current_gun].fire_delay
 	await get_tree().create_timer(amount).timeout
 	can_shoot = true
 
 func hurt_timer():
+	if get_tree() == null:
+		return
 	can_hurt = false
 	await get_tree().create_timer(i_frames).timeout
 	can_hurt = true
