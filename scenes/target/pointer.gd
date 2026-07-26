@@ -13,6 +13,7 @@ var recoil_values = []
 var max_ammo: Array[int] = []
 var current_ammo: Array[int] = []
 var is_reloading: bool = false
+var damage_mults: Array[int]= [1, 2, 3, 16]
 
 @export var ShootingSound: AudioStreamPlayer
 @export var ReloadSound: AudioStreamPlayer
@@ -61,6 +62,7 @@ func shoot():
 		elif distance < 55:
 			suma += 2
 		else: suma += 1
+	suma *= damage_mults[global.current_gun]
 	global.money += suma
 	return
 	
@@ -71,7 +73,7 @@ func reload():
 	is_reloading = true
 	update_labels.emit()
 	ReloadSound.play()
-	await get_tree().create_timer(global.weapons[global.current_gun].reload_time).timeout
+	await get_tree().create_timer(global.weapons[0].reload_time).timeout
 	
 	if is_reloading:
 		current_ammo[global.current_gun] = max_ammo[global.current_gun]
@@ -133,8 +135,7 @@ func shotgun_shoot(target):
 		elif distance < 55:
 			suma += 2
 		else: suma += 1
-	print(suma)
-	return suma
+	return suma * damage_mults[2]
 func _on_area_entered(area: Area2D) -> void:
 	aimed_targets.append(area)
 
