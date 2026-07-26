@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ch2m4oowm2o70"]
+
+[ext_resource type="Script" uid="uid://cikx8e8t002hr" path="res://scenes/death/death_display.gd" id="1_yylhm"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="2_sayis"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="3_tmnio"]
+
+[node name="WinnerDisplay" type="Control" unique_id=1784500990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yylhm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1265363789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8392157, 0.8392157, 0.8392157, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1549850654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -123.0
+offset_right = 181.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=161953616]
+layout_mode = 2
+text = "YOU WON!"
+label_settings = ExtResource("2_sayis")
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="VBoxContainer" unique_id=656951061]
+layout_mode = 2
+theme = ExtResource("3_tmnio")
+text = "RETRY"
+
+[node name="Map Display" type="Button" parent="VBoxContainer" unique_id=1842502185]
+layout_mode = 2
+theme = ExtResource("3_tmnio")
+text = "MAP DISPLAY"
+
+[connection signal="pressed" from="VBoxContainer/Map Display" to="." method="_on_map_display_pressed"]

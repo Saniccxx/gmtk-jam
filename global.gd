@@ -37,6 +37,10 @@ func load_winner_screen() -> void:
 	last_minigame_path = get_tree().current_scene.scene_file_path
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/win/winner_display.tscn")
 	
+func load_winn_screen() -> void:
+	last_minigame_path = get_tree().current_scene.scene_file_path
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/win/winn.tscn")
+	
 func lose_game() -> void:
 	get_tree().call_deferred("change_scene_to_file", "res://scenes/lose/lose_display.tscn")
 
