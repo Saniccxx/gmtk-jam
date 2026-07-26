@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cahdbq3vdbphx" path="res://scenes/parkour/assets/calmbeforestorm.wav" id="2_exba2"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="4_ilqgx"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="4_pnlec"]
-[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="5_exba2"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="5_ilqgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wall_h"]
 size = Vector2(1240, 40)
@@ -149,17 +149,14 @@ horizontal_alignment = 1
 [node name="map" parent="PauseMenu/ColorRect/VBoxContainer" parent_id_path=PackedInt32Array(2089184364, 1308764988) index="2" unique_id=657664127]
 visible = false
 
+[node name="main menu" type="Button" parent="PauseMenu/ColorRect/VBoxContainer" parent_id_path=PackedInt32Array(2089184364, 1308764988) index="3" unique_id=1367306162]
+layout_mode = 2
+theme = ExtResource("5_ilqgx")
+text = "main menu"
+
 [node name="Hud" parent="." unique_id=923602173 instance=ExtResource("4_pnlec")]
 
-[node name="Button" parent="Hud/CanvasLayer/Control" parent_id_path=PackedInt32Array(923602173, 1852210214) index="2" unique_id=595914550]
-visible = false
-layout_mode = 1
-offset_right = 108.0
-offset_bottom = 100.0
-theme_override_constants/icon_max_width = 100
-icon = ExtResource("5_exba2")
-
-[connection signal="pressed" from="Hud/CanvasLayer/Control/Button" to="Hud/CanvasLayer/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="PauseMenu/ColorRect/VBoxContainer/main menu" to="PauseMenu" method="_on_main_menu_pressed"]
 
 [editable path="PauseMenu"]
 [editable path="Hud"]
