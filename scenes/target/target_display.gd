@@ -23,10 +23,10 @@ func place_hitmark(pos):
 
 func _remove_heart():
 	if lives_left == 3:
-		$Hud/CanvasLayer2/Hearts/TextureRect3/Heart3.visible = false
+		$Hud/CanvasLayer2/Hearts/TextureRect3/Heart3.play("Break")
 	elif lives_left == 2:
-		$Hud/CanvasLayer2/Hearts/TextureRect2/Heart2.visible = false
+		$Hud/CanvasLayer2/Hearts/TextureRect2/Heart2.play("Break")
 	if lives_left == 1:
-		$Hud/CanvasLayer2/Hearts/TextureRect/Heart1.visible = false
+		$Hud/CanvasLayer2/Hearts/TextureRect/Heart1.play("Break")
 	lives_left -= 1
 	

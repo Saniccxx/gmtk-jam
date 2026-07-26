@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ds3so0rp1a85m"]
+
+[ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="1_rvajm"]
+
+[node name="Tutorial" type="Control" unique_id=658154782]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" parent="." unique_id=2089184364 instance=ExtResource("1_rvajm")]
