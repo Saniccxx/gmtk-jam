@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="3_3s77m"]
 [ext_resource type="PackedScene" uid="uid://bayaqynxqmgmk" path="res://scenes/target/target.tscn" id="4_irbp4"]
 [ext_resource type="Script" uid="uid://b68dnd1dnmoj0" path="res://scenes/target/pointer.gd" id="4_xe5lj"]
-[ext_resource type="Texture2D" uid="uid://dw8nufl6ilpv5" path="res://assets/Screenshot 2025-04-04 165424.png" id="6_c2lq2"]
 [ext_resource type="Texture2D" uid="uid://2it0c2k1fvae" path="res://assets/sdu polskie logo.png" id="7_aj51f"]
 [ext_resource type="Texture2D" uid="uid://chgeiresf52tk" path="res://assets/galazka sdu (1).png" id="7_umlhu"]
+[ext_resource type="Texture2D" uid="uid://bycnirmliripv" path="res://assets/coin.png" id="10_2k2j1"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="10_umlhu"]
 [ext_resource type="Theme" uid="uid://0s07bscxmkxq" path="res://scenes/zombie/font.tres" id="10_xkw8o"]
 [ext_resource type="AudioStream" uid="uid://h64bgtl5sgth" path="res://assets/sounds/shoot.wav" id="11_qnf4o"]
+[ext_resource type="Texture2D" uid="uid://cglnql552c6lc" path="res://assets/coin_up.png" id="11_uvku7"]
 [ext_resource type="AudioStream" uid="uid://bigxnahwsckxm" path="res://assets/sounds/reload.wav" id="12_xkw8o"]
 [ext_resource type="PackedScene" uid="uid://c0ommrxrm0i5l" path="res://scenes/target/hitmark.tscn" id="14_xehft"]
 [ext_resource type="Texture2D" uid="uid://bppdlychx5e0s" path="res://scenes/target/assets/Hit_marker.png" id="14_xuo1e"]
@@ -38,20 +39,135 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_c2lq2")
+"texture": ExtResource("10_2k2j1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_c2lq2")
+"texture": ExtResource("10_2k2j1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_c2lq2")
+"texture": ExtResource("10_2k2j1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_aj51f")
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uvku7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
 }],
 "loop": 1,
-"name": &"Live",
-"speed": 1.0
+"name": &"coin_1",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uvku7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}],
+"loop": 1,
+"name": &"coin_2",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2k2j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_uvku7")
+}],
+"loop": 1,
+"name": &"coin_3",
+"speed": 2.0
 }]
 
 [node name="TargetDisplay" type="Node2D" unique_id=671150416]
@@ -107,10 +223,10 @@ layout_mode = 2
 expand_mode = 1
 
 [node name="Heart1" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect" unique_id=600832537]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_cvx70")
-animation = &"Live"
-autoplay = "Live"
+animation = &"coin_1"
+autoplay = "coin_1"
 
 [node name="TextureRect2" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=812126584]
 custom_minimum_size = Vector2(100, 100)
@@ -118,10 +234,10 @@ layout_mode = 2
 expand_mode = 1
 
 [node name="Heart2" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect2" unique_id=1758094373]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_cvx70")
-animation = &"Live"
-autoplay = "Live"
+animation = &"coin_2"
+autoplay = "coin_2"
 
 [node name="TextureRect3" type="TextureRect" parent="Hud/CanvasLayer2/Hearts" unique_id=976301406]
 custom_minimum_size = Vector2(100, 100)
@@ -129,10 +245,11 @@ layout_mode = 2
 expand_mode = 1
 
 [node name="Heart3" type="AnimatedSprite2D" parent="Hud/CanvasLayer2/Hearts/TextureRect3" unique_id=1411983792]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_cvx70")
-animation = &"Live"
-autoplay = "Live"
+animation = &"coin_2"
+autoplay = "coin_3"
+frame_progress = 0.124221444
 
 [node name="Reloading" type="Label" parent="Hud/CanvasLayer2" unique_id=1512131868]
 visible = false
