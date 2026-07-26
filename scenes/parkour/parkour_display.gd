@@ -4,6 +4,9 @@ extends Node2D
 @onready var obstacles = $Obstacles
 @onready var lava = $Player/Lava
 
+@onready var lives_left: int = 3
+var last_safe_position: Vector2 = Vector2.ZERO
+
 var platform_texture = preload("res://scenes/parkour/assets/platform.png")
 
 var base_texture_size = Vector2(300.0, 50.0)
@@ -73,6 +76,9 @@ func _process(delta: float) -> void:
 		$Player.ShootingSound = $SFX/Shoot
 	
 	lava.global_position.y = lava_floor_y
+	
+	if player.is_on_floor():
+		last_safe_position = player.global_position
 	
 	var gen_threshold = player.global_position.x + threshold_range
 	if current_gen_x < gen_threshold:
@@ -235,4 +241,30 @@ func cleanup_platforms() -> void:
 
 func _on_lava_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		_remove_heart()
+
+
+func _remove_heart() -> void:
+	if lives_left == 3:
+		_break_heart($Hud/CanvasLayer2/Hearts/TextureRect3/Heart3)
+	elif lives_left == 2:
+		_break_heart($Hud/CanvasLayer2/Hearts/TextureRect2/Heart2)
+	elif lives_left == 1:
+		_break_heart($Hud/CanvasLayer2/Hearts/TextureRect/Heart1)
+	lives_left -= 1
+
+	if lives_left <= 0:
 		global.load_death_screen()
+	else:
+		_respawn_player()
+
+
+func _break_heart(heart: AnimatedSprite2D) -> void:
+	heart.play("Break")
+	await heart.animation_finished
+	heart.visible = false
+
+
+func _respawn_player() -> void:
+	player.global_position = last_safe_position
+	player.velocity = Vector2.ZERO

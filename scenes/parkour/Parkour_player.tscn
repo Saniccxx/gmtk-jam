@@ -95,6 +95,7 @@
 [ext_resource type="Texture2D" uid="uid://be5nwlryuebaq" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0033.png" id="117_i6gyu"]
 [ext_resource type="Texture2D" uid="uid://cusojr7t6ephe" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0034.png" id="118_5hu8p"]
 [ext_resource type="Texture2D" uid="uid://dskfiwdeu74ul" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0035.png" id="119_hgmxt"]
+[ext_resource type="Texture2D" uid="uid://x2xxk87jri5w" path="res://assets/hands_with_guns/pistol.png" id="120_2gt7j"]
 [ext_resource type="Texture2D" uid="uid://c24vb8glw2xhy" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20001.png" id="301_47jjt"]
 [ext_resource type="Texture2D" uid="uid://4x3k50ewq2h7" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20002.png" id="302_nasi8"]
 [ext_resource type="Texture2D" uid="uid://nm7cmvdvmn1h" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20003.png" id="303_6st4e"]
@@ -531,5 +532,16 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75747721]
 shape = SubResource("CapsuleShape2D_lorgp")
+
+[node name="Shoulders" type="Node2D" parent="." unique_id=1155090254]
+position = Vector2(-9, -39)
+
+[node name="HandsWithGun" type="Sprite2D" parent="Shoulders" unique_id=1528915596]
+position = Vector2(31, 0)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("120_2gt7j")
+
+[node name="Muzzle" type="Node2D" parent="Shoulders/HandsWithGun" unique_id=1211408586]
+position = Vector2(256, -48)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_sprite_animation_finished"]
