@@ -1,12 +1,9 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://bn2kvgsiusju1"]
 
-[sub_resource type="SystemFont" id="SystemFont_p5ffu"]
-font_names = PackedStringArray("Impact")
+[ext_resource type="FontFile" uid="uid://css5drqtahtua" path="res://assets/Pijamas-ejPO.ttf" id="1_p5ffu"]
 
 [resource]
-font = SubResource("SystemFont_p5ffu")
-font_size = 30
-outline_color = Color(0, 0, 1, 1)
-shadow_size = 12
-shadow_color = Color(0, 0, 0, 0.5568628)
-shadow_offset = Vector2(2, 2)
+font = ExtResource("1_p5ffu")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+outline_size = 20
