@@ -50,6 +50,8 @@ func shoot():
 			print("life lost")
 			damage.emit()
 			hurt_timer()
+		if global.current_gun == 2:
+			shotgun_shoot(1, false)
 		return
 	
 	for target in aimed_targets:
@@ -101,6 +103,15 @@ func _physics_process(delta: float) -> void:
 	position += velocity * delta
 	position[1] -= due_recoil * recoil_catchup_speed
 	due_recoil -= due_recoil * recoil_catchup_speed
+	if position[0] < 10:
+		position[0] = 10
+	if position[1] < 10:
+		position[1] = 10
+	if position[0] > 1910:
+		position[0] = 1910
+	if position[1] > 1070:
+		position[1] = 1070
+	
 	
 		
 func _process(delta: float) -> void:
@@ -124,11 +135,13 @@ func get_shotgun_spread(radius: float) -> Vector2:
 		sin(angle) * distance
 	)
 
-func shotgun_shoot(target):
+func shotgun_shoot(target, hit=true):
 	var suma = 0
 	for bullet in range(global.weapons[2].bullets_per_shot):
 		var bullet_pos = global_position + get_shotgun_spread(25)
 		hitmark.emit(bullet_pos)
+		if not hit:
+			continue
 		var distance = bullet_pos.distance_to(target.global_position)
 		if distance < 30:
 			suma += 3

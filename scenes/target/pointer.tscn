@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://orshyegbw7kt"]
 
-[ext_resource type="Texture2D" uid="uid://c0h75l56qhk2b" path="res://assets/celownik.png" id="1_jvpei"]
+[ext_resource type="Texture2D" uid="uid://xek50148jt3w" path="res://scenes/target/assets/celowniczek.png" id="1_jvpei"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cvx70"]
 radius = 39.999996
@@ -13,4 +13,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_cvx70")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1086884645]
+position = Vector2(1, -2)
+scale = Vector2(2.7, 2.7)
 texture = ExtResource("1_jvpei")
