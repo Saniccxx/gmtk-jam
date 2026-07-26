@@ -58,6 +58,12 @@ animations = [{
 script = ExtResource("1_8sajy")
 hitmarker = ExtResource("14_xehft")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1009383528]
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 2500.0
+offset_bottom = 1500.0
+
 [node name="All_targets" type="Node2D" parent="." unique_id=795459499]
 position = Vector2(917.99994, 401.99997)
 scale = Vector2(0.1, 0.1)
