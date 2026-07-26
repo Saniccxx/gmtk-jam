@@ -7,7 +7,10 @@
 [ext_resource type="Script" uid="uid://yju1ktvxmm7l" path="res://scenes/parkour/distance_label.gd" id="4_1yfpb"]
 [ext_resource type="Shader" uid="uid://cu6p0blmwb0wd" path="res://scenes/parkour/lava.gdshader" id="5_c82wr"]
 [ext_resource type="PackedScene" uid="uid://cj71ghepp1xrm" path="res://HUD.tscn" id="6_ghnu6"]
+[ext_resource type="Texture2D" uid="uid://0w1f5fek16kp" path="res://scenes/parkour/assets/jeicam/sun/Untitled-16.png" id="7_6widt"]
+[ext_resource type="Script" uid="uid://cn630d5ca2brr" path="res://scenes/parkour/sun.gd" id="8_8rakm"]
 [ext_resource type="AudioStream" uid="uid://d12rwnkso5d18" path="res://scenes/parkour/assets/pek.wav" id="8_tucp6"]
+[ext_resource type="Script" uid="uid://bb2ql1kpb85x2" path="res://scenes/parkour/cloud_paralax.gd" id="9_rj0wi"]
 [ext_resource type="PackedScene" uid="uid://dyyd053pyqgsv" path="res://scenes/pause/pause_menu.tscn" id="9_tucp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l7qi"]
@@ -39,6 +42,17 @@ stream = ExtResource("2_6widt")
 
 [node name="Shoot" type="AudioStreamPlayer" parent="SFX" unique_id=833954713]
 stream = ExtResource("3_8rakm")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1087105394]
+scroll_scale = Vector2(0.01, 0.01)
+
+[node name="Sun" type="Sprite2D" parent="Parallax2D" unique_id=1816627984]
+position = Vector2(1757, 191)
+texture = ExtResource("7_6widt")
+script = ExtResource("8_8rakm")
+
+[node name="CloudParalax" type="Parallax2D" parent="." unique_id=490732713]
+script = ExtResource("9_rj0wi")
 
 [node name="Obstacles" type="Node2D" parent="." unique_id=1284390135]
 
