@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://etofa2l48up2" path="res://scenes/mom/dialog_display.gd" id="1_4jfqe"]
 [ext_resource type="AudioStream" uid="uid://c22u2jn3pl2dc" path="res://scenes/parkour/assets/badmom.wav" id="2_utc5l"]
+[ext_resource type="Texture2D" uid="uid://ceofjealdpvko" path="res://scenes/parkour/assets/Untitled-1a.png" id="2_wnn3p"]
+[ext_resource type="Texture2D" uid="uid://cx1ujksesu411" path="res://scenes/parkour/assets/Untitled-3l.png" id="3_20h2d"]
+[ext_resource type="Texture2D" uid="uid://c5e35875fu6ih" path="res://scenes/parkour/assets/Untitled-d4.png" id="4_yesko"]
+[ext_resource type="LabelSettings" uid="uid://bn2kvgsiusju1" path="res://ui/big_label.tres" id="5_20h2d"]
+[ext_resource type="Theme" uid="uid://b717cepw8rqms" path="res://ui/button_theme.tres" id="6_m7mak"]
 
 [node name="DialogDisplay" type="Control" unique_id=1765881269]
 layout_mode = 3
@@ -19,49 +24,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.063352965, 0.14109856, 0.07446138, 1)
+color = Color(0.8392157, 0.8392157, 0.8392157, 1)
 
-[node name="Mom" type="ColorRect" parent="." unique_id=1310492475]
+[node name="Mom" type="TextureRect" parent="." unique_id=1905745702]
 layout_mode = 0
 offset_left = 110.0
 offset_top = 75.0
-offset_right = 510.0
-offset_bottom = 275.0
-color = Color(1, 0, 1, 1)
+offset_right = 410.0
+offset_bottom = 375.0
+texture = ExtResource("2_wnn3p")
 
 [node name="Label" type="Label" parent="Mom" unique_id=2078615833]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Mom"
+label_settings = ExtResource("5_20h2d")
 
-[node name="Kid" type="ColorRect" parent="." unique_id=1380887290]
+[node name="Kid" type="TextureRect" parent="." unique_id=2134574493]
 layout_mode = 0
-offset_left = 1614.0
-offset_top = 451.0
-offset_right = 1814.0
-offset_bottom = 651.0
-color = Color(0, 0, 1, 1)
+offset_left = 1534.0
+offset_top = 449.0
+offset_right = 1834.0
+offset_bottom = 749.0
+texture = ExtResource("3_20h2d")
 
 [node name="Label" type="Label" parent="Kid" unique_id=1338488897]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Kid"
+label_settings = ExtResource("5_20h2d")
 
-[node name="DialogBox" type="ColorRect" parent="." unique_id=441243214]
+[node name="DialogBox" type="TextureRect" parent="." unique_id=637199440]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 828.0
-offset_right = 1849.0
-offset_bottom = 1004.0
-color = Color(0.20800105, 0.16522065, 0.010485886, 1)
+offset_left = 43.0
+offset_top = 761.0
+offset_right = 1820.0
+offset_bottom = 1061.0
+texture = ExtResource("4_yesko")
+flip_h = true
+flip_v = true
 
 [node name="SpeakerLabel" type="Label" parent="DialogBox" unique_id=1891501962]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 175.0
 offset_bottom = 64.0
+label_settings = ExtResource("5_20h2d")
 
 [node name="TextLabel" type="Label" parent="DialogBox" unique_id=2063878624]
 unique_name_in_owner = true
@@ -70,6 +80,7 @@ offset_left = 23.0
 offset_top = 84.0
 offset_right = 802.0
 offset_bottom = 133.0
+label_settings = ExtResource("5_20h2d")
 
 [node name="ContinueHint" type="Label" parent="DialogBox" unique_id=355985286]
 unique_name_in_owner = true
@@ -80,6 +91,7 @@ offset_top = 132.0
 offset_right = 1739.0
 offset_bottom = 155.0
 text = "Press [Enter]"
+label_settings = ExtResource("5_20h2d")
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="." unique_id=1152928758]
 visible = false
@@ -95,6 +107,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_m7mak")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1000395052]
 stream = ExtResource("2_utc5l")
