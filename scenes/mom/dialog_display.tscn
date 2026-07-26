@@ -96,7 +96,7 @@ offset_left = 448.0
 offset_top = 167.0
 offset_right = 665.0
 offset_bottom = 232.0
-text = "Press [Enter]"
+text = "Press Enter"
 label_settings = SubResource("LabelSettings_luapr")
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="." unique_id=1152928758]
