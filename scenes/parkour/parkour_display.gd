@@ -66,6 +66,13 @@ func _update_lava_top_y() -> void:
 func _process(delta: float) -> void:
 	ammo_label.text = "Ammo: %d" % player.current_ammo[global.current_gun]
 	
+	if global.current_gun == 3:
+		$Player.ShootingSound = $SFX/Machinegun
+	elif global.current_gun == 2:
+		$Player.ShootingSound = $SFX/Shoot
+	else:
+		$Player.ShootingSound = $SFX/Shoot
+	
 	lava.global_position.y = lava_floor_y
 	
 	var gen_threshold = player.global_position.x + threshold_range
