@@ -1,6 +1,6 @@
 extends Node
 
-var time_left := 601.0
+var time_left := 901.0
 var running := false
 
 signal time_changed(seconds_left)
@@ -15,7 +15,7 @@ func stop():
 	running = false
 
 func reset():
-	time_left = 601.0
+	time_left = 901.0
 	time_changed.emit(time_left)
 
 func _process(delta):

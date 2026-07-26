@@ -31,7 +31,7 @@ var dialogue_tree := {
 	},
 	"mom_grants_time": {
 		"speaker": "Mom",
-		"text": "Here's the deal: you have 10 minutes to finish.",
+		"text": "Here's the deal: you have 15 minutes to finish.",
 		"next": "mom_last"
 	},
 	"mom_last": {
@@ -41,7 +41,7 @@ var dialogue_tree := {
 	},
 	"kid_final": {
 		"speaker": "Kid",
-		"text": "Got it! Ten minutes, 100,000 tickets. I'm on it!",
+		"text": "Got it! 15 minutes, 100,000 tickets. I'm on it!",
 		"next": "end"
 	},
 	"end": {
