@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://hbvb4mnln3cw"]
 
 [ext_resource type="Script" uid="uid://d08a003y3anji" path="res://scenes/parkour/Parkour_player.gd" id="1_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://pdwscy30mdna" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0001.png" id="2_lorgp"]
-[ext_resource type="Texture2D" uid="uid://b65eebh6rhrmo" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0002.png" id="3_g1mjv"]
-[ext_resource type="Texture2D" uid="uid://pkvx35hqd3mb" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0003.png" id="4_7t4n8"]
-[ext_resource type="Texture2D" uid="uid://buq6dnwq737ht" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0004.png" id="5_5uait"]
-[ext_resource type="Texture2D" uid="uid://bqjg2cjsv37lc" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0006.png" id="6_8otbt"]
-[ext_resource type="Texture2D" uid="uid://cj5n0qhj0j4u8" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0007.png" id="7_73afq"]
-[ext_resource type="Texture2D" uid="uid://chsj80c6r7bi6" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0008.png" id="8_ny5yb"]
-[ext_resource type="Texture2D" uid="uid://c4mk303s2a0mf" path="res://scenes/parkour/assets/jeicam/idle_with_stroke/MyAnimation0009.png" id="9_68ekg"]
+[ext_resource type="Texture2D" uid="uid://b43ai8thqft0k" path="res://assets/idle_no_hands/MyAnimation0001.png" id="2_2gt7j"]
+[ext_resource type="Texture2D" uid="uid://55h0ou0svw5u" path="res://assets/idle_no_hands/MyAnimation0002.png" id="3_7tejg"]
+[ext_resource type="Texture2D" uid="uid://bcnh1eswsl3uq" path="res://assets/idle_no_hands/MyAnimation0003.png" id="4_1hck8"]
+[ext_resource type="Texture2D" uid="uid://cpi8kfrlmompx" path="res://assets/idle_no_hands/MyAnimation0004.png" id="5_rmi8x"]
+[ext_resource type="Texture2D" uid="uid://b6m7cpodec5x6" path="res://assets/idle_no_hands/MyAnimation0006.png" id="6_irfyl"]
+[ext_resource type="Texture2D" uid="uid://cbft1kmcgejnj" path="res://assets/idle_no_hands/MyAnimation0007.png" id="7_lldlc"]
+[ext_resource type="Texture2D" uid="uid://l3hlagyv3fud" path="res://assets/idle_no_hands/MyAnimation0008.png" id="8_lwlus"]
+[ext_resource type="Texture2D" uid="uid://chtsu8ft8w2do" path="res://assets/idle_no_hands/MyAnimation0009.png" id="9_28e0n"]
 [ext_resource type="Texture2D" uid="uid://bsd761j3g6h41" path="res://scenes/parkour/assets/jeicam/jump/frame_00_delay-0.04s_no_bg.png" id="10_nfvfq"]
 [ext_resource type="Texture2D" uid="uid://4it5buew1y5b" path="res://scenes/parkour/assets/jeicam/jump/frame_01_delay-0.04s_no_bg.png" id="11_2gt7j"]
 [ext_resource type="Texture2D" uid="uid://besmh02jw4w3v" path="res://scenes/parkour/assets/jeicam/jump/frame_02_delay-0.04s_no_bg.png" id="12_7tejg"]
@@ -95,6 +95,7 @@
 [ext_resource type="Texture2D" uid="uid://be5nwlryuebaq" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0033.png" id="117_i6gyu"]
 [ext_resource type="Texture2D" uid="uid://cusojr7t6ephe" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0034.png" id="118_5hu8p"]
 [ext_resource type="Texture2D" uid="uid://dskfiwdeu74ul" path="res://scenes/parkour/assets/jeicam/slide/MyAnimation0035.png" id="119_hgmxt"]
+[ext_resource type="Texture2D" uid="uid://x2xxk87jri5w" path="res://assets/hands_with_guns/pistol.png" id="120_2gt7j"]
 [ext_resource type="Texture2D" uid="uid://c24vb8glw2xhy" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20001.png" id="301_47jjt"]
 [ext_resource type="Texture2D" uid="uid://4x3k50ewq2h7" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20002.png" id="302_nasi8"]
 [ext_resource type="Texture2D" uid="uid://nm7cmvdvmn1h" path="res://scenes/parkour/assets/jeicam/run/MyAnimation20003.png" id="303_6st4e"]
@@ -124,28 +125,28 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lorgp")
+"texture": ExtResource("2_2gt7j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g1mjv")
+"texture": ExtResource("3_7tejg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7t4n8")
+"texture": ExtResource("4_1hck8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_5uait")
+"texture": ExtResource("5_rmi8x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_8otbt")
+"texture": ExtResource("6_irfyl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_73afq")
+"texture": ExtResource("7_lldlc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ny5yb")
+"texture": ExtResource("8_lwlus")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_68ekg")
+"texture": ExtResource("9_28e0n")
 }],
 "loop": 1,
 "name": &"default",
@@ -513,8 +514,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lorgp"]
-radius = 94.2
-height = 332.55
+radius = 51.85
+height = 167.02
 
 [node name="Player" type="CharacterBody2D" unique_id=689076596]
 floor_stop_on_slope = false
@@ -526,10 +527,20 @@ script = ExtResource("1_i3pqv")
 position = Vector2(-2, -152)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fb6tf")
-animation = &"slide_intro"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75747721]
 shape = SubResource("CapsuleShape2D_lorgp")
+
+[node name="Shoulders" type="Node2D" parent="." unique_id=1155090254]
+position = Vector2(-9, -39)
+
+[node name="HandsWithGun" type="Sprite2D" parent="Shoulders" unique_id=1528915596]
+position = Vector2(70, 0)
+scale = Vector2(0.281, 0.281)
+texture = ExtResource("120_2gt7j")
+
+[node name="Muzzle" type="Node2D" parent="Shoulders/HandsWithGun" unique_id=1211408586]
+position = Vector2(256, -48)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_sprite_animation_finished"]
