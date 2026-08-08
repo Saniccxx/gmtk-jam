@@ -1,8 +1,10 @@
 # Doodle arcade
 
-A fast-paced mini-game collection built in Godot 4. Test your reaction speed and mash your way through micro-challenges.
+### A fast-paced mini-game collection built in Godot 4. Test your reaction speed and mash your way through micro-challenges.
 
 ---
+
+## Try it in the browser: https://rutra8002.itch.io/doodle-arcade
 
 ## Included Mini-Games
 
